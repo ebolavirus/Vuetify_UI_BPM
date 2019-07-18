@@ -7,6 +7,7 @@
              @cancelVerify="cancelVerify"
              @reassignVerify="reassignVerify">
     <template slot="main">
+      <wanhuabutton />
       <basearea/>
       <basearea/>
       <basearea/>
