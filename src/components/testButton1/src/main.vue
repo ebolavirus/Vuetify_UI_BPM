@@ -6,12 +6,13 @@
 </template>
 -->
 <script>
-import { Button } from 'element-ui'
+import { Input } from 'element-ui'
 export default {
-  name: 'wanhuabutton',
-  extends: Button,
-  created () {
-    console.log("fffffffffffff");
+  name: 'wanhuabutton1',
+  extends: Input,
+  mounted () {
+      //new code
+    console.log("JFJFJFFJFJJFFJJFFJFJ")
   }
 };
 </script>

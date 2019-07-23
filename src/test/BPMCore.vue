@@ -7,7 +7,11 @@
              @cancelVerify="cancelVerify"
              @reassignVerify="reassignVerify">
     <template slot="main">
-      <wanhuabutton />
+      <wanhuabutton1 v-model="inputValue" />
+      <wanhuabutton2 v-model="inputValue">
+        <el-button slot="append" icon="el-icon-search"></el-button>
+      </wanhuabutton2>
+      <el-input v-model="inputValue" />
       <basearea/>
       <basearea/>
       <basearea/>
@@ -39,7 +43,8 @@ export default {
     return {
       isShow: false,
       size: 18,
-      height: 36
+      height: 36,
+      inputValue: '222222'
     }
   },
   computed: {

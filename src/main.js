@@ -5,10 +5,12 @@ import router from './router'
 import minxins from './mixin'
 import 'babel-polyfill'
 import ElementUI from 'element-ui'
-import wanhuabutton from './components/testButton'
+import wanhuabutton1 from './components/testButton1'
+import wanhuabutton2 from './components/testButton2'
 import './style/index.css'
 Vue.use(ElementUI)
-Vue.component(wanhuabutton.name, wanhuabutton)
+Vue.component(wanhuabutton1.name, wanhuabutton1)
+Vue.component(wanhuabutton2.name, wanhuabutton2)
 
 minxins.forEach(item => {
   Vue.mixin(item)
