@@ -3,23 +3,26 @@ import './plugins/vuetify'
 import App from './App.vue'
 import DialogPromise from './DialogPromise'
 import i18n from './i18n'
-function _getLocale()
-{
+import vuetify from './plugins/vuetify'
+
+function _getLocale() {
     let locale = "en";
-    const locales = Object.keys( i18n );
-    for( let i = 0; i < locales.length; i++ )
-    {
-        if( window.location.pathname.indexOf( '/' + locales[ i ] + '/' ) !== -1 )
-        {
-            locale = locales[ i ];
+    const locales = Object.keys(i18n);
+    for (let i = 0; i < locales.length; i++) {
+        if (window.location.pathname.indexOf('/' + locales[i] + '/') !== -1) {
+            locale = locales[i];
             return locale;
         }
     }
     return locale;
 }
 
-Vue.use( DialogPromise, { snackbarParent : "app", locale : _getLocale() } );
+Vue.use(DialogPromise, {
+    snackbarParent: "app",
+    locale: _getLocale()
+});
 Vue.config.productionTip = false;
-new Vue( {
-    render : h => h( App ),
-} ).$mount( '#app' );
+new Vue({
+    vuetify,
+    render: h => h(App),
+}).$mount('#app');
