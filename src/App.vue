@@ -1,17 +1,19 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <dialog-promise-demo></dialog-promise-demo>
 </template>
 
 <script>
+import DialogPromiseDemo from './demo/DialogPromiseDemo'
+
 export default {
-  name: 'app',
+  name: 'App',
+  components: {
+      "dialog-promise-demo" : DialogPromiseDemo
+  },
   data () {
     return {
+      //
     }
   }
 }
 </script>
-<style>
-</style>

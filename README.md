@@ -1,139 +1,134 @@
-# 描述
+# vuetify-dialog-promise
 
-vue流程页面开发需要引用的bpm-core-item组件，用于流程流转。
+A Promise API for [Vuetify](https://www.npmjs.com/package/vuetify) dialogs and utility for raising snackbar alerts.
+ 
+Adds the following methods to the Vue instance:
 
-## 组件安装
+* `$alert( message )` 
+    - An alert dialog. Returns Promise, resolved when the user accepts it.
+    - `message` can be a string or an object with properties `{ text, title?, dialogMaxWidth?, acceptText?, 
+    cancelText? }` where `title` becomes the dialog title, `text` becomes the message to display, and the other 
+    properties control the appearance and behaviour of the dialog (see "Configurable properties" below). Applies to 
+    `$confirm` and `$prompt` also (see below).
+* `$confirm( message )` 
+    - A confirmation dialog. Returns Promise, resolved if the user accepts it, rejected if the user cancels it.
+* `$prompt( message )` 
+    - A prompt dialog. Returns Promise, resolved with user input if user accepts it, rejected if the user cancels it.
+* `$inform( message )` 
+    - Raises a snackbar notification in the default colour.
+    - `message` can be a string or an object with properties `{ text, color?, closeText?, snackbarX?, snackbarY?,
+    snackbarTimeout? }` where `text` becomes the message to display, and the other properties control the appearance
+    and behaviour of the snackbar (see "Configurable properties" below). Applies to `$warn` and `$error` also (see 
+    below).
+* `$warn( message )` 
+    - Raises a snackbar notification in the warning colour.
+* `$error( message )` 
+    - Raises a snackbar notification in the error colour.
 
-	npm install bpm-core-item
+Based on [Vue CLI](https://cli.vuejs.org/) and [Vuetify](https://www.npmjs.com/package/vuetify).
 
-## 组件版本更新
+## Features
 
-更新至最新版本：
+* Button labels localised to a large variety of languages (pull requests welcome) - Localisations for the buttons are
+extracted from the [Dojo toolkit](https://dojotoolkit.org/) i18n.
+* Allows you to inject your own button labels, overriding the defaults
+* Various features of the dialogues and snackbars are configurable (e.g. dialog max width, snackbar location, colour, 
+duration)
 
-	npm install bpm-core-item@*
+Full description and more examples accessible from home page served by `npm run serve`.
 
-如需更新至指定版本：
+## Configurable properties
 
-	npm install bpm-core-item@0.0.1
+Various properties can be configured by handing them to Vue.use in the `options` argument when installing the plugin. 
+(see **Usage examples** below). 
 
-通常情况下bpmcore都使用最新版本。
+All of these are optional and have defaults:
 
-## 引用
+* `locale` 
+    - Locale for the button labels. Over 30 locales are supported. To override, see the properties below.
+* `acceptText` 
+    - Label for accept button in dialog
+* `cancelText` 
+    - Label for cancel button in dialog
+* `closeText` 
+    - Label for close button in snackbar message
+* `snackbarX` 
+    - Position of snackbar message: "left" or "right"
+* `snackbarY` 
+    - Position of snackbar message: "top" or "bottom"
+* `snackbarTimeout` 
+    - Snackbar duration in milliseconds
+* `dialogMaxWidth` 
+    - Max width of dialog in pixels
+* `snackbarParent` 
+    - ID of parent node in which the dialogs are mounted, default is "app"
 
-	import bpmCoreItem from 'bpm-core-item'
-	Vue.use(bpmCoreItem)
+## Usage examples
 
-## 使用
+To install and configure the plugin:
 
-bpm-core-item包含两个组件，页面布局组件和附件组件。
+```
+import Vue from "vue";
+import DialogPromise from "vuetify-dialog-promise";
 
-1.页面布局组件：
+Vue.use( DialogPromise, {
+    locale : "fi",
+    snackbarX : "left",
+    snackbarY : "bottom"
+} );
+```
 
-	  <bpmprocesslayout>
-	  </bpmprocesslayout>
+To use the plugin from inside your own component:
 
-2.附件组件：
+```
+// Message with defaults
+this.$alert( "Your mother is a hamster and your father smells of elderberries." );
 
-	  <attachment>
-	  </attachment>
+// Confirmation with property overrides
+this.$confirm( { 
+    title : "Are you a witch?", 
+    text : "Do you weigh less than a duck?", 
+    acceptText : "I float", 
+    cancelText : "I sink"
+ } ).then( y => this.burnTheWitch() ).catch( n => this.notAWitch() );
+ 
+// Prompt for value
+this.$prompt( "What is your quest?" ).then( quest => 
+    this.beginQuest( quest ).catch( n => {} );
+    
+// Snackbar notification with defaults    
+this.$inform( "We are the knights that say Ni." );
 
-## bpmprocesslayout配置
+// Snackbar notification with overrides
+this.$inform( { text : "My favourite colour is blue.", color : "blue" } );
+```
 
-### Props说明
+If used in a Vue-CLI project, this will be baked into your layer without you having to do anything.
 
+## Project setup
+```
+npm install
+```
 
-|    参数    |    作用   |   类型   | 默认值 |
-| -----------------  | ---------------- | :--------: | :----------: |
-| title        |流程标题名称 |String | 非空，必须指定流程名称
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-### 事件说明
+### Compiles and minifies for production
+```
+npm run build
+```
 
-| 方法 | 描述   |  触发时机
-| :--------:   | -----  | -----  |
-|    save    | 保存事件，用于保存业务数据 | 点击保存按钮时调用
-|    submitVerify    |  提交校验事件  |    点击提交时调用
-|    confirmVerify    |  提交确认校验事件  |   点击提交-确认按钮后调用
-|    rejectVerify    |  驳回校验事件   |  点击驳回按钮时调用
-|    rejectConfirmVerify    |  驳回确认校验事件   |  点击驳回-确认按钮时调用
-|    reassignVerify    |  加签、转办校验事件   |  点击加签转办选人框的确认按钮后调用
-|    cancelVerify    |  注销校验时间   | 点击注销按钮汇后调用
+### Run your tests
+```
+npm run test
+```
 
-以上校验事件校验通过后才能继续往下执行引擎流转。
+### Run your unit tests
+```
+npm run test:unit
+```
 
-引用bpmprocesslayout的组件需要在methods添加校验方法
-
-	// 点击保存按钮触发的方法
-    save () {
-      // todo 业务数据保存
-    },
-	// 提交校验
-    submitVerify () {
-      this.setBpmValue({akey: 'isSubmitVerify', avalue: false})
-	  // todo 业务校验
-      this.setBpmValue({akey: 'isSubmitVerify', avalue: true})
-    },
-    // 点击提交弹框中的确认按钮出发的方法
-    confirmVerify () {
-      this.setBpmValue({akey: 'isConfirmVerify', avalue: false})
-      // todo 业务校验
-      this.setBpmValue({akey: 'isConfirmVerify', avalue: true})
-    },
-    // 点击驳回按钮触发的方法
-    rejectVerify () {
-     this.setBpmValue({akey: 'isRejectVerify', avalue: false})
-      // todo 业务校验
-     this.setBpmValue({akey: 'isRejectVerify', avalue: true})
-    },
-    // 点击驳回弹框中的确认按钮触发的方法
-    rejectConfirmVerify () {
-      this.setBpmValue({akey: 'isRejectConfirmVerify', avalue: false})
-      // todo 业务校验
-      this.setBpmValue({akey: 'isRejectConfirmVerify', avalue: true})
-    },
-    // 点击加签按转办选人组件的确认钮触发的方法
-    reassignVerify () {
-      this.setBpmValue({akey: 'isReassignVerify', avalue: false})
-      // todo 业务校验
-      this.setBpmValue({akey: 'isReassignVerify', avalue: true})
-    }
-    // 点击注销钮触发的方法
-    cancelVerify () {
-      this.setBpmValue({akey: 'isCancelVerify', avalue: false})
-      // todo 业务校验
-      this.setBpmValue({akey: 'isCancelVerify', avalue: true})
-    }
-
-
-### 主表单实现
-
-主表单实现：在bpmprocesslayout组件中添加slot=main的template：
-
-        <template slot="main">
-        <！--todo 主表单实现-->
-       </template>
-
-### bpmprocesslayout配置样例
-
-     <bpmprocesslayout :title="$t('mtv3I18n.bpdName')
-        @submitVerify="submitVerify"
-         @confirmVerify="confirmVerify"
-         @rejectVerify="rejectVerify"
-         @reassignVerify="reassignVerify">
-        <template slot="main">
-        <！--todo 主表单实现-->
-       </template>
-    </bpmprocesslayout>
-
-
-## attachment配置
-
-### Props说明
-
-
-|    参数    |    作用   |   类型   | 默认值 |
-| -----------------  | ---------------- | :--------: | :----------: |
-| instanceId        |附件绑定值 |String | 非空，必须指定，只包含一个附件时为流程tspiid
-
-###特殊说明
-
-一个流程最多支持三个附件组件，第二个、第三个组件分别为tspiid+'att'、tspiid+'app'。
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
