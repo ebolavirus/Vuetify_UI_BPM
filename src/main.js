@@ -6,6 +6,8 @@ import i18n from './i18n'
 import vuetify from './plugins/vuetify'
 import './components'
 
+import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
+
 function _getLocale() {
     let locale = "en";
     const locales = Object.keys(i18n);

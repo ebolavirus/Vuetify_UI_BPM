@@ -19,8 +19,9 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-textfield</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled></wh-textfield>
-          <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled&gt;&lt;/wh-textfield&gt;</code>
+          <wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled append-icon="mdi-account-edit" />
+          <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
+            append-icon="mdi-account-edit"/&gt;</code>
           <br>参考v-text-field，属性一致
         </v-expansion-panel-content>
         <!-- IT顾问评估 -->
