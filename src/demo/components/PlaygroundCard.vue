@@ -26,6 +26,26 @@
         </v-expansion-panel-content>
         <!-- IT顾问评估 -->
       </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-numberfield</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-numberfield label="办公室个数" placeholder="please input number" append-icon="mdi-bee" />
+          <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
+            append-icon="mdi-account-edit"/&gt;</code>
+          <br>参考v-text-field，属性一致
+        </v-expansion-panel-content>
+        <!-- IT顾问评估 -->
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-moneyfield</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-moneyfield label="办公室价格" placeholder="please input number" append-icon="mdi-bee" />
+          <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
+            append-icon="mdi-account-edit"/&gt;</code>
+          <br>参考v-text-field，属性一致
+        </v-expansion-panel-content>
+        <!-- IT顾问评估 -->
+      </v-expansion-panel>
     </v-expansion-panels>
   </v-container>
 </template>
