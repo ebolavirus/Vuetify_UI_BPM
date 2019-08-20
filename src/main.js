@@ -4,6 +4,7 @@ import App from './App.vue'
 import DialogPromise from './DialogPromise'
 import i18n from './i18n'
 import vuetify from './plugins/vuetify'
+import './components'
 
 function _getLocale() {
     let locale = "en";

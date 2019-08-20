@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app dark color="grey darken-2">
       <v-toolbar-title>
-        <span>Vuetify</span>
+        <wh-logo></wh-logo>
         <span class="font-weight-light">WANHUA UI DEMO</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -20,7 +20,6 @@
       </v-toolbar-items>
     </v-app-bar>
     <v-content app>
-      <wh-logo></wh-logo>
       <info-card v-if="shown === 'info'"></info-card>
       <v-container v-if="shown === 'demo'">
         <v-layout align-center justify-center>
@@ -102,7 +101,6 @@
 <script>
   import DemoCard from './components/DemoCard';
   import InfoCard from './components/InfoCard';
-  import WHLogo from '../components/singles/WHLogo';
   import i18n from '../i18n';
 
   const locales = Object.keys(i18n);
@@ -120,8 +118,7 @@
     name: "DialogPromiseDemo",
     components: {
       "demo-card": DemoCard,
-      "info-card": InfoCard,
-      "wh-logo": WHLogo
+      "info-card": InfoCard
     },
     data() {
       return {
