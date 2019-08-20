@@ -2,7 +2,9 @@
   <v-app>
     <v-app-bar app dark color="grey darken-2">
       <v-toolbar-title>
-        <wh-logo></wh-logo>
+        <!-- <wh-logo></wh-logo> -->
+        <v-icon>mdi-anchor</v-icon>
+        <v-icon>mdi-file-document-box-search</v-icon>
         <span class="font-weight-light">WANHUA UI DEMO</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>

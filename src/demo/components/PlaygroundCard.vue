@@ -1,8 +1,29 @@
 <template>
   <v-container>
+    <v-expansion-panels v-model="panel" multiple>
+      <v-expansion-panel>
+        <v-expansion-panel-header>
+          Textfield
+          <template v-slot:actions>
+            <v-icon color="primary">$vuetify.icons.values.expand</v-icon>
+          </template>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <v-layout wrap>
+            <v-flex xs12 sm6 md6 lg6>
+              <v-text-field label="*办公室位置"></v-text-field>
+            </v-flex>
+            <v-flex xs12>
+              <v-textarea label="服务内容"></v-textarea>
+            </v-flex>
+          </v-layout>
+        </v-expansion-panel-content>
+        <!-- IT顾问评估 -->
+      </v-expansion-panel>
+    </v-expansion-panels>
     <v-layout align-center justify-center>
       <v-flex ma-3>
-        <v-card max-width="800">
+        <v-card>
           <v-card-text>
             <p>
               The VuetifyDialogPromise plugin provides a Promise API for Vuetify dialogs and snackbar notifications.
@@ -104,6 +125,9 @@
 <script>
   export default {
     name: "PlaygroundCard",
+    data: () => ({
+      panel: []
+    }),
     methods: {
       tryPlain() {
         this.$prompt("What is your favourite colour?").then(colour => {
@@ -111,6 +135,8 @@
         });
       },
       tryFull() {
+        console.log(this.$vuetify)
+        return
         this.$prompt({
           title: "Important question:",
           text: "What is your favourite colour?",
