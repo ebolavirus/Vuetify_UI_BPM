@@ -7,6 +7,10 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
+        <v-btn class="hidden-xs-only" text :input-value="shown === 'wanhuademo'" @click="shown = 'wanhuademo'"
+          active-class="default-class grey darken-1">
+          Wanhua UI
+        </v-btn>
         <v-btn class="hidden-xs-only" text :input-value="shown === 'demo'" @click="shown = 'demo'"
           active-class="default-class grey darken-1">
           Playground
@@ -21,6 +25,7 @@
     </v-app-bar>
     <v-content app>
       <info-card v-if="shown === 'info'"></info-card>
+      <playground-card v-if="shown === 'wanhuademo'"></playground-card>
       <v-container v-if="shown === 'demo'">
         <v-layout align-center justify-center>
           <v-flex>
@@ -101,6 +106,7 @@
 <script>
   import DemoCard from './components/DemoCard';
   import InfoCard from './components/InfoCard';
+  import PlaygroundCard from './components/PlaygroundCard';
   import i18n from '../i18n';
 
   const locales = Object.keys(i18n);
@@ -118,7 +124,8 @@
     name: "DialogPromiseDemo",
     components: {
       "demo-card": DemoCard,
-      "info-card": InfoCard
+      "info-card": InfoCard,
+      "playground-card": PlaygroundCard
     },
     data() {
       return {
