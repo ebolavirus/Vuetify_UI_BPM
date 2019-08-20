@@ -3,9 +3,22 @@
     <v-expansion-panels v-model="panel" multiple>
       <v-expansion-panel>
         <v-expansion-panel-header>
+          Logo
+          <template v-slot:actions>
+            <v-icon color="primary">$vuetify.icons.expand</v-icon>
+          </template>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-logo></wh-logo>
+          <code>&lt;wh-logo&gt;&lt;/wh-logo&gt;</code>
+        </v-expansion-panel-content>
+        <!-- IT顾问评估 -->
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>
           Textfield
           <template v-slot:actions>
-            <v-icon color="primary">$vuetify.icons.values.expand</v-icon>
+            <v-icon color="primary">$vuetify.icons.expand</v-icon>
           </template>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
