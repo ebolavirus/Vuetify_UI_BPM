@@ -132,7 +132,7 @@
         newLocale: _getLocale(),
         locale: _getLocale(),
         locales: locales,
-        shown: "demo",
+        shown: "wanhuademo",
         defaults: {
           title: "Important!",
           cancelText: "No thanks",
