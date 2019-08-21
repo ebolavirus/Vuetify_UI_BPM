@@ -35,16 +35,17 @@
             placeholder="please input number" append-icon="mdi-bee" /&gt;</code>
           <br>整体基于v-text-field,最大长度、后缀图标等属性参考v-text-field
           <br>添加变量isDecimal(默认false)，识别是否为整数或小数
-          <br>注意，要触发此组件的值变化，必须使用v-model进行值绑定，否则可以直接用value赋值
+          <br>注意，要触发此组件的值变化检测，必须使用v-model进行值绑定，否则可以直接用value赋值
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header>wh-moneyfield</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-moneyfield label="办公室价格" placeholder="please input number" append-icon="mdi-bee" />
-          <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
-            append-icon="mdi-account-edit"/&gt;</code>
-          <br>参考v-text-field，属性一致
+          <wh-moneyfield v-model="valuenumber" label="办公室价格" placeholder="please input number" append-icon="mdi-bee" />
+          <code>&lt;wh-moneyfield v-model="valuenumber" label="办公室价格"
+            placeholder="please input number" append-icon="mdi-bee" /&gt;</code>
+          <br>整体基于v-text-field,最大长度、后缀图标等属性参考v-text-field
+          <br>注意，要触发此组件的值变化检测，必须使用v-model进行值绑定，否则可以直接用value赋值
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
