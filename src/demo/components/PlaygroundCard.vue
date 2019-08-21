@@ -131,7 +131,7 @@
         <v-expansion-panel-header>wh-date-picker</v-expansion-panel-header>
         <v-expansion-panel-content>
           <wh-date-picker v-model="date" label="日期"></wh-date-picker>         
-          <br><code></code>
+          <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
         </v-expansion-panel-content>
       </v-expansion-panel>       
     </v-expansion-panels>

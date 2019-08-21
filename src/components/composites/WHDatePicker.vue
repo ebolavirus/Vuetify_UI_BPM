@@ -1,7 +1,7 @@
 <template>
   <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" persistent full-width width="290px">
     <template v-slot:activator="{ on }">
-      <v-text-field v-model="whpassvalue" label="Picker in dialog" prepend-icon="event" readonly v-on="on">
+      <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-event" readonly v-on="on">
       </v-text-field>
     </template>
     <v-date-picker v-model="whpassvalue" scrollable>
