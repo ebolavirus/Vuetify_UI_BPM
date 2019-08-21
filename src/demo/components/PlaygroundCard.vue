@@ -29,10 +29,12 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-numberfield</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-numberfield label="办公室个数" placeholder="please input number" append-icon="mdi-bee" />
+          <wh-numberfield v-model="valuenumber" label="办公室个数" placeholder="please input number" append-icon="mdi-bee" />
           <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
             append-icon="mdi-account-edit"/&gt;</code>
-          <br>参考v-text-field，属性一致
+          <br>整体基于v-text-field,最大长度、后缀图标等属性参考v-text-field
+          <br>整体基于v-text-field,最大长度、后缀图标等属性参考v-text-field
+          <br>注意，要触发此组件的值变化，必须使用v-model进行值绑定，否则可以直接用value赋值
         </v-expansion-panel-content>
         <!-- IT顾问评估 -->
       </v-expansion-panel>
@@ -46,55 +48,6 @@
         </v-expansion-panel-content>
         <!-- IT顾问评估 -->
       </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>wh-textarea</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""></wh-textarea>
-          <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>wh-btn</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <wh-btn block color="indigo" dark>Button</wh-btn>
-          <br><code>&lt;wh-btn block color="indigo" dark&gt;Button&lt;/wh-btn&gt;</code>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>wh-select</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <wh-select :items="types" label="state" item-text="state"
-          item-value="abbr"></wh-select>
-          <br><code>&lt;wh-select :items="types" label="state" item-text="state"
-          item-value="abbr"&gt;&lt;/wh-select&gt;</code>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>wh-radio</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <wh-radio-group row label="性别：">
-              <wh-radio label="男" value="radio-1"></wh-radio>
-              <wh-radio label="女" value="radio-2"></wh-radio>
-          </wh-radio-group>          
-          <br><code>          &lt;wh-radio-group row&gt;
-              &lt;wh-radio label="男" value="radio-1"&gt;&lt;/wh-radio&gt;
-              &lt;wh-radio label="女" value="radio-2"&gt;&lt;/wh-radio&gt;
-          &lt;/wh-radio-group&gt;  </code>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>wh-checkbox</v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <wh-radio-group row label="办理人：">
-              <wh-checkbox label="张三" value="checkbox-1"></wh-checkbox>
-              <wh-checkbox label="李四" value="checkbox-2"></wh-checkbox>
-          </wh-radio-group>          
-          <br><code>          &lt;wh-radio-group row&gt;
-              &lt;wh-checkbox label="张三" value="checkbox-1"&gt;&lt;/wh-checkbox&gt;
-              &lt;wh-checkbox label="李四" value="checkbox-2"&gt;&lt;/wh-checkbox&gt;
-          &lt;/wh-radio-group&gt;  </code>
-        </v-expansion-panel-content>
-      </v-expansion-panel>      
     </v-expansion-panels>
   </v-container>
 </template>
@@ -104,13 +57,7 @@
     name: "PlaygroundCard",
     data: () => ({
       panel: [],
-      types: [
-          { state: 'Florida', abbr: 'FL' },
-          { state: 'Georgia', abbr: 'GA' },
-          { state: 'Nebraska', abbr: 'NE' },
-          { state: 'California', abbr: 'CA' },
-          { state: 'New York', abbr: 'NY' },
-        ]
+      valuenumber: '0'
     }),
     methods: {
       tryPlain() {
