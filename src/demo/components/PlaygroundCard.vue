@@ -110,6 +110,7 @@
                     &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
             &lt;/wh-timeline&gt;</code>
         </v-expansion-panel-content>
+      </v-expansion-panel>   
       <v-expansion-panel>
         <v-expansion-panel-header>wh-tabbar</v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -126,7 +127,13 @@
           以上仅为tab简单使用场景，详细用法参见vuetify官网doc
         </v-expansion-panel-content>
       </v-expansion-panel>
-      </v-expansion-panel>  
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-date-picker</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-date-picker v-model="date" label="日期"></wh-date-picker>         
+          <br><code></code>
+        </v-expansion-panel-content>
+      </v-expansion-panel>       
     </v-expansion-panels>
   </v-container>
 </template>
@@ -157,8 +164,11 @@
           state: 'New York',
           abbr: 'NY'
         },
-      ]
+      ],
+      date: new Date().toISOString().substr(0, 10)
     }),
+    computed:{
+    },
     methods: {
       tryPlain() {
         this.$prompt("What is your favourite colour?").then(colour => {
