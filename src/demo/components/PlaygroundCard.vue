@@ -94,7 +94,38 @@
               &lt;wh-checkbox label="李四" value="checkbox-2"&gt;&lt;/wh-checkbox&gt;
           &lt;/wh-radio-group&gt;  </code>
         </v-expansion-panel-content>
-      </v-expansion-panel>      
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-timeline</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-timeline>
+            <wh-timeline-item>timeline item</wh-timeline-item>
+            <wh-timeline-item class="text-right">timeline item</wh-timeline-item>
+            <wh-timeline-item>timeline item</wh-timeline-item>
+          </wh-timeline>          
+          <br><code>        &lt;wh-timeline&gt;
+                    &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
+                    &lt;wh-timeline-item class="text-right"&gt;timeline item&lt;/wh-timeline-item&gt;
+                    &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
+            &lt;/wh-timeline&gt;</code>
+        </v-expansion-panel-content>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-tabbar</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-tabs>
+            <wh-tab>Item One</wh-tab>
+            <wh-tab>Item Two</wh-tab>
+            <wh-tab>Item Three</wh-tab>
+          </wh-tabs>         
+              <br><code>  &lt;wh-tabs&gt;
+            &lt;wh-tab&gt;Item One&lt;/wh-tab&gt;
+            &lt;wh-tab&gt;Item Two&lt;/wh-tab&gt;
+            &lt;wh-tab&gt;Item Three&lt;/wh-tab&gt;
+          &lt;/wh-tabs&gt;</code>
+          以上仅为tab简单使用场景，详细用法参见vuetify官网doc
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      </v-expansion-panel>  
     </v-expansion-panels>
   </v-container>
 </template>

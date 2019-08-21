@@ -1,9 +1,9 @@
 <script>
   import {
-    VRadio
+    VTimelineItem
   } from 'vuetify/lib'
   export default {
-    name: 'wh-radio',
-    extends: VRadio
+    name: 'wh-timeline-item',
+    extends: VTimelineItem
   };
 </script>
