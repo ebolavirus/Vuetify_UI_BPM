@@ -20,10 +20,10 @@
     "bpm"
   ],
   "dependencies": {
+    "lodash": ">=4.17.13",
     "vue": "^2.6.10",
     "vue-i18n": "^8.12.0",
-    "vuetify": "^2.0.7",
-    "lodash": ">=4.17.13"
+    "vuetify": "^2.0.9"
   },
   "devDependencies": {
     "@mdi/font": "^4.0.96",
