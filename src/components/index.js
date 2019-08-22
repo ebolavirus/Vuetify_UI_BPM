@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import WHLogo from './singles/WHLogo'
 import WHIcon from './singles/WHIcon'
+import WHHyperlink from './singles/WHHyperlink'
 import WHTextfield from './singles/WHTextfield'
 import WHNumberfield from './singles/WHNumberfield'
 import WHMoneyfield from './singles/WHMoneyfield'
@@ -23,6 +24,7 @@ import WHTimePicker from './composites/WHTimePicker'
 
 Vue.component(WHLogo.name, WHLogo)
 Vue.component(WHIcon.name, WHIcon)
+Vue.component(WHHyperlink.name, WHHyperlink)
 Vue.component(WHTextfield.name, WHTextfield)
 Vue.component(WHNumberfield.name, WHNumberfield)
 Vue.component(WHMoneyfield.name, WHMoneyfield)
@@ -41,4 +43,4 @@ Vue.component(WHTabItem.name, WHTabItem)
 Vue.component(WHTabs.name, WHTabs)
 Vue.component(WHTabsSlider.name, WHTabsSlider)
 Vue.component(WHDatePicker.name, WHDatePicker)
-Vue.component(WHTimePicker.name,WHTimePicker)
+Vue.component(WHTimePicker.name, WHTimePicker)

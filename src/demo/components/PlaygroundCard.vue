@@ -17,6 +17,14 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
+        <v-expansion-panel-header>wh-hyperlink</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-hyperlink href="http://www.baidu.com" label="百度" />
+          <br><code>&lt;wh-hyperlink href="http://www.baidu.com" label="百度" /&gt;</code>
+          <br>自封组件，href为链接，label为展示文字，不填文字则展示超链接自身
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
         <v-expansion-panel-header>wh-textfield</v-expansion-panel-header>
         <v-expansion-panel-content>
           <wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled append-icon="mdi-account-edit" />
@@ -103,14 +111,14 @@
             <wh-timeline-item>timeline item</wh-timeline-item>
             <wh-timeline-item class="text-right">timeline item</wh-timeline-item>
             <wh-timeline-item>timeline item</wh-timeline-item>
-          </wh-timeline>          
-          <br><code>        &lt;wh-timeline&gt;
-                    &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
-                    &lt;wh-timeline-item class="text-right"&gt;timeline item&lt;/wh-timeline-item&gt;
-                    &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
+          </wh-timeline>
+          <br><code> &lt;wh-timeline&gt;
+            &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
+            &lt;wh-timeline-item class="text-right"&gt;timeline item&lt;/wh-timeline-item&gt;
+            &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
             &lt;/wh-timeline&gt;</code>
         </v-expansion-panel-content>
-      </v-expansion-panel>   
+      </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header>wh-tabbar</v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -118,29 +126,29 @@
             <wh-tab>Item One</wh-tab>
             <wh-tab>Item Two</wh-tab>
             <wh-tab>Item Three</wh-tab>
-          </wh-tabs>         
-              <br><code>  &lt;wh-tabs&gt;
+          </wh-tabs>
+          <br><code> &lt;wh-tabs&gt;
             &lt;wh-tab&gt;Item One&lt;/wh-tab&gt;
             &lt;wh-tab&gt;Item Two&lt;/wh-tab&gt;
             &lt;wh-tab&gt;Item Three&lt;/wh-tab&gt;
-          &lt;/wh-tabs&gt;</code>
+            &lt;/wh-tabs&gt;</code>
           以上仅为tab简单使用场景，详细用法参见vuetify官网doc
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header>wh-date-picker</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-date-picker v-model="date" label="日期"></wh-date-picker>         
+          <wh-date-picker v-model="date" label="日期"></wh-date-picker>
           <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header>wh-time-picker</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-time-picker v-model="time" label="时间"></wh-time-picker>         
+          <wh-time-picker v-model="time" label="时间"></wh-time-picker>
           <br><code>&lt;wh-time-picker v-model="time" label="时间"/&gt;</code>
         </v-expansion-panel-content>
-      </v-expansion-panel>              
+      </v-expansion-panel>
     </v-expansion-panels>
   </v-container>
 </template>
@@ -175,8 +183,7 @@
       date: new Date().toISOString().substr(0, 10),
       time: ''
     }),
-    computed:{
-    },
+    computed: {},
     methods: {
       tryPlain() {
         this.$prompt("What is your favourite colour?").then(colour => {
