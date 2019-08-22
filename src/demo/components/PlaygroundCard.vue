@@ -133,7 +133,14 @@
           <wh-date-picker v-model="date" label="日期"></wh-date-picker>         
           <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
         </v-expansion-panel-content>
-      </v-expansion-panel>       
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-time-picker</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-time-picker v-model="time" label="时间"></wh-time-picker>         
+          <br><code>&lt;wh-time-picker v-model="time" label="时间"/&gt;</code>
+        </v-expansion-panel-content>
+      </v-expansion-panel>              
     </v-expansion-panels>
   </v-container>
 </template>
@@ -165,7 +172,8 @@
           abbr: 'NY'
         },
       ],
-      date: new Date().toISOString().substr(0, 10)
+      date: new Date().toISOString().substr(0, 10),
+      time: ''
     }),
     computed:{
     },
