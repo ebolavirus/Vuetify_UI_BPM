@@ -17,9 +17,26 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
+        <v-expansion-panel-header>wh-hyperlink</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-hyperlink href="http://www.baidu.com" label="百度" />
+          <br><code>&lt;wh-hyperlink href="http://www.baidu.com" label="百度" /&gt;</code>
+          <br>自封组件，href为链接，label为展示文字，不填文字则展示超链接自身
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-loading</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-loading :loading="overlay" />
+          <wh-btn @click="overlay = true">打开loading</wh-btn>
+          <code>&lt;wh-loading :loading="overlay" /&gt;</code>
+          <br>复合组件，loading为boolean，决定是否展示loading
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
         <v-expansion-panel-header>wh-textfield</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled append-icon="mdi-account-edit" />
+          <wh-textfield label="*办公室位置" placeholder="万华实业前楼" />
           <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
             append-icon="mdi-account-edit"/&gt;</code>
           <br>参考v-text-field，属性一致
@@ -97,20 +114,76 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
+        <v-expansion-panel-header>wh-treeview</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-treeview :items="treeitems" />
+          <br><code>&lt;wh-treeview :items="treeitems" /&gt;</code>
+          <br>基于v-treeview，默认selected为true
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-layout</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-layout>
+            <wh-flex :rowNumber="2">
+              <wh-textfield label="一行两列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="2">
+              <wh-textfield label="一行两列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="3">
+              <wh-textfield label="一行三列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="3">
+              <wh-textfield label="一行三列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="3">
+              <wh-textfield label="一行三列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="1">
+              <wh-textfield label="一行一列" placeholder="万华实业前楼" />
+            </wh-flex>
+          </wh-layout>
+          <br><code>
+            &lt;wh-layout>
+            &lt;wh-flex :rowNumber="2"&gt;
+            &lt;wh-textfield label="一行两列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="2"&gt;
+            &lt;wh-textfield label="一行两列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="3"&gt;
+            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="3"&gt;
+            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="3"&gt;
+            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
+            &lt;/wh-flex&gt;
+            &lt;wh-flex :rowNumber="1"&gt;
+            &lt;wh-textfield label="一行一列" placeholder="万华实业前楼" /&gt;
+            &lt;/wh-flex&gt;
+            &lt;/wh-layout&gt;</code>
+          <br>基于v-layout和v-flex
+          <br>使用方法视上方demo，最外层嵌套wh-layout,内部使用wh-flex标签动态拼接元素，元素的rowNumber默认为1，允许值包含1,2,3,4
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
         <v-expansion-panel-header>wh-timeline</v-expansion-panel-header>
         <v-expansion-panel-content>
           <wh-timeline>
             <wh-timeline-item>timeline item</wh-timeline-item>
             <wh-timeline-item class="text-right">timeline item</wh-timeline-item>
             <wh-timeline-item>timeline item</wh-timeline-item>
-          </wh-timeline>          
-          <br><code>        &lt;wh-timeline&gt;
-                    &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
-                    &lt;wh-timeline-item class="text-right"&gt;timeline item&lt;/wh-timeline-item&gt;
-                    &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
+          </wh-timeline>
+          <br><code> &lt;wh-timeline&gt;
+            &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
+            &lt;wh-timeline-item class="text-right"&gt;timeline item&lt;/wh-timeline-item&gt;
+            &lt;wh-timeline-item&gt;timeline item&lt;/wh-timeline-item&gt;
             &lt;/wh-timeline&gt;</code>
         </v-expansion-panel-content>
-      </v-expansion-panel>   
+      </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header>wh-tabbar</v-expansion-panel-header>
         <v-expansion-panel-content>
@@ -118,26 +191,26 @@
             <wh-tab>Item One</wh-tab>
             <wh-tab>Item Two</wh-tab>
             <wh-tab>Item Three</wh-tab>
-          </wh-tabs>         
-              <br><code>  &lt;wh-tabs&gt;
+          </wh-tabs>
+          <br><code> &lt;wh-tabs&gt;
             &lt;wh-tab&gt;Item One&lt;/wh-tab&gt;
             &lt;wh-tab&gt;Item Two&lt;/wh-tab&gt;
             &lt;wh-tab&gt;Item Three&lt;/wh-tab&gt;
-          &lt;/wh-tabs&gt;</code>
+            &lt;/wh-tabs&gt;</code>
           以上仅为tab简单使用场景，详细用法参见vuetify官网doc
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header>wh-date-picker</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-date-picker v-model="date" label="日期" ></wh-date-picker>         
+          <wh-date-picker v-model="date" label="日期"></wh-date-picker>        
           <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header>wh-time-picker</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-time-picker v-model="time" label="时间" ></wh-time-picker>         
+          <wh-time-picker v-model="time" label="时间"></wh-time-picker>
           <br><code>&lt;wh-time-picker v-model="time" label="时间"/&gt;</code>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -157,6 +230,7 @@
     name: "PlaygroundCard",
     data: () => ({
       panel: [],
+      overlay: false,
       valuenumber: '0',
       types: [{
           state: 'Florida',
@@ -181,9 +255,124 @@
       ],
       date: new Date().toISOString().substr(0, 10),
       time: '',
+      treeitems: [{
+          id: 1,
+          name: 'Applications :',
+          children: [{
+              id: 2,
+              name: 'Calendar : app'
+            },
+            {
+              id: 3,
+              name: 'Chrome : app'
+            },
+            {
+              id: 4,
+              name: 'Webstorm : app'
+            },
+          ],
+        },
+        {
+          id: 5,
+          name: 'Documents :',
+          children: [{
+              id: 6,
+              name: 'vuetify :',
+              children: [{
+                id: 7,
+                name: 'src :',
+                children: [{
+                    id: 8,
+                    name: 'index : ts'
+                  },
+                  {
+                    id: 9,
+                    name: 'bootstrap : ts'
+                  },
+                ],
+              }, ],
+            },
+            {
+              id: 10,
+              name: 'material2 :',
+              children: [{
+                id: 11,
+                name: 'src :',
+                children: [{
+                    id: 12,
+                    name: 'v-btn : ts'
+                  },
+                  {
+                    id: 13,
+                    name: 'v-card : ts'
+                  },
+                  {
+                    id: 14,
+                    name: 'v-window : ts'
+                  },
+                ],
+              }, ],
+            },
+          ],
+        },
+        {
+          id: 15,
+          name: 'Downloads :',
+          children: [{
+              id: 16,
+              name: 'October : pdf'
+            },
+            {
+              id: 17,
+              name: 'November : pdf'
+            },
+            {
+              id: 18,
+              name: 'Tutorial : html'
+            },
+          ],
+        },
+        {
+          id: 19,
+          name: 'Videos :',
+          children: [{
+              id: 20,
+              name: 'Tutorials :',
+              children: [{
+                  id: 21,
+                  name: 'Basic layouts : mp4'
+                },
+                {
+                  id: 22,
+                  name: 'Advanced techniques : mp4'
+                },
+                {
+                  id: 23,
+                  name: 'All about app : dir'
+                },
+              ],
+            },
+            {
+              id: 24,
+              name: 'Intro : mov'
+            },
+            {
+              id: 25,
+              name: 'Conference introduction : avi'
+            },
+          ],
+        },
+      ]
+      time: '',
       page: 2
     }),
-    computed:{
+    computed: {},
+    watch: {
+      overlay(val) {
+        val && setTimeout(() => {
+          this.overlay = false
+        }, 3000)
+      },
     },
     methods: {
       tryPlain() {
