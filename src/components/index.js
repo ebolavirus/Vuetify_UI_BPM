@@ -4,6 +4,7 @@ import WHIcon from './singles/WHIcon'
 import WHFooter from './singles/WHFooter'
 import WHLayout from './singles/WHLayout'
 import WHFlex from './singles/WHFlex'
+import WHTable from './singles/WHTable'
 import WHHyperlink from './singles/WHHyperlink'
 import WHTextfield from './singles/WHTextfield'
 import WHNumberfield from './singles/WHNumberfield'
@@ -33,6 +34,7 @@ Vue.component(WHIcon.name, WHIcon)
 Vue.component(WHFooter.name, WHFooter)
 Vue.component(WHLayout.name, WHLayout)
 Vue.component(WHFlex.name, WHFlex)
+Vue.component(WHTable.name, WHTable)
 Vue.component(WHHyperlink.name, WHHyperlink)
 Vue.component(WHTextfield.name, WHTextfield)
 Vue.component(WHNumberfield.name, WHNumberfield)
