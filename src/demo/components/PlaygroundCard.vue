@@ -36,7 +36,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-textfield</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled append-icon="mdi-account-edit" />
+          <wh-textfield label="*办公室位置" placeholder="万华实业前楼" />
           <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
             append-icon="mdi-account-edit"/&gt;</code>
           <br>参考v-text-field，属性一致
@@ -111,6 +111,62 @@
             &lt;wh-checkbox label="张三" value="checkbox-1"&gt;&lt;/wh-checkbox&gt;
             &lt;wh-checkbox label="李四" value="checkbox-2"&gt;&lt;/wh-checkbox&gt;
             &lt;/wh-radio-group&gt; </code>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-treeview</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-treeview :items="treeitems" />
+          <br><code>&lt;wh-treeview :items="treeitems" /&gt;</code>
+          <br>基于v-treeview，默认selected为true
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header>wh-layout</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-layout>
+            <wh-flex :rowNumber="2">
+              <wh-textfield label="一行两列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="2">
+              <wh-textfield label="一行两列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="3">
+              <wh-textfield label="一行三列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="3">
+              <wh-textfield label="一行三列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="3">
+              <wh-textfield label="一行三列" placeholder="万华实业前楼" />
+            </wh-flex>
+            <wh-flex :rowNumber="1">
+              <wh-textfield label="一行一列" placeholder="万华实业前楼" />
+            </wh-flex>
+          </wh-layout>
+          <br><code>
+            &lt;wh-layout>
+            &lt;wh-flex :rowNumber="2"&gt;
+            &lt;wh-textfield label="一行两列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="2"&gt;
+            &lt;wh-textfield label="一行两列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="3"&gt;
+            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="3"&gt;
+            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
+            &lt;wh-flex&gt;
+            &lt;wh-flex :rowNumber="3"&gt;
+            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
+            &lt;/wh-flex&gt;
+            &lt;wh-flex :rowNumber="1"&gt;
+            &lt;wh-textfield label="一行一列" placeholder="万华实业前楼" /&gt;
+            &lt;/wh-flex&gt;
+            &lt;/wh-layout&gt;</code>
+          <br>基于v-layout和v-flex
+          <br>使用方法视上方demo，最外层嵌套wh-layout,内部使用wh-flex标签动态拼接元素，元素的rowNumber默认为1，允许值包含1,2,3,4
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
@@ -191,7 +247,115 @@
         },
       ],
       date: new Date().toISOString().substr(0, 10),
-      time: ''
+      time: '',
+      treeitems: [{
+          id: 1,
+          name: 'Applications :',
+          children: [{
+              id: 2,
+              name: 'Calendar : app'
+            },
+            {
+              id: 3,
+              name: 'Chrome : app'
+            },
+            {
+              id: 4,
+              name: 'Webstorm : app'
+            },
+          ],
+        },
+        {
+          id: 5,
+          name: 'Documents :',
+          children: [{
+              id: 6,
+              name: 'vuetify :',
+              children: [{
+                id: 7,
+                name: 'src :',
+                children: [{
+                    id: 8,
+                    name: 'index : ts'
+                  },
+                  {
+                    id: 9,
+                    name: 'bootstrap : ts'
+                  },
+                ],
+              }, ],
+            },
+            {
+              id: 10,
+              name: 'material2 :',
+              children: [{
+                id: 11,
+                name: 'src :',
+                children: [{
+                    id: 12,
+                    name: 'v-btn : ts'
+                  },
+                  {
+                    id: 13,
+                    name: 'v-card : ts'
+                  },
+                  {
+                    id: 14,
+                    name: 'v-window : ts'
+                  },
+                ],
+              }, ],
+            },
+          ],
+        },
+        {
+          id: 15,
+          name: 'Downloads :',
+          children: [{
+              id: 16,
+              name: 'October : pdf'
+            },
+            {
+              id: 17,
+              name: 'November : pdf'
+            },
+            {
+              id: 18,
+              name: 'Tutorial : html'
+            },
+          ],
+        },
+        {
+          id: 19,
+          name: 'Videos :',
+          children: [{
+              id: 20,
+              name: 'Tutorials :',
+              children: [{
+                  id: 21,
+                  name: 'Basic layouts : mp4'
+                },
+                {
+                  id: 22,
+                  name: 'Advanced techniques : mp4'
+                },
+                {
+                  id: 23,
+                  name: 'All about app : dir'
+                },
+              ],
+            },
+            {
+              id: 24,
+              name: 'Intro : mov'
+            },
+            {
+              id: 25,
+              name: 'Conference introduction : avi'
+            },
+          ],
+        },
+      ]
     }),
     computed: {},
     watch: {
