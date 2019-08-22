@@ -19,6 +19,7 @@ import WHTabs from './singles/WHTabs'
 import WHTabsSlider from './singles/WHTabsSlider'
 import WHDatePicker from './composites/WHDatePicker'
 import WHTimePicker from './composites/WHTimePicker'
+import WHPagination from './composites/WHPagination'
 
 
 Vue.component(WHLogo.name, WHLogo)
@@ -42,3 +43,4 @@ Vue.component(WHTabs.name, WHTabs)
 Vue.component(WHTabsSlider.name, WHTabsSlider)
 Vue.component(WHDatePicker.name, WHDatePicker)
 Vue.component(WHTimePicker.name,WHTimePicker)
+Vue.component(WHPagination.name, WHPagination)
