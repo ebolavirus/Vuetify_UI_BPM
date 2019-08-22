@@ -54,4 +54,5 @@ Vue.component(WHTabs.name, WHTabs)
 Vue.component(WHTabsSlider.name, WHTabsSlider)
 Vue.component(WHDatePicker.name, WHDatePicker)
 
-Vue.component(WHPagination.name, WHPagination)Vue.component(WHLoading.name, WHLoading)
+Vue.component(WHPagination.name, WHPagination)
+Vue.component(WHLoading.name, WHLoading)
