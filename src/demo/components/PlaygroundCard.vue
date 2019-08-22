@@ -104,6 +104,9 @@
         <v-expansion-panel-header>wh-checkbox</v-expansion-panel-header>
         <v-expansion-panel-content>
           <wh-radio-group row label="办理人：">
+            <template v-slot:label>
+              <div>Your favourite <strong>search engine</strong></div>
+            </template>
             <wh-checkbox label="张三" value="checkbox-1"></wh-checkbox>
             <wh-checkbox label="李四" value="checkbox-2"></wh-checkbox>
           </wh-radio-group>
@@ -510,7 +513,7 @@
           protein: 7,
           iron: '6%',
         },
-      ]
+      ],
       time: '',
       page: 2
     }),
