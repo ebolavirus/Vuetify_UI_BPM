@@ -25,6 +25,15 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
+        <v-expansion-panel-header>wh-loading</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-loading :loading="overlay" />
+          <wh-btn @click="overlay = true">打开loading</wh-btn>
+          <code>&lt;wh-loading :loading="overlay" /&gt;</code>
+          <br>复合组件，loading为boolean，决定是否展示loading
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
         <v-expansion-panel-header>wh-textfield</v-expansion-panel-header>
         <v-expansion-panel-content>
           <wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled append-icon="mdi-account-edit" />
@@ -158,6 +167,7 @@
     name: "PlaygroundCard",
     data: () => ({
       panel: [],
+      overlay: false,
       valuenumber: '0',
       types: [{
           state: 'Florida',
@@ -184,6 +194,13 @@
       time: ''
     }),
     computed: {},
+    watch: {
+      overlay(val) {
+        val && setTimeout(() => {
+          this.overlay = false
+        }, 3000)
+      },
+    },
     methods: {
       tryPlain() {
         this.$prompt("What is your favourite colour?").then(colour => {
