@@ -175,7 +175,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-table</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <v-data-table :headers="typeheaders" :items="typedesserts" @item-selected="itemSelected" @click:row="clickRow"
+          <wh-table :headers="typeheaders" :items="typedesserts" @item-selected="itemSelected" @click:row="clickRow"
             :items-per-page="5" class="elevation-1">
             <template v-slot:item.name="props">
               <v-edit-dialog :return-value.sync="props.item.name" @save="save" @cancel="cancel" @open="open"
@@ -189,7 +189,7 @@
             <template v-slot:item.action="{ item }">
               <v-btn class="mb-2" @click="editItem(item)">选择</v-btn>
             </template>
-          </v-data-table>
+          </wh-table>
           <br><code>
             &lt;wh-layout>
             &lt;wh-flex :rowNumber="2"&gt;
@@ -249,7 +249,7 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-date-picker</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-date-picker v-model="date" label="日期"></wh-date-picker>        
+          <wh-date-picker v-model="date" label="日期"></wh-date-picker>
           <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -263,10 +263,10 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-pagination</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-pagination v-model="page" :length="4" :value="2"></wh-pagination>         
+          <wh-pagination v-model="page" :length="4" :value="2"></wh-pagination>
           <br><code></code>
         </v-expansion-panel-content>
-      </v-expansion-panel>        
+      </v-expansion-panel>
     </v-expansion-panels>
   </v-container>
 </template>

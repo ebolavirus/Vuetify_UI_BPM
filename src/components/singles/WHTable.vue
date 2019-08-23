@@ -6,6 +6,9 @@
 
 <script>
   export default {
-    name: 'wh-table'
+    name: 'wh-table',
+    updated() {
+      console.log('bbbbbbb', this.$slots);
+    }
   }
 </script>
