@@ -1,6 +1,6 @@
 <template>
-  <v-app>
-    <v-app-bar app dark color="grey darken-2">
+  <wh-app>
+    <wh-topbar app dark color="grey darken-2">
       <v-toolbar-title>
         <!-- <wh-logo></wh-logo> -->
         <span class="font-weight-light">WANHUA UI DEMO</span>
@@ -22,7 +22,7 @@
         <v-select dark background-color="grey darken-2" text solo :items="locales" v-on:input="setLocale()"
           v-model="newLocale" class="ma-2" style="width:75px"></v-select>
       </v-toolbar-items>
-    </v-app-bar>
+    </wh-topbar>
     <v-content app>
       <info-card v-if="shown === 'info'"></info-card>
       <playground-card v-if="shown === 'wanhuademo'"></playground-card>
@@ -99,7 +99,7 @@
         </v-layout>
       </v-container>
     </v-content>
-  </v-app>
+  </wh-app>
 
 </template>
 

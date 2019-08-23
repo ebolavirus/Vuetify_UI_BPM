@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import WHLogo from './singles/WHLogo'
 import WHIcon from './singles/WHIcon'
-import WHFooter from './singles/WHFooter'
-import WHLayout from './singles/WHLayout'
-import WHFlex from './singles/WHFlex'
 import WHTable from './singles/WHTable'
 import WHHyperlink from './singles/WHHyperlink'
 import WHTextfield from './singles/WHTextfield'
@@ -29,11 +26,16 @@ import WHTimePicker from './composites/WHTimePicker'
 import WHPagination from './composites/WHPagination'
 import WHLoading from './composites/WHLoading'
 
+import WHApp from './layout/WHApp'
+import WHContent from './layout/WHContent'
+import WHDrawer from './layout/WHDrawer'
+import WHFooter from './layout/WHFooter'
+import WHTopbar from './layout/WHTopbar'
+import WHLayout from './layout/WHLayout'
+import WHFlex from './layout/WHFlex'
+
 Vue.component(WHLogo.name, WHLogo)
 Vue.component(WHIcon.name, WHIcon)
-Vue.component(WHFooter.name, WHFooter)
-Vue.component(WHLayout.name, WHLayout)
-Vue.component(WHFlex.name, WHFlex)
 Vue.component(WHTable.name, WHTable)
 Vue.component(WHHyperlink.name, WHHyperlink)
 Vue.component(WHTextfield.name, WHTextfield)
@@ -55,6 +57,15 @@ Vue.component(WHTabItem.name, WHTabItem)
 Vue.component(WHTabs.name, WHTabs)
 Vue.component(WHTabsSlider.name, WHTabsSlider)
 Vue.component(WHDatePicker.name, WHDatePicker)
+Vue.component(WHTimePicker.name, WHTimePicker)
 
 Vue.component(WHPagination.name, WHPagination)
 Vue.component(WHLoading.name, WHLoading)
+
+Vue.component(WHApp.name, WHApp)
+Vue.component(WHContent.name, WHContent)
+Vue.component(WHDrawer.name, WHDrawer)
+Vue.component(WHFooter.name, WHFooter)
+Vue.component(WHTopbar.name, WHTopbar)
+Vue.component(WHLayout.name, WHLayout)
+Vue.component(WHFlex.name, WHFlex)

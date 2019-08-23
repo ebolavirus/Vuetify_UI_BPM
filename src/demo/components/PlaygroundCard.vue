@@ -125,7 +125,7 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
-        <v-expansion-panel-header>wh-layout</v-expansion-panel-header>
+        <v-expansion-panel-header>wh-layout & wh-flex</v-expansion-panel-header>
         <v-expansion-panel-content>
           <wh-layout>
             <wh-flex :rowNumber="2">
