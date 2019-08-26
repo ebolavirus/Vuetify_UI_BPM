@@ -1,14 +1,9 @@
-<template>
-  <v-data-table v-bind="$attrs" v-on="$listeners">
-    <slot />
-  </v-data-table>
-</template>
-
 <script>
+  import {
+    VDataTable
+  } from 'vuetify/lib'
   export default {
     name: 'wh-table',
-    updated() {
-      console.log('bbbbbbb', this.$slots);
-    }
-  }
+    extends: VDataTable
+  };
 </script>

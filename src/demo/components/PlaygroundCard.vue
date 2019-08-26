@@ -181,13 +181,15 @@
               <v-edit-dialog :return-value.sync="props.item.name" @save="save" @cancel="cancel" @open="open"
                 @close="close"> {{ props.item.name }}
                 <template v-slot:input>
-                  <v-text-field v-model="props.item.name" label="Edit" single-line counter>
-                  </v-text-field>
+                  <wh-textfield v-model="props.item.name" label="Edit" single-line counter />
                 </template>
               </v-edit-dialog>
             </template>
             <template v-slot:item.action="{ item }">
-              <v-btn class="mb-2" @click="editItem(item)">选择</v-btn>
+              <wh-btn class="mb-2" @click="editItem(item)">选择</wh-btn>
+            </template>
+            <template v-slot:footer.page-text>
+              <div>2222</div>
             </template>
           </wh-table>
           <br><code>
@@ -263,8 +265,9 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-pagination</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-pagination v-model="page" :length="4" :value="2"></wh-pagination>
-          <br><code></code>
+          <wh-pagination v-model="page" :length="10"></wh-pagination>
+          <br><code>&lt;wh-pagination v-model="page" :length="10"/&gt;</code>
+          <br>完全自封装组件
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -515,7 +518,7 @@
         },
       ],
       time: '',
-      page: 2
+      page: 1
     }),
     computed: {},
     watch: {
