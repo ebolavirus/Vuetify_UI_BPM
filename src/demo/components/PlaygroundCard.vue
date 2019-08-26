@@ -125,6 +125,35 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
+        <v-expansion-panel-header>wh-dialog</v-expansion-panel-header>
+        <v-expansion-panel-content>
+          <wh-btn color="primary" dark @click.stop="showDialog = true">
+            Open Dialog
+          </wh-btn>
+          <wh-dialog v-model="showDialog" max-width="290">
+            <wh-card>
+              <wh-cardtitle class="headline">Wanhua Dialog</wh-cardtitle>
+              <wh-cardtext>
+                Only clevers can see the dialog now!
+              </wh-cardtext>
+              <wh-cardactions>
+                <div class="flex-grow-1"></div>
+                <wh-btn color="green darken-1" text @click="showDialog = false">
+                  Disagree
+                </wh-btn>
+                <wh-btn color="green darken-1" text @click="showDialog = false">
+                  Agree
+                </wh-btn>
+              </wh-cardactions>
+            </wh-card>
+          </wh-dialog>
+          <wh-btn color="primary" dark @click="showModelDialog">
+            模态对话框
+          </wh-btn>
+          <br>复杂对话框请参考源码的demo/components/HumanDialog写法</code>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
         <v-expansion-panel-header>wh-layout & wh-flex</v-expansion-panel-header>
         <v-expansion-panel-content>
           <wh-layout>
@@ -302,6 +331,7 @@
           abbr: 'NY'
         },
       ],
+      showDialog: false,
       date: new Date().toISOString().substr(0, 10),
       time: '',
       treeitems: [{
@@ -349,11 +379,11 @@
                 name: 'src :',
                 children: [{
                     id: 12,
-                    name: 'v-btn : ts'
+                    name: 'wh-btn : ts'
                   },
                   {
                     id: 13,
-                    name: 'v-card : ts'
+                    name: 'wh-card : ts'
                   },
                   {
                     id: 14,
@@ -576,6 +606,9 @@
       itemSelected(item, value) {
         console.log('itemSelected');
         console.log(item)
+      },
+      showModelDialog() {
+        this.$alert('ffffff');
       }
     }
   }

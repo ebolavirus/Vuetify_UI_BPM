@@ -28,6 +28,11 @@ import WHLoading from './composites/WHLoading'
 
 import WHApp from './layout/WHApp'
 import WHContent from './layout/WHContent'
+import WHCard from './layout/WHCard'
+import WHCardText from './layout/WHCardText'
+import WHCardTitle from './layout/WHCardTitle'
+import WHCardActions from './layout/WHCardActions'
+import WHDialog from './layout/WHDialog'
 import WHDrawer from './layout/WHDrawer'
 import WHFooter from './layout/WHFooter'
 import WHTopbar from './layout/WHTopbar'
@@ -64,6 +69,11 @@ Vue.component(WHLoading.name, WHLoading)
 
 Vue.component(WHApp.name, WHApp)
 Vue.component(WHContent.name, WHContent)
+Vue.component(WHCard.name, WHCard)
+Vue.component(WHCardText.name, WHCardText)
+Vue.component(WHCardTitle.name, WHCardTitle)
+Vue.component(WHCardActions.name, WHCardActions)
+Vue.component(WHDialog.name, WHDialog)
 Vue.component(WHDrawer.name, WHDrawer)
 Vue.component(WHFooter.name, WHFooter)
 Vue.component(WHTopbar.name, WHTopbar)
