@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import WHLogo from './singles/WHLogo'
 import WHIcon from './singles/WHIcon'
-import WHTable from './singles/WHTable'
 import WHHyperlink from './singles/WHHyperlink'
 import WHTextfield from './singles/WHTextfield'
 import WHNumberfield from './singles/WHNumberfield'
@@ -24,6 +23,8 @@ import WHTabsSlider from './singles/WHTabsSlider'
 import WHDatePicker from './composites/WHDatePicker'
 import WHTimePicker from './composites/WHTimePicker'
 import WHPagination from './composites/WHPagination'
+import WHTable from './composites/WHTable'
+import WHEditdialog from './composites/WHEditdialog'
 import WHLoading from './composites/WHLoading'
 
 import WHApp from './layout/WHApp'
@@ -41,7 +42,6 @@ import WHFlex from './layout/WHFlex'
 
 Vue.component(WHLogo.name, WHLogo)
 Vue.component(WHIcon.name, WHIcon)
-Vue.component(WHTable.name, WHTable)
 Vue.component(WHHyperlink.name, WHHyperlink)
 Vue.component(WHTextfield.name, WHTextfield)
 Vue.component(WHNumberfield.name, WHNumberfield)
@@ -63,6 +63,8 @@ Vue.component(WHTabs.name, WHTabs)
 Vue.component(WHTabsSlider.name, WHTabsSlider)
 Vue.component(WHDatePicker.name, WHDatePicker)
 Vue.component(WHTimePicker.name, WHTimePicker)
+Vue.component(WHTable.name, WHTable)
+Vue.component(WHEditdialog.name, WHEditdialog)
 
 Vue.component(WHPagination.name, WHPagination)
 Vue.component(WHLoading.name, WHLoading)
