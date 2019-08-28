@@ -39,45 +39,180 @@ import WHFooter from './layout/WHFooter'
 import WHTopbar from './layout/WHTopbar'
 import WHLayout from './layout/WHLayout'
 import WHFlex from './layout/WHFlex'
+import SimpleDialog from './SimpleDialog'
+import SimpleSnackbar from './SimpleSnackbar'
 
-Vue.component(WHLogo.name, WHLogo)
-Vue.component(WHIcon.name, WHIcon)
-Vue.component(WHHyperlink.name, WHHyperlink)
-Vue.component(WHTextfield.name, WHTextfield)
-Vue.component(WHNumberfield.name, WHNumberfield)
-Vue.component(WHMoneyfield.name, WHMoneyfield)
-Vue.component(WHTextarea.name, WHTextarea)
-Vue.component(WHButton.name, WHButton)
-Vue.component(WHSelect.name, WHSelect)
-Vue.component(WHRadioGroup.name, WHRadioGroup)
-Vue.component(WHRadio.name, WHRadio)
-Vue.component(WHCheckbox.name, WHCheckbox)
-Vue.component(WHTreeview.name, WHTreeview)
-Vue.component(WHTimeline.name, WHTimeline)
-Vue.component(WHTimelineItem.name, WHTimelineItem)
+import DialogPromise from './DialogPromise'
 
-Vue.component(WHTab.name, WHTab)
-Vue.component(WHTabsItems.name, WHTabsItems)
-Vue.component(WHTabItem.name, WHTabItem)
-Vue.component(WHTabs.name, WHTabs)
-Vue.component(WHTabsSlider.name, WHTabsSlider)
-Vue.component(WHDatePicker.name, WHDatePicker)
-Vue.component(WHTimePicker.name, WHTimePicker)
-Vue.component(WHTable.name, WHTable)
-Vue.component(WHEditdialog.name, WHEditdialog)
+import vuetify from '../plugins/vuetify'
 
-Vue.component(WHPagination.name, WHPagination)
-Vue.component(WHLoading.name, WHLoading)
+import '@mdi/font/css/materialdesignicons.css'
 
-Vue.component(WHApp.name, WHApp)
-Vue.component(WHContent.name, WHContent)
-Vue.component(WHCard.name, WHCard)
-Vue.component(WHCardText.name, WHCardText)
-Vue.component(WHCardTitle.name, WHCardTitle)
-Vue.component(WHCardActions.name, WHCardActions)
-Vue.component(WHDialog.name, WHDialog)
-Vue.component(WHDrawer.name, WHDrawer)
-Vue.component(WHFooter.name, WHFooter)
-Vue.component(WHTopbar.name, WHTopbar)
-Vue.component(WHLayout.name, WHLayout)
-Vue.component(WHFlex.name, WHFlex)
+
+SimpleDialog.install = function (Vue){
+    Vue.component(SimpleDialog.name, SimpleDialog)
+}
+SimpleSnackbar.install = function (Vue){
+    Vue.component(SimpleSnackbar.name, SimpleSnackbar)
+}
+
+WHLogo.install = function (Vue) {
+    Vue.component(WHLogo.name, WHLogo)
+}
+WHIcon.install = function (Vue) {
+    Vue.component(WHIcon.name, WHIcon)
+}
+WHHyperlink.install = function (Vue) {
+    Vue.component(WHHyperlink.name, WHHyperlink)
+}
+WHTextfield.install = function (Vue) {
+    Vue.component(WHTextfield.name, WHTextfield)
+}
+WHNumberfield.install = function (Vue) {
+    Vue.component(WHNumberfield.name, WHNumberfield)
+}
+WHMoneyfield.install = function (Vue) {
+    Vue.component(WHMoneyfield.name, WHMoneyfield)
+}
+WHTextarea.install = function (Vue) {
+    Vue.component(WHTextarea.name, WHTextarea)
+}
+WHButton.install = function (Vue) {
+    Vue.component(WHButton.name, WHButton)
+}
+WHSelect.install = function (Vue) {
+    Vue.component(WHSelect.name, WHSelect)
+}
+WHRadioGroup.install = function (Vue) {
+    Vue.component(WHRadioGroup.name, WHRadioGroup)
+}
+WHRadio.install = function (Vue) {
+    Vue.component(WHRadio.name, WHRadio)
+}
+WHCheckbox.install = function (Vue) {
+    Vue.component(WHCheckbox.name, WHCheckbox)
+}
+WHTreeview.install = function (Vue) {
+    Vue.component(WHTreeview.name, WHTreeview)
+}
+WHTimeline.install = function (Vue) {
+    Vue.component(WHTimeline.name, WHTimeline)
+}
+WHTimelineItem.install = function (Vue) {
+    Vue.component(WHTimelineItem.name, WHTimelineItem)
+}
+
+
+WHTab.install = function (Vue) {
+    Vue.component(WHTab.name, WHTab)
+}
+WHTabsItems.install = function (Vue) {
+    Vue.component(WHTabsItems.name, WHTabsItems)
+}
+WHTabItem.install = function (Vue) {
+    Vue.component(WHTabItem.name, WHTabItem)
+}
+WHTabs.install = function (Vue) {
+    Vue.component(WHTabs.name, WHTabs)
+}
+WHTabsSlider.install = function (Vue) {
+    Vue.component(WHTabsSlider.name, WHTabsSlider)
+}
+WHDatePicker.install = function (Vue) {
+    Vue.component(WHDatePicker.name, WHDatePicker)
+}
+WHTimePicker.install = function (Vue) {
+    Vue.component(WHTimePicker.name, WHTimePicker)
+}
+WHTable.install = function (Vue) {
+    Vue.component(WHTable.name, WHTable)
+}
+WHEditdialog.install = function (Vue) {
+    Vue.component(WHEditdialog.name, WHEditdialog)
+}
+WHPagination.install = function (Vue) {
+    Vue.component(WHPagination.name, WHPagination)
+}
+WHLoading.install = function (Vue) {
+    Vue.component(WHLoading.name, WHLoading)
+}
+
+
+
+WHApp.install = function (Vue) {
+    Vue.component(WHApp.name, WHApp)
+}
+WHContent.install = function (Vue) {
+    Vue.component(WHContent.name, WHContent)
+}
+WHCard.install = function (Vue) {
+    Vue.component(WHCard.name, WHCard)
+}
+WHCardText.install = function (Vue) {
+    Vue.component(WHCardText.name, WHCardText)
+}
+WHCardTitle.install = function (Vue) {
+    Vue.component(WHCardTitle.name, WHCardTitle)
+}
+WHCardActions.install = function (Vue) {
+    Vue.component(WHCardActions.name, WHCardActions)
+}
+WHDialog.install = function (Vue) {
+    Vue.component(WHDialog.name, WHDialog)
+}
+WHDrawer.install = function (Vue) {
+    Vue.component(WHDrawer.name, WHDrawer)
+}
+WHFooter.install = function (Vue) {
+    Vue.component(WHFooter.name, WHFooter)
+}
+WHTopbar.install = function (Vue) {
+    Vue.component(WHTopbar.name, WHTopbar)
+}
+WHLayout.install = function (Vue) {
+    Vue.component(WHLayout.name, WHLayout)
+}
+WHFlex.install = function (Vue) {
+    Vue.component(WHFlex.name, WHFlex)
+}
+
+
+
+// 存储组件列表
+const components = [WHLogo, WHIcon, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
+    WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHCardText,
+    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex, DialogPromise]
+
+// 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
+const install = function (Vue) {
+    // 判断是否安装
+    if (install.installed) return
+    // 遍历注册全局组件
+    components.map(component => Vue.component(component.name, component))
+}
+
+// 判断是否是直接引入文件
+if (typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue)
+}
+
+export default {
+    // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
+    install,
+    // 以下是具体的组件列表
+    WHLogo,
+    WHIcon,
+    WHHyperlink,
+    WHTextfield,
+    WHNumberfield,
+    WHMoneyfield,
+    WHButton,
+    WHSelect,
+    WHRadioGroup,
+    WHRadio,
+    WHCheckbox, WHTreeview, WHTimeline,
+    WHTimelineItem, WHTab, WHTabItem,
+    WHTabsItems, WHTabsSlider, WHTimePicker,
+    WHPagination, WHTable, WHLoading, WHApp, WHContent, WHCardText,
+    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex,DialogPromise
+}

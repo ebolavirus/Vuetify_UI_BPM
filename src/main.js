@@ -1,10 +1,9 @@
 import Vue from 'vue'
-import './plugins/vuetify'
 import App from './App.vue'
-import DialogPromise from './DialogPromise'
+import DialogPromise from './components/DialogPromise'
 import i18n from './i18n'
 import vuetify from './plugins/vuetify'
-import './components'
+import './components/test.js'
 
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 

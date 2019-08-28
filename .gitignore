@@ -19,3 +19,15 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
+# 忽略目录
+demo/
+src/
+public/
+dist/
+tests/
+# 忽略指定文件
+vue.config.js
+babel.config.js
+*.map
+*.xlsx
+*.md

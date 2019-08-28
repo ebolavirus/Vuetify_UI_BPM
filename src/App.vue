@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import DialogPromiseDemo from './demo/DialogPromiseDemo'
+import DialogPromiseDemo from './demo/DialogPromiseDemo.vue'
 
 export default {
   name: 'App',
