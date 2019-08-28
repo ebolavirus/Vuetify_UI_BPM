@@ -204,46 +204,15 @@
       <v-expansion-panel>
         <v-expansion-panel-header>wh-table</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <wh-table :headers="typeheaders" :items="typedesserts" @item-selected="itemSelected" @click:row="clickRow"
-            :items-per-page="5" class="elevation-1">
-            <template v-slot:item.name="props">
-              <v-edit-dialog :return-value.sync="props.item.name" @save="save" @cancel="cancel" @open="open"
-                @close="close"> {{ props.item.name }}
-                <template v-slot:input>
-                  <wh-textfield v-model="props.item.name" label="Edit" single-line counter />
-                </template>
-              </v-edit-dialog>
-            </template>
-            <template v-slot:item.action="{ item }">
-              <wh-btn class="mb-2" @click="editItem(item)">选择</wh-btn>
-            </template>
-            <template v-slot:footer.page-text>
-              <div>2222</div>
-            </template>
-          </wh-table>
+          <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" @item-selected="itemSelected"
+            :showSelect="true" :singleSelect="false" @click:row="clickRow" @inline-edit="inlineEditFunction"
+            @submitEvent="submitTest" />
           <br><code>
-            &lt;wh-layout>
-            &lt;wh-flex :rowNumber="2"&gt;
-            &lt;wh-textfield label="一行两列" placeholder="万华实业前楼" /&gt;
-            &lt;wh-flex&gt;
-            &lt;wh-flex :rowNumber="2"&gt;
-            &lt;wh-textfield label="一行两列" placeholder="万华实业前楼" /&gt;
-            &lt;wh-flex&gt;
-            &lt;wh-flex :rowNumber="3"&gt;
-            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
-            &lt;wh-flex&gt;
-            &lt;wh-flex :rowNumber="3"&gt;
-            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
-            &lt;wh-flex&gt;
-            &lt;wh-flex :rowNumber="3"&gt;
-            &lt;wh-textfield label="一行三列" placeholder="万华实业前楼" /&gt;
-            &lt;/wh-flex&gt;
-            &lt;wh-flex :rowNumber="1"&gt;
-            &lt;wh-textfield label="一行一列" placeholder="万华实业前楼" /&gt;
-            &lt;/wh-flex&gt;
-            &lt;/wh-layout&gt;</code>
-          <br>基于v-layout和v-flex
-          <br>使用方法视上方demo，最外层嵌套wh-layout,内部使用wh-flex标签动态拼接元素，元素的rowNumber默认为1，允许值包含1,2,3,4
+            &lt;wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions"
+            @item-selected="itemSelected"
+            :showSelect="true" :singleSelect="false" @click:row="clickRow" @inline-edit="inlineEditFunction"
+            @submitEvent="submitTest" class="elevation-1" /&gt;</code>
+          <br>基于v-simple-table(非v-data-table)封装，添加了动作按钮、行点击事件、行内编辑、单选、多选事件。
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
