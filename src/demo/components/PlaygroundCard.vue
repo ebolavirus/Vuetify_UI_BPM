@@ -415,6 +415,7 @@
           text: '变更类型',
           align: 'left',
           sortable: false,
+          editable: true,
           value: 'name',
         },
         {
@@ -428,13 +429,13 @@
         {
           text: '说明',
           value: 'carbs'
-        },
-        {
-          text: '操作',
-          value: 'action',
-          sortable: false
         }
       ],
+      typeActions: [{
+        text: '提交',
+        icon: 'mdi-pencil',
+        actionName: 'submitEvent'
+      }],
       typedesserts: [{
           name: 'Frozen Yogurt',
           calories: 159,
@@ -551,14 +552,13 @@
           });
         });
       },
-      editItem(aItem) {
-        console.log('aaaaa', aItem);
-        this.$emit('dialogSelected', aItem);
-        this.intypedialog = false;
-      },
       clickRow(aItem) {
         console.log("++++++++++++");
         console.log(aItem);
+      },
+      itemSelected(item, value) {
+        console.log('itemSelected');
+        console.log(item, value);
       },
       save() {
         console.log('aItem saved');
@@ -578,6 +578,12 @@
       },
       showModelDialog() {
         this.$alert('ffffff');
+      },
+      inlineEditFunction() {
+
+      },
+      submitTest() {
+        console.log('submit test...');
       }
     }
   }
