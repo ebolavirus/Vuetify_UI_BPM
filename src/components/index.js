@@ -39,6 +39,8 @@ import WHFooter from './layout/WHFooter'
 import WHTopbar from './layout/WHTopbar'
 import WHLayout from './layout/WHLayout'
 import WHFlex from './layout/WHFlex'
+import WHAreaPanel from './layout/WHAreaPanel'
+import WHAreaPanels from './layout/WHAreaPanels'
 import SimpleDialog from './SimpleDialog'
 import SimpleSnackbar from './SimpleSnackbar'
 
@@ -50,10 +52,10 @@ import vuetify from '../plugins/vuetify'
 import '@mdi/font/css/materialdesignicons.css'
 
 
-SimpleDialog.install = function (Vue){
+SimpleDialog.install = function (Vue) {
     Vue.component(SimpleDialog.name, SimpleDialog)
 }
-SimpleSnackbar.install = function (Vue){
+SimpleSnackbar.install = function (Vue) {
     Vue.component(SimpleSnackbar.name, SimpleSnackbar)
 }
 
@@ -176,13 +178,20 @@ WHLayout.install = function (Vue) {
 WHFlex.install = function (Vue) {
     Vue.component(WHFlex.name, WHFlex)
 }
+WHAreaPanel.install = function (Vue) {
+    Vue.component(WHAreaPanel.name, WHAreaPanel)
+}
+WHAreaPanels.install = function (Vue) {
+    Vue.component(WHAreaPanels.name, WHAreaPanels)
+}
 
 
 
 // 存储组件列表
 const components = [WHLogo, WHIcon, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
     WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHCardText,
-    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex]
+    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex, WHAreaPanel, WHAreaPanels
+]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
 const install = function (Vue) {
@@ -213,9 +222,30 @@ export default {
     WHSelect,
     WHRadioGroup,
     WHRadio,
-    WHCheckbox, WHTreeview, WHTimeline,
-    WHTimelineItem, WHTab, WHTabItem,
-    WHTabsItems, WHTabsSlider, WHTimePicker,
-    WHPagination, WHTable, WHLoading, WHApp, WHContent, WHCardText,
-    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex,DialogPromise
+    WHCheckbox,
+    WHTreeview,
+    WHTimeline,
+    WHTimelineItem,
+    WHTab,
+    WHTabItem,
+    WHTabsItems,
+    WHTabsSlider,
+    WHTimePicker,
+    WHPagination,
+    WHTable,
+    WHLoading,
+    WHApp,
+    WHContent,
+    WHCardText,
+    WHCardTitle,
+    WHCardActions,
+    WHDialog,
+    WHDrawer,
+    WHFooter,
+    WHTopbar,
+    WHLayout,
+    WHFlex,
+    WHAreaPanel,
+    WHAreaPanels,
+    DialogPromise
 }
