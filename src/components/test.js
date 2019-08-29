@@ -39,6 +39,8 @@ import WHFooter from './layout/WHFooter'
 import WHTopbar from './layout/WHTopbar'
 import WHLayout from './layout/WHLayout'
 import WHFlex from './layout/WHFlex'
+import WHAreaPanel from './layout/WHAreaPanel'
+import WHAreaPanels from './layout/WHAreaPanels'
 
 Vue.component(WHLogo.name, WHLogo)
 Vue.component(WHIcon.name, WHIcon)
@@ -81,3 +83,5 @@ Vue.component(WHFooter.name, WHFooter)
 Vue.component(WHTopbar.name, WHTopbar)
 Vue.component(WHLayout.name, WHLayout)
 Vue.component(WHFlex.name, WHFlex)
+Vue.component(WHAreaPanel.name, WHAreaPanel)
+Vue.component(WHAreaPanels.name, WHAreaPanels)
