@@ -46,6 +46,7 @@ import DialogPromise from './DialogPromise'
 
 import vuetify from '../plugins/vuetify'
 
+
 import '@mdi/font/css/materialdesignicons.css'
 
 
@@ -181,7 +182,7 @@ WHFlex.install = function (Vue) {
 // 存储组件列表
 const components = [WHLogo, WHIcon, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
     WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHCardText,
-    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex, DialogPromise]
+    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
 const install = function (Vue) {
@@ -189,6 +190,8 @@ const install = function (Vue) {
     if (install.installed) return
     // 遍历注册全局组件
     components.map(component => Vue.component(component.name, component))
+    Vue.use(vuetify)
+    Vue.use(DialogPromise)
 }
 
 // 判断是否是直接引入文件
