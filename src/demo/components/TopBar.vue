@@ -26,11 +26,11 @@
             <span class="mr-2">高级▾</span>
           </wh-btn>
         </template>
-        <v-list>
-          <v-list-item v-for="(item, index) in baritems" :key="index">
-            <v-list-item-title>{{item.title}}</v-list-item-title>
-          </v-list-item>
-        </v-list>
+        <wh-list>
+          <wh-list-item v-for="(item, index) in baritems" :key="index">
+            <wh-list-item-title>{{item.title}}</wh-list-item-title>
+          </wh-list-item>
+        </wh-list>
       </wh-menu>
       <wh-btn text>
         <span class="mr-2">帮助</span>
@@ -49,11 +49,11 @@
             <span class="mr-2">操作▾</span>
           </wh-btn>
         </template>
-        <v-list>
-          <v-list-item v-for="(item, index) in barminiitems" :key="index">
-            <v-list-item-title>{{item.title}}</v-list-item-title>
-          </v-list-item>
-        </v-list>
+        <wh-list>
+          <wh-list-item v-for="(item, index) in barminiitems" :key="index">
+            <wh-list-item-title>{{item.title}}</wh-list-item-title>
+          </wh-list-item>
+        </wh-list>
       </wh-menu>
     </template>
     <!-- 提交对话框 -->

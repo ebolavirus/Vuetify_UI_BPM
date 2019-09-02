@@ -39,6 +39,9 @@ import WHDrawer from './layout/WHDrawer'
 import WHFooter from './layout/WHFooter'
 import WHTopbar from './layout/WHTopbar'
 import WHLayout from './layout/WHLayout'
+import WHListItemTitle from './layout/WHListItemTitle'
+import WHListItem from './layout/WHListItem'
+import WHList from './layout/WHList'
 import WHFlex from './layout/WHFlex'
 import WHAreaPanel from './layout/WHAreaPanel'
 import WHAreaPanels from './layout/WHAreaPanels'
@@ -84,6 +87,9 @@ Vue.component(WHDrawer.name, WHDrawer)
 Vue.component(WHFooter.name, WHFooter)
 Vue.component(WHTopbar.name, WHTopbar)
 Vue.component(WHLayout.name, WHLayout)
+Vue.component(WHListItem.name, WHListItem)
+Vue.component(WHListItemTitle.name, WHListItemTitle)
+Vue.component(WHList.name, WHList)
 Vue.component(WHFlex.name, WHFlex)
 Vue.component(WHAreaPanel.name, WHAreaPanel)
 Vue.component(WHAreaPanels.name, WHAreaPanels)
