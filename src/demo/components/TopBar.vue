@@ -1,60 +1,60 @@
 <template>
-  <v-app-bar color="primary" app dark>
-    <v-btn @click="drawerAction()" icon>
+  <wh-topbar color="primary" app dark>
+    <wh-btn @click="drawerAction()" icon>
       <v-app-bar-nav-icon />
-    </v-btn>
-    <v-toolbar-title class="headline text-uppercase">
+    </wh-btn>
+    <v-toolbar-title>
       <span class="mr-2">Vuetify信息服务申请DEMO</span>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <template v-if="$vuetify.breakpoint.mdAndUp">
-      <v-btn text @click="submitAction()">
+      <wh-btn text @click="submitAction()">
         <span class="mr-2">提交</span>
-      </v-btn>
-      <v-btn text @click="saveAction()">
+      </wh-btn>
+      <wh-btn text @click="saveAction()">
         <span class="mr-2">保存</span>
-      </v-btn>
-      <v-btn text @click="rejectAction()">
+      </wh-btn>
+      <wh-btn text @click="rejectAction()">
         <span class="mr-2">驳回</span>
-      </v-btn>
-      <v-btn text @click="cancelAction()">
+      </wh-btn>
+      <wh-btn text @click="cancelAction()">
         <span class="mr-2">注销</span>
-      </v-btn>
-      <v-menu offset-y>
+      </wh-btn>
+      <wh-menu offset-y>
         <template v-slot:activator="{on}">
-          <v-btn text v-on="on">
+          <wh-btn text v-on="on">
             <span class="mr-2">高级▾</span>
-          </v-btn>
+          </wh-btn>
         </template>
         <v-list>
           <v-list-item v-for="(item, index) in baritems" :key="index">
             <v-list-item-title>{{item.title}}</v-list-item-title>
           </v-list-item>
         </v-list>
-      </v-menu>
-      <v-btn text>
+      </wh-menu>
+      <wh-btn text>
         <span class="mr-2">帮助</span>
-      </v-btn>
-      <v-btn text @click="progressGraphAction()">
+      </wh-btn>
+      <wh-btn text @click="progressGraphAction()">
         <span class="mr-2">流程图</span>
-      </v-btn>
-      <v-btn text>
+      </wh-btn>
+      <wh-btn text>
         <span class="mr-2">关闭</span>
-      </v-btn>
+      </wh-btn>
     </template>
     <template v-else>
-      <v-menu offset-y>
+      <wh-menu offset-y>
         <template v-slot:activator="{on}">
-          <v-btn text v-on="on">
+          <wh-btn text v-on="on">
             <span class="mr-2">操作▾</span>
-          </v-btn>
+          </wh-btn>
         </template>
         <v-list>
           <v-list-item v-for="(item, index) in barminiitems" :key="index">
             <v-list-item-title>{{item.title}}</v-list-item-title>
           </v-list-item>
         </v-list>
-      </v-menu>
+      </wh-menu>
     </template>
     <!-- 提交对话框 -->
     <v-dialog v-model="dialog2" max-width="800px">
@@ -78,8 +78,8 @@
           </v-layout>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" text @click="dialog2 = false">关闭</v-btn>
-          <v-btn color="primary" text @click="dialog2 = false">提交</v-btn>
+          <wh-btn color="primary" text @click="dialog2 = false">关闭</wh-btn>
+          <wh-btn color="primary" text @click="dialog2 = false">提交</wh-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -94,7 +94,7 @@
           </v-layout>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" text @click="dialog3 = false">关闭</v-btn>
+          <wh-btn color="primary" text @click="dialog3 = false">关闭</wh-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -115,8 +115,8 @@
           </v-layout>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="primary" text @click="dialog5 = false">关闭</v-btn>
-          <v-btn color="primary" text @click="dialog5 = false">驳回</v-btn>
+          <wh-btn color="primary" text @click="dialog5 = false">关闭</wh-btn>
+          <wh-btn color="primary" text @click="dialog5 = false">驳回</wh-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -126,12 +126,12 @@
         <v-card-title>注销流程</v-card-title>
         <v-card-text>您确定要注销当前单据吗？</v-card-text>
         <v-card-actions>
-          <v-btn color="primary" text @click="dialog4 = false">关闭</v-btn>
-          <v-btn color="primary" text @click="dialog4 = false">注销</v-btn>
+          <wh-btn color="primary" text @click="dialog4 = false">关闭</wh-btn>
+          <wh-btn color="primary" text @click="dialog4 = false">注销</wh-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </v-app-bar>
+  </wh-topbar>
 </template>
 
 <script>

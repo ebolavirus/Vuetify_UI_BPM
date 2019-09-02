@@ -1,12 +1,12 @@
 <template>
-  <v-app>
+  <wh-app>
     <TopBar @drawerclick="draweropen = !draweropen" />
-    <v-content>
+    <wh-content>
       <Sidedrawer v-model="draweropen" />
       <HelloWorld />
       <!-- <FootAttachment/> -->
-    </v-content>
-  </v-app>
+    </wh-content>
+  </wh-app>
 </template>
 
 <script>

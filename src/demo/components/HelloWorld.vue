@@ -17,9 +17,6 @@
                 <TypeDialog v-model="typedialog" @dialogSelected="typeDialogSelected" />
               </v-flex>
               <v-flex xs12 sm6 md6 lg6>
-                <WanhuaRadio />
-              </v-flex>
-              <v-flex xs12 sm6 md6 lg6>
                 <v-text-field label="*办公室位置"></v-text-field>
               </v-flex>
               <v-flex xs12>
@@ -74,7 +71,7 @@
           <v-expansion-panel-content>
             <v-layout wrap>
               <v-flex xs12 sm6 md6 lg6>
-                <v-menu ref="menu1" v-model="startDateMenu" :close-on-content-click="false" :return-value.sync="date1"
+                <wh-menu ref="menu1" v-model="startDateMenu" :close-on-content-click="false" :return-value.sync="date1"
                   transition="scale-transition" offset-y full-width min-width="290px">
                   <template v-slot:activator="{ on }">
                     <v-text-field v-model="date1" label="接收时间" readonly v-on="on"></v-text-field>
@@ -84,11 +81,11 @@
                     <v-btn text color="primary" @click="startDateMenu = false">取消</v-btn>
                     <v-btn text color="primary" @click="$refs.menu1.save(date1)">确定</v-btn>
                   </v-date-picker>
-                </v-menu>
+                </wh-menu>
               </v-flex>
               <v-spacer></v-spacer>
               <v-flex xs12 sm6 md6 lg6>
-                <v-menu ref="menu2" v-model="endDateMenu" :close-on-content-click="false" :return-value.sync="date2"
+                <wh-menu ref="menu2" v-model="endDateMenu" :close-on-content-click="false" :return-value.sync="date2"
                   transition="scale-transition" offset-y full-width min-width="290px">
                   <template v-slot:activator="{ on }">
                     <v-text-field v-model="date2" label="接收时间" readonly v-on="on"></v-text-field>
@@ -98,7 +95,7 @@
                     <v-btn text color="primary" @click="endDateMenu = false">取消</v-btn>
                     <v-btn text color="primary" @click="$refs.menu2.save(date2)">确定</v-btn>
                   </v-date-picker>
-                </v-menu>
+                </wh-menu>
               </v-flex>
               <v-flex xs12 sm6 md6 lg6>
                 <v-text-field label="实际费用"></v-text-field>

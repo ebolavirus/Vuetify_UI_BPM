@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import WHLogo from './singles/WHLogo'
+import WHMenu from './singles/WHMenu'
 import WHIcon from './singles/WHIcon'
 import WHHyperlink from './singles/WHHyperlink'
 import WHTextfield from './singles/WHTextfield'
@@ -61,6 +62,10 @@ SimpleSnackbar.install = function (Vue) {
 
 WHLogo.install = function (Vue) {
     Vue.component(WHLogo.name, WHLogo)
+}
+
+WHMenu.install = function (Vue) {
+    Vue.component(WHMenu.name, WHMenu)
 }
 WHIcon.install = function (Vue) {
     Vue.component(WHIcon.name, WHIcon)
@@ -188,7 +193,7 @@ WHAreaPanels.install = function (Vue) {
 
 
 // 存储组件列表
-const components = [WHLogo, WHIcon, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
+const components = [WHLogo, WHMenu, WHIcon, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
     WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHCardText,
     WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHFlex, WHAreaPanel, WHAreaPanels
 ]
@@ -213,6 +218,7 @@ export default {
     install,
     // 以下是具体的组件列表
     WHLogo,
+    WHMenu,
     WHIcon,
     WHHyperlink,
     WHTextfield,
