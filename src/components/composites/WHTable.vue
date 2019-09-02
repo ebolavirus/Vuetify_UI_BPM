@@ -1,7 +1,7 @@
 <template>
   <div v-if="$vuetify.breakpoint.smAndUp">
     <v-simple-table fixed-header :height="height" :dense="dense">
-      <thead>
+      <thead v-if="showHeader">
         <tr>
           <th v-if="showSelect" style="width: 5%">
             <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
@@ -114,7 +114,7 @@
         </tr>
       </tbody>
     </v-simple-table>
-    <wh-pagination v-if="items.length > 0" v-model="page" :length="10"></wh-pagination>
+    <wh-pagination v-if="showFooter && items.length > 0" v-model="page" :length="10"></wh-pagination>
   </div>
 </template>
 
@@ -124,6 +124,16 @@
   } from 'fs';
   export default {
     name: 'wh-table',
+    props: {
+      showHeader: {
+        type: Boolean,
+        default: true
+      },
+      showFooter: {
+        type: Boolean,
+        default: true
+      }
+    },
     data() {
       return {
         // selectedIndex: 1,

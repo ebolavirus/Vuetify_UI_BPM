@@ -57,54 +57,54 @@
       </wh-menu>
     </template>
     <!-- 提交对话框 -->
-    <v-dialog v-model="dialog2" max-width="800px">
-      <v-card>
-        <v-card-title>审批人</v-card-title>
-        <v-card-text>
-          <v-layout wrap>
-            <v-flex xs12>
-              <v-textarea label="审批意见" counter="300" value="同意" clearable></v-textarea>
-            </v-flex>
-            <v-flex xs6>
-              <v-text-field label="下一任务" value="IT顾问评估"></v-text-field>
-            </v-flex>
-            <v-flex xs6>
-              <v-text-field label="任务类型" value="单一签核"></v-text-field>
-            </v-flex>
-            <v-flex xs12>
+    <wh-dialog v-model="dialog2" max-width="800px">
+      <wh-card>
+        <wh-card-title>审批人</wh-card-title>
+        <wh-card-text>
+          <wh-layout>
+            <wh-flex :rowNumber="1">
+              <wh-textarea label="审批意见" counter="300" value="同意" clearable />
+            </wh-flex>
+            <wh-flex :rowNumber="2">
+              <wh-textfield label="下一任务" value="IT顾问评估" />
+            </wh-flex>
+            <wh-flex :rowNumber="2">
+              <wh-textfield label="任务类型" value="单一签核" />
+            </wh-flex>
+            <wh-flex :rowNumber="1">
               <v-data-table :headers="apHeaders" :items="approvers" :items-per-page="5" class="elevation-1"
                 single-select v-model="selectedApprover" item-key="name" show-select></v-data-table>
-            </v-flex>
-          </v-layout>
-        </v-card-text>
-        <v-card-actions>
+            </wh-flex>
+          </wh-layout>
+        </wh-card-text>
+        <wh-card-actions>
           <wh-btn color="primary" text @click="dialog2 = false">关闭</wh-btn>
           <wh-btn color="primary" text @click="dialog2 = false">提交</wh-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+        </wh-card-actions>
+      </wh-card>
+    </wh-dialog>
     <!-- 流程图对话框 http://bpmqas02.whchem.com/ECS_BPM_ADV/jsp/trdpty/processMapNew.jsp?bpdId=25.3e223090-6578-4686-98da-1ab9b0d1feff&appShortName=ITAPP&tsPiid=PIID-6a769121-f3cc-4dff-9cd7-4b9e1ff1bf62&snapshotId=2064.25fda463-fbb1-448d-ae01-c0791db69ea1 -->
-    <v-dialog v-model="dialog3" max-width="1000px">
-      <v-card>
-        <v-card-title>流程图</v-card-title>
-        <v-card-text>
+    <wh-dialog v-model="dialog3" max-width="1000px">
+      <wh-card>
+        <wh-card-title>流程图</wh-card-title>
+        <wh-card-text>
           <v-layout align-center justify-center>
             <v-img src="../assets/25.jpg" aspect-ratio="1" class="grey lighten-2" max-width="1000" max-height="680"
               contain></v-img>
           </v-layout>
-        </v-card-text>
-        <v-card-actions>
+        </wh-card-text>
+        <wh-card-actions>
           <wh-btn color="primary" text @click="dialog3 = false">关闭</wh-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+        </wh-card-actions>
+      </wh-card>
+    </wh-dialog>
     <!-- 保存业务数据 -->
     <v-alert dismissible elevation="2" v-if="saved" type="info">保存成功!</v-alert>
     <!-- 驳回对话框 -->
-    <v-dialog v-model="dialog5" max-width="800px">
-      <v-card>
-        <v-card-title>任务驳回</v-card-title>
-        <v-card-text>
+    <wh-dialog v-model="dialog5" max-width="800px">
+      <wh-card>
+        <wh-card-title>任务驳回</wh-card-title>
+        <wh-card-text>
           <v-layout wrap>
             <v-flex xs12 sm6>
               <v-select :items="['起草@Draft']" label="驳回到环节" required></v-select>
@@ -113,24 +113,24 @@
               <v-textarea label="审批意见" counter="300" value="同意" clearable required></v-textarea>
             </v-flex>
           </v-layout>
-        </v-card-text>
-        <v-card-actions>
+        </wh-card-text>
+        <wh-card-actions>
           <wh-btn color="primary" text @click="dialog5 = false">关闭</wh-btn>
           <wh-btn color="primary" text @click="dialog5 = false">驳回</wh-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+        </wh-card-actions>
+      </wh-card>
+    </wh-dialog>
     <!-- 注销流程 -->
-    <v-dialog v-model="dialog4" max-width="300px">
-      <v-card>
-        <v-card-title>注销流程</v-card-title>
-        <v-card-text>您确定要注销当前单据吗？</v-card-text>
-        <v-card-actions>
+    <wh-dialog v-model="dialog4" max-width="300px">
+      <wh-card>
+        <wh-card-title>注销流程</wh-card-title>
+        <wh-card-text>您确定要注销当前单据吗？</wh-card-text>
+        <wh-card-actions>
           <wh-btn color="primary" text @click="dialog4 = false">关闭</wh-btn>
           <wh-btn color="primary" text @click="dialog4 = false">注销</wh-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+        </wh-card-actions>
+      </wh-card>
+    </wh-dialog>
   </wh-topbar>
 </template>
 

@@ -3,7 +3,7 @@
     VCardText
   } from 'vuetify/lib'
   export default {
-    name: 'wh-cardtext',
+    name: 'wh-card-text',
     extends: VCardText
   };
 </script>

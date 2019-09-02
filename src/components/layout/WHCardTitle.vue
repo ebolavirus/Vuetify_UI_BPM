@@ -3,7 +3,7 @@
     VCardTitle
   } from 'vuetify/lib'
   export default {
-    name: 'wh-cardtitle',
+    name: 'wh-card-title',
     extends: VCardTitle
   };
 </script>
