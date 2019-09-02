@@ -1,58 +1,58 @@
 <template>
-  <v-dialog v-model="intypedialog" fullscreen hide-overlay>
+  <wh-dialog v-model="intypedialog" fullscreen hide-overlay>
     <!-- transition="dialog-bottom-transition"> -->
-    <v-card>
+    <wh-card>
       <v-toolbar dark color="primary">
-        <v-btn icon dark @click="intypedialog = false">
-          <v-icon>mdi-close</v-icon>
-        </v-btn>
+        <wh-btn icon dark @click="intypedialog = false">
+          <wh-icon>mdi-close</wh-icon>
+        </wh-btn>
         <v-toolbar-title>选择人员</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-          <v-btn dark text @click="editItem">确认</v-btn>
+          <wh-btn dark text @click="editItem">确认</wh-btn>
         </v-toolbar-items>
       </v-toolbar>
       <v-container grid-list-md>
-        <v-layout wrap>
-          <v-flex sm3 order-sm1 v-if="$vuetify.breakpoint.smAndUp">
-            <v-card>
-              <v-card-text>
-                <v-text-field label="搜索部门" append-outer-icon="mdi-file-document-box-search" value="信息中心" readonly>
-                </v-text-field>
+        <wh-layout wrap>
+          <wh-flex sm3 order-sm1 v-if="$vuetify.breakpoint.smAndUp">
+            <wh-card>
+              <wh-card-text>
+                <wh-textfield label="搜索部门" append-outer-icon="mdi-file-document-box-search" value="信息中心" readonly>
+                </wh-textfield>
                 <v-treeview selectable selected-color="amber" :items="departmentitems"></v-treeview>
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm6 order-xs2 order-sm2>
-            <v-card>
-              <v-card-text>
-                <v-text-field label="搜索人员" placeholder="ITCODE,中文名，英文名等"
-                  append-outer-icon="mdi-file-document-box-search" value="mmsuna"></v-text-field>
+              </wh-card-text>
+            </wh-card>
+          </wh-flex>
+          <wh-flex xs12 sm6 order-xs2 order-sm2>
+            <wh-card>
+              <wh-card-text>
+                <wh-textfield label="搜索人员" placeholder="ITCODE,中文名，英文名等"
+                  append-outer-icon="mdi-file-document-box-search" value="mmsuna"></wh-textfield>
                 <v-data-table :headers="typeheaders" :items="typedesserts" :items-per-page="5" show-select
                   item-key="name" v-model="listSelectValue" class="elevation-1">
                 </v-data-table>
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm3 order-xs1 order-sm3>
-            <v-card>
-              <v-card-title>选中人员列表</v-card-title>
-              <v-card-text>
+              </wh-card-text>
+            </wh-card>
+          </wh-flex>
+          <wh-flex xs12 sm3 order-xs1 order-sm3>
+            <wh-card>
+              <wh-card-title>选中人员列表</wh-card-title>
+              <wh-card-text>
                 <v-data-table dense :headers="typeheaders2" :items="listSelectValue" :items-per-page="1000" show-select
                   item-key="name" hide-default-header hide-default-footer no-data-text="没有人员选中" height="300"
                   v-model="listSelectValue2" class="elevation-1">
                 </v-data-table>
                 <div class="text-center pt-2">
-                  <v-btn color="primary" class="mr-2" @click="removeItem(0)">移除选中</v-btn>
-                  <v-btn color="primary" @click="removeItem(1)">移除全部</v-btn>
+                  <wh-btn color="primary" class="mr-2" @click="removeItem(0)">移除选中</wh-btn>
+                  <wh-btn color="primary" @click="removeItem(1)">移除全部</wh-btn>
                 </div>
-              </v-card-text>
-            </v-card>
-          </v-flex>
-        </v-layout>
+              </wh-card-text>
+            </wh-card>
+          </wh-flex>
+        </wh-layout>
       </v-container>
-    </v-card>
-  </v-dialog>
+    </wh-card>
+  </wh-dialog>
 </template>
 
 <script>

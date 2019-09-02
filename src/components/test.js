@@ -31,6 +31,7 @@ import WHLoading from './composites/WHLoading'
 
 import WHApp from './layout/WHApp'
 import WHContent from './layout/WHContent'
+import WHContainer from './layout/WHContainer'
 import WHCard from './layout/WHCard'
 import WHCardText from './layout/WHCardText'
 import WHCardTitle from './layout/WHCardTitle'
@@ -81,6 +82,7 @@ Vue.component(WHLoading.name, WHLoading)
 
 Vue.component(WHApp.name, WHApp)
 Vue.component(WHContent.name, WHContent)
+Vue.component(WHContainer.name, WHContainer)
 Vue.component(WHCard.name, WHCard)
 Vue.component(WHCardText.name, WHCardText)
 Vue.component(WHCardTitle.name, WHCardTitle)
