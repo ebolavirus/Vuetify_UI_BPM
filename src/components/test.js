@@ -2,6 +2,7 @@ import Vue from 'vue'
 import WHLogo from './singles/WHLogo'
 import WHMenu from './singles/WHMenu'
 import WHIcon from './singles/WHIcon'
+import WHImg from './singles/WHImg'
 import WHHyperlink from './singles/WHHyperlink'
 import WHTextfield from './singles/WHTextfield'
 import WHNumberfield from './singles/WHNumberfield'
@@ -42,6 +43,7 @@ import WHLayout from './layout/WHLayout'
 import WHListItemTitle from './layout/WHListItemTitle'
 import WHListItem from './layout/WHListItem'
 import WHList from './layout/WHList'
+import WHSpacer from './layout/WHSpacer'
 import WHFlex from './layout/WHFlex'
 import WHAreaPanel from './layout/WHAreaPanel'
 import WHAreaPanels from './layout/WHAreaPanels'
@@ -49,6 +51,7 @@ import WHAreaPanels from './layout/WHAreaPanels'
 Vue.component(WHLogo.name, WHLogo)
 Vue.component(WHMenu.name, WHMenu)
 Vue.component(WHIcon.name, WHIcon)
+Vue.component(WHImg.name, WHImg)
 Vue.component(WHHyperlink.name, WHHyperlink)
 Vue.component(WHTextfield.name, WHTextfield)
 Vue.component(WHNumberfield.name, WHNumberfield)
@@ -90,6 +93,7 @@ Vue.component(WHLayout.name, WHLayout)
 Vue.component(WHListItem.name, WHListItem)
 Vue.component(WHListItemTitle.name, WHListItemTitle)
 Vue.component(WHList.name, WHList)
+Vue.component(WHSpacer.name, WHSpacer)
 Vue.component(WHFlex.name, WHFlex)
 Vue.component(WHAreaPanel.name, WHAreaPanel)
 Vue.component(WHAreaPanels.name, WHAreaPanels)

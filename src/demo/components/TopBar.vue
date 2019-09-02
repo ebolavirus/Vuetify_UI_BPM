@@ -6,7 +6,7 @@
     <v-toolbar-title>
       <span class="mr-2">Vuetify信息服务申请DEMO</span>
     </v-toolbar-title>
-    <v-spacer></v-spacer>
+    <wh-spacer></wh-spacer>
     <template v-if="$vuetify.breakpoint.mdAndUp">
       <wh-btn text @click="submitAction()">
         <span class="mr-2">提交</span>
@@ -72,8 +72,8 @@
               <wh-textfield label="任务类型" value="单一签核" />
             </wh-flex>
             <wh-flex :rowNumber="1">
-              <v-data-table :headers="apHeaders" :items="approvers" :items-per-page="5" class="elevation-1"
-                single-select v-model="selectedApprover" item-key="name" show-select></v-data-table>
+              <wh-table :headers="apHeaders" :items="approvers" :showFooter="false" :showSelect="true"
+                :singleSelect="true" />
             </wh-flex>
           </wh-layout>
         </wh-card-text>
@@ -88,31 +88,29 @@
       <wh-card>
         <wh-card-title>流程图</wh-card-title>
         <wh-card-text>
-          <v-layout align-center justify-center>
-            <v-img src="../assets/25.jpg" aspect-ratio="1" class="grey lighten-2" max-width="1000" max-height="680"
-              contain></v-img>
-          </v-layout>
+          <wh-layout align-center justify-center>
+            <wh-img src="http://www.baidu.com/img/superlogo_c4d7df0a003d3db9b65e9ef0fe6da1ec.png?where=super"
+              aspect-ratio="1" class="grey lighten-2" max-width="1000" max-height="680" contain />
+          </wh-layout>
         </wh-card-text>
         <wh-card-actions>
           <wh-btn color="primary" text @click="dialog3 = false">关闭</wh-btn>
         </wh-card-actions>
       </wh-card>
     </wh-dialog>
-    <!-- 保存业务数据 -->
-    <v-alert dismissible elevation="2" v-if="saved" type="info">保存成功!</v-alert>
     <!-- 驳回对话框 -->
     <wh-dialog v-model="dialog5" max-width="800px">
       <wh-card>
         <wh-card-title>任务驳回</wh-card-title>
         <wh-card-text>
-          <v-layout wrap>
-            <v-flex xs12 sm6>
-              <v-select :items="['起草@Draft']" label="驳回到环节" required></v-select>
-            </v-flex>
-            <v-flex xs12>
-              <v-textarea label="审批意见" counter="300" value="同意" clearable required></v-textarea>
-            </v-flex>
-          </v-layout>
+          <wh-layout>
+            <wh-flex :rowNumber="2">
+              <wh-select :items="['起草@Draft']" label="驳回到环节" required />
+            </wh-flex>
+            <wh-flex :rowNumber="1">
+              <wh-textarea label="审批意见" counter="300" value="同意" clearable required />
+            </wh-flex>
+          </wh-layout>
         </wh-card-text>
         <wh-card-actions>
           <wh-btn color="primary" text @click="dialog5 = false">关闭</wh-btn>
@@ -204,7 +202,6 @@
       dialog4: false,
       // 驳回对话框开关
       dialog5: false,
-      saved: false,
       apHeaders: [{
           text: "名称",
           align: "left",
@@ -239,7 +236,7 @@
       },
       saveAction() {
         console.log("saveAction");
-        this.saved = true;
+        this.$alert("保存成功！");
       },
       cancelAction() {
         this.dialog4 = true;

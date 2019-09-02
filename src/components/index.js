@@ -2,6 +2,7 @@ import Vue from 'vue'
 import WHLogo from './singles/WHLogo'
 import WHMenu from './singles/WHMenu'
 import WHIcon from './singles/WHIcon'
+import WHImg from './singles/WHImg'
 import WHHyperlink from './singles/WHHyperlink'
 import WHTextfield from './singles/WHTextfield'
 import WHNumberfield from './singles/WHNumberfield'
@@ -42,6 +43,7 @@ import WHLayout from './layout/WHLayout'
 import WHListItem from './layout/WHListItem'
 import WHList from './layout/WHList'
 import WHListItemTitle from './layout/WHListItemTitle'
+import WHSpacer from './layout/WHSpacer'
 import WHFlex from './layout/WHFlex'
 import WHAreaPanel from './layout/WHAreaPanel'
 import WHAreaPanels from './layout/WHAreaPanels'
@@ -72,6 +74,9 @@ WHMenu.install = function (Vue) {
 }
 WHIcon.install = function (Vue) {
     Vue.component(WHIcon.name, WHIcon)
+}
+WHImg.install = function (Vue) {
+    Vue.component(WHImg.name, WHImg)
 }
 WHHyperlink.install = function (Vue) {
     Vue.component(WHHyperlink.name, WHHyperlink)
@@ -192,6 +197,9 @@ WHListItemTitle.install = function (Vue) {
 WHList.install = function (Vue) {
     Vue.component(WHList.name, WHList)
 }
+WHSpacer.install = function (Vue) {
+    Vue.component(WHSpacer.name, WHSpacer)
+}
 WHFlex.install = function (Vue) {
     Vue.component(WHFlex.name, WHFlex)
 }
@@ -205,9 +213,9 @@ WHAreaPanels.install = function (Vue) {
 
 
 // 存储组件列表
-const components = [WHLogo, WHMenu, WHIcon, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
+const components = [WHLogo, WHMenu, WHIcon, WHImg, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
     WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHCardText,
-    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHFlex, WHAreaPanel, WHAreaPanels
+    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHSpacer, WHFlex, WHAreaPanel, WHAreaPanels
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -232,6 +240,7 @@ export default {
     WHLogo,
     WHMenu,
     WHIcon,
+    WHImg,
     WHHyperlink,
     WHTextfield,
     WHNumberfield,
@@ -262,6 +271,7 @@ export default {
     WHFooter,
     WHTopbar,
     WHLayout,
+    WHSpacer,
     WHListItemTitle,
     WHListItem,
     WHList,

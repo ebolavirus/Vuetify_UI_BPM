@@ -55,7 +55,7 @@
         </tr>
       </tbody>
     </v-simple-table>
-    <wh-pagination v-if="items.length > 0" v-model="page" :length="10"></wh-pagination>
+    <wh-pagination v-if="showFooter && (items.length > 0)" v-model="page" :length="10" />
   </div>
   <div v-else>
     <v-simple-table fixed-header :height="height" dense>
@@ -114,7 +114,7 @@
         </tr>
       </tbody>
     </v-simple-table>
-    <wh-pagination v-if="showFooter && items.length > 0" v-model="page" :length="10"></wh-pagination>
+    <wh-pagination v-if="showFooter && (items.length > 0)" v-model="page" :length="10" />
   </div>
 </template>
 
@@ -124,16 +124,6 @@
   } from 'fs';
   export default {
     name: 'wh-table',
-    props: {
-      showHeader: {
-        type: Boolean,
-        default: true
-      },
-      showFooter: {
-        type: Boolean,
-        default: true
-      }
-    },
     data() {
       return {
         // selectedIndex: 1,
@@ -145,6 +135,14 @@
       }
     },
     props: {
+      showHeader: {
+        type: Boolean,
+        default: true
+      },
+      showFooter: {
+        type: Boolean,
+        default: true
+      },
       dense: {
         type: Boolean,
         default: false
@@ -156,15 +154,21 @@
       headers: {
         // support ability: text,value,width,align,editable
         type: Array,
-        default: []
+        default () {
+          return []
+        }
       },
       items: {
         type: Array,
-        default: []
+        default () {
+          return []
+        }
       },
       actions: {
         type: Array,
-        default: []
+        default () {
+          return []
+        }
       },
       showSelect: {
         type: Boolean,
@@ -199,7 +203,7 @@
       },
       indexSelected(to, from) {
         if (this.singleSelect) {
-          this.$emit('item-selected', items[to - 1], to - 1);
+          this.$emit('item-selected', this.items[to - 1], to - 1);
         } else {
           this.$emit('item-selected', '', to);
         }
