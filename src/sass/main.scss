@@ -1,7 +1,7 @@
 // src/sass/main.scss
 
-// Any changes to a default variable must be
-// declared above the initial style import
+@import './components/settings.scss';
+// Any changes to a default variable must be declared above the initial style import
 $font-size-root: 14px;
 // Required for modifying core defaults
 @import '~vuetify/src/styles/styles.sass';

@@ -1,6 +1,6 @@
 <template>
   <v-expansion-panel>
-    <v-expansion-panel-header>{{title}}</v-expansion-panel-header>
+    <v-expansion-panel-header style="background-color: lightgray;">{{title}}</v-expansion-panel-header>
     <v-expansion-panel-content>
       <slot />
     </v-expansion-panel-content>
@@ -9,12 +9,12 @@
 
 <script>
   export default {
-    name: 'wh-area-panel',
+    name: "wh-area-panel",
     props: {
       title: {
         type: String,
-        default: ''
+        default: ""
       }
     }
-  }
+  };
 </script>
