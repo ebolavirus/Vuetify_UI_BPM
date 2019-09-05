@@ -1,2 +1,5 @@
-$expansion-panel-content-padding: 0 2px 2px !default;
+$expansion-panel-header-min-height: 30px !default;
+$expansion-panel-active-header-min-height: 30px !default;
+$expansion-panel-header-padding: 5px 5px !default;
+$expansion-panel-content-padding: 5px 5px !default;
 @import '~vuetify/src/components/VExpansionPanel/_variables.scss';
