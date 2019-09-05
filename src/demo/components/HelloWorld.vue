@@ -12,6 +12,9 @@
             <wh-flex :rowNumber="2">
               <wh-textfield label="*办公室位置"></wh-textfield>
             </wh-flex>
+            <wh-flex :rowNumber="2">
+              <wh-textfield disabled label="*办公室位置(只读）" value="ffff"></wh-textfield>
+            </wh-flex>
             <wh-flex :rowNumber="1">
               <wh-textarea label="服务内容"></wh-textarea>
             </wh-flex>
