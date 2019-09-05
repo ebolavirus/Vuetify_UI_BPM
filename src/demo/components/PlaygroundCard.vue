@@ -48,8 +48,8 @@
         <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-btn">
-        <wh-btn block color="indigo" dark>Button</wh-btn>
-        <br><code>&lt;wh-btn block color="indigo" dark&gt;Button&lt;/wh-btn&gt;</code>
+        <wh-btn depressed block color="indigo" dark>Button</wh-btn>
+        <br><code>&lt;wh-btn depressed block color="indigo" dark&gt;Button&lt;/wh-btn&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-select">
         <wh-select :items="types" label="state" item-text="state" item-value="abbr"></wh-select>
@@ -90,11 +90,11 @@
         </wh-btn>
         <wh-dialog v-model="showDialog" max-width="290">
           <wh-card>
-            <wh-cardtitle class="headline">Wanhua Dialog</wh-cardtitle>
-            <wh-cardtext>
+            <wh-card-title class="headline">Wanhua Dialog</wh-card-title>
+            <wh-card-text>
               Only clevers can see the dialog now!
-            </wh-cardtext>
-            <wh-cardactions>
+            </wh-card-text>
+            <wh-card-actions>
               <div class="flex-grow-1"></div>
               <wh-btn color="green darken-1" text @click="showDialog = false">
                 Disagree
@@ -102,7 +102,7 @@
               <wh-btn color="green darken-1" text @click="showDialog = false">
                 Agree
               </wh-btn>
-            </wh-cardactions>
+            </wh-card-actions>
           </wh-card>
         </wh-dialog>
         <wh-btn color="primary" dark @click="showModelDialog">
