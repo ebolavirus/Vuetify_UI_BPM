@@ -105,9 +105,9 @@
             </wh-flex>
           </wh-layout>
         </wh-area-panel>
-        <wh-area-panel title="附件">
+        <!-- <wh-area-panel title="附件">
           <iframe src="http://www.baidu.com" style="width: 100%"></iframe>
-        </wh-area-panel>
+        </wh-area-panel> -->
       </wh-area-panels>
     </wh-layout>
   </wh-container>
