@@ -7,7 +7,7 @@ $font-size-root: 14px;
 @import '~vuetify/src/styles/styles.sass';
 
 
-@import '~vuetify/src/components/VTimeline/_variables.scss';
+@import './components/VTimeline.scss';
 
 @import './components/VExpansionPanel.scss';
 
