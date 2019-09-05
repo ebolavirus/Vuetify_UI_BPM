@@ -6,7 +6,7 @@ import vuetify from './plugins/vuetify'
 import './components/test.js'
 
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
-import '../public/css/vuetify.css'
+import './css/vuetify.css'
 
 function _getLocale() {
     let locale = "en";
