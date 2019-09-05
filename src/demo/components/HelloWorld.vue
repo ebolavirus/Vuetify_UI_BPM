@@ -5,7 +5,7 @@
         <wh-area-panel title="服务描述">
           <wh-layout>
             <wh-flex :rowNumber="2">
-              <wh-textfield label="*服务类型" append-outer-icon="mdi-file-document-box-search" readonly
+              <wh-textfield label="*服务类型" append-outer-icon="mdi-file-document-box-search" counter readonly
                 @click:append-outer.stop="typeSelect" v-model="typeValue"></wh-textfield>
               <TypeDialog v-model="typedialog" @dialogSelected="typeDialogSelected" />
             </wh-flex>
@@ -124,7 +124,7 @@
     data: () => ({
       panel: [0, 1, 2, 3, 4, 5, 6],
       serviceTypes: ["type1", "type2", "type3", "type4", "type5"],
-      typeValue: "",
+      typeValue: "AAA天罡火地煞功",
       dutyValue: "",
       typedialog: false,
       dutydialog: false,
