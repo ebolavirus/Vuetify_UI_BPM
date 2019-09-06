@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import DialogPromise from './components/DialogPromise'
+import DialogPromise from './DialogPromise'
 import i18n from './i18n'
 import vuetify from './plugins/vuetify'
 import './components/test.js'
