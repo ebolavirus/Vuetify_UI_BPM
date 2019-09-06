@@ -2062,7 +2062,7 @@
 .v-select__selection--comma {
   align-items: center;
   display: inline-flex;
-  margin: 7px 4px 7px 0;
+  margin: 2px 4px 2px 4px;
 }
 
 .v-select__slot {
@@ -3441,7 +3441,7 @@
 .theme--light.v-input--is-disabled .v-label,
 .theme--light.v-input--is-disabled input,
 .theme--light.v-input--is-disabled textarea {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .theme--dark.v-input:not(.v-input--is-disabled) input,
@@ -6133,7 +6133,7 @@
   display: flex;
   align-items: center;
   flex: 0 0 0;
-  justify-content: flex-end;
+  justify-content: flex-start;
   white-space: nowrap;
 }
 
@@ -10789,7 +10789,7 @@
 .v-timeline-item__divider {
   position: relative;
   /*  min-width: 96px;*/
-  min-width: 60px;
+  min-width: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11061,7 +11061,7 @@
 
 .v-timeline--dense:not(.v-timeline--reverse):before {
   /*  left: calc(48px - 1px);*/
-  left: calc(30px - 1px);
+  left: calc(24px - 1px);
   right: initial;
 }
 
@@ -11090,7 +11090,7 @@
 
 .v-timeline--dense .v-timeline-item__body {
   /*  max-width: calc(100% - 96px);*/
-  max-width: calc(100% - 60px);
+  max-width: calc(100% - 48px);
 }
 
 .v-timeline--dense .v-timeline-item__opposite {

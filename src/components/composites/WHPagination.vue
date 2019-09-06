@@ -1,37 +1,23 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="1">
-        <v-btn text icon @click="btnClick(1)">
-          <v-icon>mdi-skip-previous</v-icon>
-        </v-btn>
-      </v-col>
-      <v-col cols="1">
-        <v-btn text icon style="transform:rotate(180deg);" @click="btnClick(2)">
-          <v-icon>mdi-play</v-icon>
-        </v-btn>
-      </v-col>
-      <v-col cols="3">
-        <span>Records from {{numFrom}} to {{numTo}}</span>
-      </v-col>
-      <v-col cols="1">
-        <v-btn text icon @click="btnClick(3)">
-          <v-icon>mdi-play</v-icon>
-        </v-btn>
-      </v-col>
-      <v-col cols="1">
-        <v-btn text icon @click="btnClick(4)">
-          <v-icon>mdi-skip-next</v-icon>
-        </v-btn>
-      </v-col>
-      <v-col cols="2">
-        <v-select :items="pageArray" v-model="currentPage" prefix="Page" />
-      </v-col>
-      <v-col cols="3">
-        <v-select :items="countPerRow" v-model="currentCountPerRow" suffix=" rows per page" />
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="v-data-footer">
+    <v-btn text icon @click="btnClick(1)">
+      <v-icon>mdi-skip-previous</v-icon>
+    </v-btn>
+    <v-btn text icon style="transform:rotate(180deg);" @click="btnClick(2)">
+      <v-icon>mdi-play</v-icon>
+    </v-btn>
+    <div class="v-data-footer__pagination">{{numFrom}} to {{numTo}}</div>
+    <v-btn text icon @click="btnClick(3)">
+      <v-icon>mdi-play</v-icon>
+    </v-btn>
+    <v-btn text icon @click="btnClick(4)">
+      <v-icon>mdi-skip-next</v-icon>
+    </v-btn>
+    Page:
+    <v-select class="v-data-footer__select" :items="pageArray" v-model="currentPage" />
+    Rows per page:
+    <v-select class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
+  </div>
 </template>
 
 <script>

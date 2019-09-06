@@ -55,7 +55,9 @@
         </tr>
       </tbody>
     </v-simple-table>
-    <wh-pagination v-if="showFooter && (items.length > 0)" v-model="page" :length="10" />
+    <template v-if="showFooter && (items.length > 0)">
+      <slot />
+    </template>
   </div>
   <div v-else>
     <v-simple-table fixed-header :height="height" dense>
@@ -114,7 +116,9 @@
         </tr>
       </tbody>
     </v-simple-table>
-    <wh-pagination v-if="showFooter && (items.length > 0)" v-model="page" :length="10" />
+    <template v-if="showFooter && (items.length > 0)">
+      <slot />
+    </template>
   </div>
 </template>
 
