@@ -158,14 +158,14 @@
       <wh-area-panel title="wh-table">
         <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" @item-selected="itemSelected"
           :showSelect="true" :singleSelect="false" @click:row="clickRow" @inline-edit="inlineEditFunction"
-          @submitEvent="submitTest">
+          @submitEvent="submitTest" @deleteEvent="deleteTest">
           <wh-pagination v-model="page" :length="10"></wh-pagination>
         </wh-table>
         <br><code>
           &lt;wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions"
           @item-selected="itemSelected"
           :showSelect="true" :singleSelect="false" @click:row="clickRow" @inline-edit="inlineEditFunction"
-          @submitEvent="submitTest" class="elevation-1" &gt;
+          @submitEvent="submitTest" class="elevation-1" &gt; @deleteEvent="deleteTest"
           &lt;wh-pagination v-model="page" :length="10"&gt;&lt;/wh-pagination&gt;
           &lt;/wh-table&gt;</code>
         <br>基于v-simple-table(非v-data-table)封装，添加了动作按钮、行点击事件、行内编辑、单选、多选事件。
@@ -375,6 +375,10 @@
         text: '提交',
         icon: 'mdi-pencil',
         actionName: 'submitEvent'
+      },{
+        text: '删除',
+        icon: 'mdi-delete',
+        actionName: 'deleteEvent'
       }],
       typedesserts: [{
           name: 'Frozen Yogurt',
@@ -524,6 +528,9 @@
       },
       submitTest() {
         console.log('submit test...');
+      },
+      deleteTest() {
+        console.log('delete test');
       }
     }
   }

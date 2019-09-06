@@ -1,8 +1,8 @@
 <template>
   <div v-if="$vuetify.breakpoint.smAndUp">
     <v-simple-table fixed-header :height="height" :dense="dense">
-      <thead v-if="showHeader">
-        <tr>
+      <thead v-if="showHeader" style="line-height:1;">
+        <tr style="line-height:1;">
           <th v-if="showSelect" style="width: 5%">
             <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
           </th>
@@ -42,14 +42,17 @@
           </td>
           <td v-if="actions && actions.length > 0">
             <template v-for="(action, key4) in actions">
-              <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
+              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)">
+                  {{action.icon}}
+              </v-icon>
+              <!-- <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
                 <v-icon v-if="action.icon && action.icon !== ''">
                   {{action.icon}}
                 </v-icon>
                 <template v-if="action.text && action.text !== ''">
                   {{action.text}}
                 </template>
-              </wh-btn>
+              </wh-btn> -->
             </template>
           </td>
         </tr>
@@ -103,14 +106,17 @@
           </td>
           <td v-if="actions && actions.length > 0">
             <template v-for="(action, key4) in actions">
-              <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
+              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)">
+                  {{action.icon}}
+              </v-icon>
+              <!-- <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
                 <v-icon v-if="action.icon && action.icon !== ''">
                   {{action.icon}}
                 </v-icon>
                 <template v-if="action.text && action.text !== ''">
                   {{action.text}}
-                </template>
-              </wh-btn>
+                 </template>
+              </wh-btn> -->
             </template>
           </td>
         </tr>
@@ -121,7 +127,6 @@
     </template>
   </div>
 </template>
-
 <script>
   import {
     access
