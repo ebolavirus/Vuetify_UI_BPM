@@ -1,10 +1,11 @@
 <template>
-  <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width width="290px">
+  <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width
+    width="250px">
     <template v-slot:activator="{ on }">
       <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-event" readonly v-on="on">
       </v-text-field>
     </template>
-    <v-time-picker v-model="whpassvalue" :readonly="readonly" scrollable>
+    <v-time-picker v-model="whpassvalue" :readonly="readonly" scrollable width="250px">
       <v-spacer></v-spacer>
       <v-btn text color="primary" @click="modal = false">取消</v-btn>
       <v-btn text color="primary" @click="$refs.dialog.save(whpassvalue)">确定</v-btn>
@@ -23,9 +24,9 @@
       modal: false
     }),
     props: {
-      time : '',
-      label : '',
-      readonly : false
+      time: '',
+      label: '',
+      readonly: false
     },
     computed: {
       whpassvalue: {
