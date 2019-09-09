@@ -520,13 +520,21 @@
         console.log('itemSelected');
         console.log(item)
       },
-      // showModelDialog() {
-      //   this.$alert('ffffff');
-      // },
-      showModelDialog: async function () {
+      showModelDialog() {
+        // this.$alert('ffffff');
+        this.showModelDialog2();
+      },
+      showModelDialog2: async function () {
         const res = await this.$dialog.confirm({
           text: 'Do you really want to exit?',
-          title: 'Warning'
+          title: 'Warning',
+          actions: {
+            false: 'Cancel22',
+            true: {
+              text: 'OK22',
+              color: 'primary'
+            }
+          }
         })
         console.log("res comes out......", res);
       },
