@@ -100,7 +100,7 @@
                   </v-edit-dialog>
                 </template>
                 <template v-else>
-                  <wh-textfield :label="item3.text" v-model="item2[item3.value]" readonly />
+                  <wh-textfield :label="item3.text" v-model="item2[item3.value]" disabled />
                 </template>
               </v-row>
             </v-container>
