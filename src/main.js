@@ -1,9 +1,12 @@
 import Vue from 'vue'
 import App from './App.vue'
-import DialogPromise from './DialogPromise'
 import i18n from './i18n'
 import vuetify from './plugins/vuetify'
 import './components/test.js'
+
+import DialogPromise from './DialogPromise'
+import VuetifyDialog from 'vuetify-dialog'
+import 'vuetify-dialog/dist/vuetify-dialog.css'
 
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 import './css/vuetify.css'
@@ -24,6 +27,11 @@ Vue.use(DialogPromise, {
     snackbarParent: "app",
     locale: _getLocale()
 });
+Vue.use(VuetifyDialog, {
+    context: {
+        vuetify
+    }
+})
 Vue.config.productionTip = false;
 new Vue({
     vuetify,

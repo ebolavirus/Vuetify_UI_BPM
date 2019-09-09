@@ -375,7 +375,7 @@
         text: '提交',
         icon: 'mdi-pencil',
         actionName: 'submitEvent'
-      },{
+      }, {
         text: '删除',
         icon: 'mdi-delete',
         actionName: 'deleteEvent'
@@ -521,7 +521,11 @@
         console.log(item)
       },
       showModelDialog() {
-        this.$alert('ffffff');
+        // this.$alert('ffffff');
+        this.$dialog.confirm({
+          text: 'Do you really want to exit?',
+          title: 'Warning'
+        })
       },
       inlineEditFunction() {
 
