@@ -1,8 +1,8 @@
 <template>
-  <wh-drawer app v-model="drawer" width="350">
+  <wh-drawer app v-model="drawer">
     <wh-area-panels>
       <wh-area-panel title="基本信息">
-        <wh-textfield v-for="(item, index) in desserts" :key="index" :label="item.name" :value="item.calories" />
+        <wh-text v-for="(item, index) in desserts" :key="index" :label="item.name" :value="item.calories" />
       </wh-area-panel>
       <wh-area-panel title="审批历史">
         <wh-timeline dense>

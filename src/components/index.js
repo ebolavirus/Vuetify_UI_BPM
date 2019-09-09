@@ -4,6 +4,7 @@ import WHMenu from './singles/WHMenu'
 import WHIcon from './singles/WHIcon'
 import WHImg from './singles/WHImg'
 import WHHyperlink from './singles/WHHyperlink'
+import WHText from './singles/WHText'
 import WHTextfield from './singles/WHTextfield'
 import WHNumberfield from './singles/WHNumberfield'
 import WHMoneyfield from './singles/WHMoneyfield'
@@ -83,6 +84,9 @@ WHImg.install = function (Vue) {
 }
 WHHyperlink.install = function (Vue) {
     Vue.component(WHHyperlink.name, WHHyperlink)
+}
+WHText.install = function (Vue) {
+    Vue.component(WHText.name, WHText)
 }
 WHTextfield.install = function (Vue) {
     Vue.component(WHTextfield.name, WHTextfield)
@@ -219,7 +223,7 @@ WHAreaPanels.install = function (Vue) {
 
 
 // 存储组件列表
-const components = [WHLogo, WHMenu, WHIcon, WHImg, WHHyperlink, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
+const components = [WHLogo, WHMenu, WHIcon, WHImg, WHHyperlink, WHText, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
     WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHContainer, WHCard, WHCardText,
     WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHSpacer, WHFlex, WHAreaPanel, WHAreaPanels
 ]
@@ -253,6 +257,7 @@ export default {
     WHIcon,
     WHImg,
     WHHyperlink,
+    WHText,
     WHTextfield,
     WHNumberfield,
     WHMoneyfield,
