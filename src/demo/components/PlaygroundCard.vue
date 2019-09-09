@@ -158,7 +158,7 @@
       <wh-area-panel title="wh-table">
         <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" @item-selected="itemSelected"
           :showSelect="true" :singleSelect="false" @click:row="clickRow" @inline-edit="inlineEditFunction"
-          @submitEvent="submitTest" @deleteEvent="deleteTest">
+          height="300px" mobileheight="600px" @submitEvent="submitTest" @deleteEvent="deleteTest">
           <wh-pagination v-model="page" :length="10"></wh-pagination>
         </wh-table>
         <br><code>

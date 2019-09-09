@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         <tr v-for="(item2, key2) in items" :key="key2"
-          :style="key2 === selectedIndex?{'background-color': 'skyblue'}:{}" @click="colClicked(key2, item2)">
+          :style="key2 === selectedIndex?{'background-color': '#FFECB3'}:{}" @click="colClicked(key2, item2)">
           <td v-if="showSelect">
             <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
             <!--when single check, add 1 plus to avoid a bug when key is 0-->
@@ -64,7 +64,7 @@
     </template>
   </div>
   <div v-else>
-    <v-simple-table fixed-header :height="height" dense>
+    <v-simple-table fixed-header :height="mobileheight" dense>
       <thead>
         <tr>
           <th v-if="showSelect" style="width: 5%">
@@ -80,8 +80,8 @@
       </thead>
       <tbody class="mx-0 px-0">
         <tr v-for="(item2, key2) in items" :key="key2"
-          :style="key2 === selectedIndex?{'background-color': 'skyblue'}:{}" @click="colClicked(key2, item2)">
-          <td v-if="showSelect">
+          :style="key2 === selectedIndex?{'background-color': '#FFECB3'}:{}" @click="colClicked(key2, item2)">
+          <td v-if="showSelect" style="width: 8%">
             <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
             <!--when single check, add 1 plus to avoid a bug when key is 0-->
             <v-checkbox v-else v-model="indexSelected" :multiple="false" :value="key2+1"></v-checkbox>
@@ -105,7 +105,7 @@
               </v-row>
             </v-container>
           </td>
-          <td v-if="actions && actions.length > 0">
+          <td v-if="actions && actions.length > 0" style="width: 20%">
             <template v-for="(action, key4) in actions">
               <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)"
                 :key="key4">
@@ -161,6 +161,10 @@
       height: {
         type: String,
         default: '300px'
+      },
+      mobileheight: {
+        type: String,
+        default: '600px'
       },
       headers: {
         // support ability: text,value,width,align,editable
