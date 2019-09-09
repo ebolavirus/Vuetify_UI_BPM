@@ -520,12 +520,15 @@
         console.log('itemSelected');
         console.log(item)
       },
-      showModelDialog() {
-        // this.$alert('ffffff');
-        this.$dialog.confirm({
+      // showModelDialog() {
+      //   this.$alert('ffffff');
+      // },
+      showModelDialog: async function () {
+        const res = await this.$dialog.confirm({
           text: 'Do you really want to exit?',
           title: 'Warning'
         })
+        console.log("res comes out......", res);
       },
       inlineEditFunction() {
 

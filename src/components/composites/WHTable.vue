@@ -42,8 +42,9 @@
           </td>
           <td v-if="actions && actions.length > 0">
             <template v-for="(action, key4) in actions">
-              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)">
-                  {{action.icon}}
+              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)"
+                :key="key4">
+                {{action.icon}}
               </v-icon>
               <!-- <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
                 <v-icon v-if="action.icon && action.icon !== ''">
@@ -106,8 +107,9 @@
           </td>
           <td v-if="actions && actions.length > 0">
             <template v-for="(action, key4) in actions">
-              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)">
-                  {{action.icon}}
+              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)"
+                :key="key4">
+                {{action.icon}}
               </v-icon>
               <!-- <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
                 <v-icon v-if="action.icon && action.icon !== ''">
