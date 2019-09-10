@@ -3611,7 +3611,7 @@
 /** Ripples */
 /** Elements */
 .theme--light.v-label {
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(25, 118, 210, 1);
 }
 
 .theme--light.v-label--is-disabled {
@@ -5398,6 +5398,7 @@
   display: inline-flex;
   top: 0;
   height: auto;
+  color: rgba(0, 0, 0);
 }
 
 .v-input--selection-controls.v-input--is-focused .v-input--selection-controls__ripple:before,
