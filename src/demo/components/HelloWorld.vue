@@ -33,7 +33,7 @@
               </wh-radio-group>
             </wh-flex>
             <wh-flex :rowNumber="4">
-              <wh-select :items="serviceTypes" label="服务分类"></wh-select>
+              <wh-select :items="serviceTypes" style="width: 80%" label="服务分类"></wh-select>
             </wh-flex>
             <wh-flex :rowNumber="4">
               <wh-textfield label="预估费用" type="number" suffix="元"></wh-textfield>
