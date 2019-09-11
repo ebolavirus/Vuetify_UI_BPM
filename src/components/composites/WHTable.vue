@@ -23,7 +23,11 @@
             <v-checkbox v-else v-model="indexSelected" :multiple="false" :value="key2+1"></v-checkbox>
           </td>
           <td v-for="(item3, key3) in headers" :key="key3">
-            <template v-if="item3['editable']">
+            <template v-if="item3['editable'] && item3.dicMapSource">
+              <wh-select :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
+                item-value="value" @change="changeValue($event,key2,key3)" />
+            </template>
+            <template v-else-if="item3['editable']">
               <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
                 <!-- @close="close"-->
                 <template v-slot:default>
@@ -241,6 +245,20 @@
         }
         return value
       },
+      getObject(item2, item3) {
+        let value = item2[item3.value]
+        if (item3.dicMapSource) {
+          for (let i in item3.dicMapSource) {
+            if (value + '' === item3.dicMapSource[i].value) {
+              return item3.dicMapSource[i]
+            }
+          }
+        }
+        return {
+          label: 'labelerror',
+          value: 'valueerror'
+        }
+      },
       save(key2, key3) {
         console.log('aItem saved', key2, key3, this.editValue);
         this.$emit('inline-edit', key2, key3, this.editValue);
@@ -276,6 +294,11 @@
           cacheObject.isMobileExpand = true
           this.$set(this.items, key, cacheObject)
         }
+      },
+      changeValue(value, key2, key3) {
+        console.log('select changed.....', value, key2, key3);
+        this.editValue = value
+        this.$emit('inline-edit', key2, key3, value);
       }
     }
   }
