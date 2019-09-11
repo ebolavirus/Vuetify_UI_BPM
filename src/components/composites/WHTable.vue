@@ -46,14 +46,6 @@
                 :key="key4">
                 {{action.icon}}
               </v-icon>
-              <!-- <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
-                <v-icon v-if="action.icon && action.icon !== ''">
-                  {{action.icon}}
-                </v-icon>
-                <template v-if="action.text && action.text !== ''">
-                  {{action.text}}
-                </template>
-              </wh-btn> -->
             </template>
           </td>
         </tr>
@@ -67,11 +59,13 @@
     <v-simple-table fixed-header :height="mobileheight" dense>
       <thead>
         <tr>
-          <th v-if="showSelect" style="width: 5%">
+          <th v-if="showSelect" style="width: 4%">
             <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
           </th>
           <th>
             列表
+          </th>
+          <th v-if="mobileExpandable" style="width: 4%">
           </th>
           <th v-if="actions && actions.length > 0">
             操作
@@ -90,7 +84,7 @@
           <td>
             <v-container>
               <v-row v-for="(item3, key3) in headers" :key="key3">
-                <template v-if="item3['editable']">
+                <template v-if="item3['editable'] && rowShow(key2,key3)">
                   <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
                     <template v-slot:default>
                       <wh-textfield color="green" :label="item3.text" v-model="item2[item3.value]" readonly />
@@ -100,11 +94,18 @@
                     </template>
                   </v-edit-dialog>
                 </template>
-                <template v-else>
+                <template v-else-if="rowShow(key2,key3)">
                   <wh-textfield :label="item3.text" v-model="item2[item3.value]" disabled />
+                </template>
+                <template v-else>
                 </template>
               </v-row>
             </v-container>
+          </td>
+          <td v-if="mobileExpandable" style="width: 4%">
+            <v-icon @click="clickExpanded(key2)" color="blue">
+              {{items[key2].isMobileExpand?'mdi-chevron-double-up':'mdi-chevron-double-down'}}
+            </v-icon>
           </td>
           <td v-if="actions && actions.length > 0" style="width: 20%">
             <template v-for="(action, key4) in actions">
@@ -112,14 +113,6 @@
                 :key="key4">
                 {{action.icon}}
               </v-icon>
-              <!-- <wh-btn class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
-                <v-icon v-if="action.icon && action.icon !== ''">
-                  {{action.icon}}
-                </v-icon>
-                <template v-if="action.text && action.text !== ''">
-                  {{action.text}}
-                 </template>
-              </wh-btn> -->
             </template>
           </td>
         </tr>
@@ -134,6 +127,9 @@
   import {
     access
   } from 'fs';
+  import {
+    setTimeout
+  } from 'timers';
   export default {
     name: 'wh-table',
     data() {
@@ -143,7 +139,9 @@
         wholecheckbox: false,
         indexSelected: [],
         editValue: '',
-        page: 1
+        page: 1,
+        //默认变量
+        displayCountWhenUnExpanded: 2
       }
     },
     props: {
@@ -156,6 +154,10 @@
         default: true
       },
       dense: {
+        type: Boolean,
+        default: false
+      },
+      mobileExpandable: {
         type: Boolean,
         default: false
       },
@@ -242,6 +244,25 @@
       colClicked(aCol, aitem) {
         this.selectedIndex = aCol
         this.$emit('click:row', aitem, aCol);
+      },
+      rowShow(key2, key3) {
+        if (!this.mobileExpandable)
+          return true
+        // console.log('rowShow;::::', this.items[key2].isMobileExpand);
+        if (this.items[key2].isMobileExpand)
+          return true
+        return key3 < this.displayCountWhenUnExpanded
+      },
+      clickExpanded(key) {
+        let cacheObject = this.items[key];
+        if (cacheObject.isMobileExpand) {
+          cacheObject.isMobileExpand = false
+          this.$set(this.items, key, cacheObject)
+        } else {
+          // this.items[key].isMobileExpand = false
+          cacheObject.isMobileExpand = true
+          this.$set(this.items, key, cacheObject)
+        }
       }
     }
   }

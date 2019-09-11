@@ -6124,7 +6124,7 @@
 }
 
 .v-application--is-ltr .v-data-footer__pagination {
-  margin: 0 32px 0 24px;
+  margin: 0 12px 0 12px;
 }
 
 .v-application--is-rtl .v-data-footer__pagination {
@@ -6473,7 +6473,7 @@
 
 .v-data-table td,
 .v-data-table th {
-  padding: 0 16px;
+  padding: 8px 16px 4px 16px;
 }
 
 .v-data-table th {
