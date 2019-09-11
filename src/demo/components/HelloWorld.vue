@@ -22,23 +22,20 @@
         </wh-area-panel>
         <wh-area-panel title="IT顾问评估">
           <wh-layout>
-            <wh-flex :rowNumber="4">
-              <wh-radio-group v-model="row" row xs6 sm3 md3>
-                <template v-slot:label>
-                  <div>变更等级：</div>
-                </template>
+            <wh-flex :rowNumber="3">
+              <wh-radio-group v-model="row" xs6 sm3 md3 label="变更等级">
                 <wh-radio label="较小" value="0"></wh-radio>
                 <wh-radio label="中等" value="1"></wh-radio>
                 <wh-radio label="较大" value="2"></wh-radio>
               </wh-radio-group>
             </wh-flex>
-            <wh-flex :rowNumber="4">
+            <wh-flex :rowNumber="3">
               <wh-select :items="serviceTypes" style="width: 80%" label="服务分类"></wh-select>
             </wh-flex>
-            <wh-flex :rowNumber="4">
+            <wh-flex :rowNumber="3">
               <wh-textfield label="预估费用" type="number" suffix="元"></wh-textfield>
             </wh-flex>
-            <wh-flex :rowNumber="4">
+            <wh-flex :rowNumber="3">
               <wh-textfield label="实施日期" type="date"></wh-textfield>
             </wh-flex>
             <wh-flex :rowNumber="2">
@@ -86,21 +83,15 @@
         <wh-area-panel title="申请人验收">
           <wh-layout>
             <wh-flex :rowNumber="2">
-              <wh-radio-group row>
-                <template v-slot:label>
-                  <div>是否解决：</div>
-                </template>
+              <wh-radio-group label="AAA">
                 <wh-radio label="已解决" value="0"></wh-radio>
                 <wh-radio label="未解决" value="1"></wh-radio>
               </wh-radio-group>
             </wh-flex>
             <wh-flex :rowNumber="2">
-              <wh-radio-group row>
-                <template v-slot:label>
-                  <div>是否满意：</div>
-                </template>
-                <wh-radio label="满意" value="0"></wh-radio>
-                <wh-radio label="不满意" value="1"></wh-radio>
+              <wh-radio-group label="BBB">
+                <wh-checkbox label="满意" value="0"></wh-checkbox>
+                <wh-checkbox label="不满意" value="1"></wh-checkbox>
               </wh-radio-group>
             </wh-flex>
             <wh-flex :rowNumber="1">

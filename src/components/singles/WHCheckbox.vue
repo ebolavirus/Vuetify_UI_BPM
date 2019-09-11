@@ -7,3 +7,9 @@
     extends: VCheckbox
   };
 </script>
+<style scoped>
+  .v-messages {
+    min-height: 0;
+    height: 0;
+  }
+</style>>
