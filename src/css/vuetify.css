@@ -444,7 +444,7 @@
   display: inline-flex;
   -webkit-font-feature-settings: "liga";
   font-feature-settings: "liga";
-  font-size: 24px;
+  font-size: 20px;
   justify-content: center;
   letter-spacing: normal;
   line-height: 1;
@@ -467,6 +467,7 @@
 
 .v-icon.v-icon.v-icon--link {
   cursor: pointer;
+  font-size: 24px;
 }
 
 .v-icon--disabled {
@@ -3611,7 +3612,7 @@
 /** Ripples */
 /** Elements */
 .theme--light.v-label {
-  color: rgba(0, 0, 0, 0.54);
+  color: rgba(25, 118, 210, 1);
 }
 
 .theme--light.v-label--is-disabled {
@@ -5398,6 +5399,7 @@
   display: inline-flex;
   top: 0;
   height: auto;
+  color: rgba(0, 0, 0);
 }
 
 .v-input--selection-controls.v-input--is-focused .v-input--selection-controls__ripple:before,
@@ -6122,7 +6124,7 @@
 }
 
 .v-application--is-ltr .v-data-footer__pagination {
-  margin: 0 32px 0 24px;
+  margin: 0 12px 0 12px;
 }
 
 .v-application--is-rtl .v-data-footer__pagination {
@@ -6471,7 +6473,7 @@
 
 .v-data-table td,
 .v-data-table th {
-  padding: 0 16px;
+  padding: 8px 16px 4px 16px;
 }
 
 .v-data-table th {
@@ -10762,7 +10764,7 @@
 }
 
 .v-timeline {
-  padding-top: 24px;
+  padding-top: 5px;
   position: relative;
 }
 
@@ -15345,7 +15347,7 @@ html {
 }
 
 .v-input--selection-controls {
-  margin-top: 12px;
+  margin-top: 0px;
   padding-top: 0px;
 }
 

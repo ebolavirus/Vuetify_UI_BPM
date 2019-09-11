@@ -57,24 +57,24 @@
           item-value="abbr"&gt;&lt;/wh-select&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-radio">
-        <wh-radio-group row label="性别：">
+        <wh-radio-group label="性别">
           <wh-radio label="男" value="radio-1"></wh-radio>
           <wh-radio label="女" value="radio-2"></wh-radio>
         </wh-radio-group>
-        <br><code> &lt;wh-radio-group row&gt;
+        <br><code> &lt;wh-radio-group label="性别"&gt;
           &lt;wh-radio label="男" value="radio-1"&gt;&lt;/wh-radio&gt;
           &lt;wh-radio label="女" value="radio-2"&gt;&lt;/wh-radio&gt;
           &lt;/wh-radio-group&gt; </code>
       </wh-area-panel>
       <wh-area-panel title="wh-checkbox">
-        <wh-radio-group row label="办理人：">
+        <wh-radio-group label="办理人：">
           <template v-slot:label>
             <div>Your favourite <strong>search engine</strong></div>
           </template>
           <wh-checkbox label="张三" value="checkbox-1"></wh-checkbox>
           <wh-checkbox label="李四" value="checkbox-2"></wh-checkbox>
         </wh-radio-group>
-        <br><code> &lt;wh-radio-group row&gt;
+        <br><code> &lt;wh-radio-group label="办理人"&gt;
           &lt;wh-checkbox label="张三" value="checkbox-1"&gt;&lt;/wh-checkbox&gt;
           &lt;wh-checkbox label="李四" value="checkbox-2"&gt;&lt;/wh-checkbox&gt;
           &lt;/wh-radio-group&gt; </code>
@@ -157,8 +157,9 @@
       </wh-area-panel>
       <wh-area-panel title="wh-table">
         <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" @item-selected="itemSelected"
-          :showSelect="true" :singleSelect="false" @click:row="clickRow" @inline-edit="inlineEditFunction"
-          @submitEvent="submitTest" @deleteEvent="deleteTest">
+          :showSelect="true" :singleSelect="false" :mobileExpandable="true" @click:row="clickRow"
+          @inline-edit="inlineEditFunction" height="300px" mobileheight="600px" @submitEvent="submitTest"
+          @deleteEvent="deleteTest">
           <wh-pagination v-model="page" :length="10"></wh-pagination>
         </wh-table>
         <br><code>

@@ -4,9 +4,10 @@
       <div class="v-text-field__slot">
         <label for="input-907" class="v-label v-label--active theme--light"
           style="left: 0px; right: auto; position: absolute;">{{label}}</label>
-        <v-radio-group :row="$vuetify.breakpoint.smAndUp" v-bind="$attrs" v-on="$listeners" :inheritAttrs="false">
-          <slot />
-        </v-radio-group>
+        <!-- <input id="input-907" type="text"> -->
+        <div style="word-wrap: break-word;word-break: break-word;">
+          {{value}}
+        </div>
       </div>
     </div>
   </div>
@@ -14,9 +15,14 @@
 
 <script>
   export default {
-    name: 'wh-radio-group',
+    name: 'wh-text',
+    model: {
+      prop: 'value',
+      event: 'valueChanged'
+    },
     props: {
-      label: ''
+      label: '',
+      value: ''
     }
   }
 </script>

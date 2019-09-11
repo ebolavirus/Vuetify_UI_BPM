@@ -4,6 +4,7 @@ import WHMenu from './singles/WHMenu'
 import WHIcon from './singles/WHIcon'
 import WHImg from './singles/WHImg'
 import WHHyperlink from './singles/WHHyperlink'
+import WHText from './singles/WHText'
 import WHTextfield from './singles/WHTextfield'
 import WHNumberfield from './singles/WHNumberfield'
 import WHMoneyfield from './singles/WHMoneyfield'
@@ -54,6 +55,7 @@ Vue.component(WHMenu.name, WHMenu)
 Vue.component(WHIcon.name, WHIcon)
 Vue.component(WHImg.name, WHImg)
 Vue.component(WHHyperlink.name, WHHyperlink)
+Vue.component(WHText.name, WHText)
 Vue.component(WHTextfield.name, WHTextfield)
 Vue.component(WHNumberfield.name, WHNumberfield)
 Vue.component(WHMoneyfield.name, WHMoneyfield)
