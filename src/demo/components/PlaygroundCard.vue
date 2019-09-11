@@ -354,14 +354,26 @@
       ],
       typeheaders: [{
           text: '变更类型',
-          align: 'left',
-          sortable: false,
           editable: true,
           value: 'name'
         },
         {
           text: '公司范围',
-          value: 'calories'
+          value: 'calories',
+          editable: true,
+          dicMapSource: [{
+            label: 'label1',
+            value: '1',
+          }, {
+            label: 'label2',
+            value: '2',
+          }, {
+            label: 'label3',
+            value: '3',
+          }, {
+            label: 'label4',
+            value: '4',
+          }]
         },
         {
           text: 'IT业务顾问',
@@ -376,7 +388,7 @@
         text: '提交',
         icon: 'mdi-pencil',
         actionName: 'submitEvent'
-      },{
+      }, {
         text: '删除',
         icon: 'mdi-delete',
         actionName: 'deleteEvent'
@@ -391,7 +403,7 @@
         },
         {
           name: 'Ice cream sandwich',
-          calories: 237,
+          calories: 2,
           fat: 9.0,
           carbs: 37,
           protein: 4.3,
@@ -399,7 +411,7 @@
         },
         {
           name: 'Eclair',
-          calories: 262,
+          calories: 3,
           fat: 16.0,
           carbs: 23,
           protein: 6.0,

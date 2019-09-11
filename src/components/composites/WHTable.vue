@@ -28,7 +28,7 @@
                 <!-- @close="close"-->
                 <template v-slot:default>
                   <span style="color: blue">
-                    {{item2[item3.value]}}
+                    {{getName(item2,item3)}}
                   </span>
                 </template>
                 <template v-slot:input>
@@ -37,7 +37,7 @@
               </v-edit-dialog>
             </template>
             <template v-else>
-              {{item2[item3.value]}}
+              {{getName(item2,item3)}}
             </template>
           </td>
           <td v-if="actions && actions.length > 0">
@@ -88,7 +88,7 @@
                 <template v-if="item3['editable'] && rowShow(key2,key3)">
                   <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
                     <template v-slot:default>
-                      <wh-textfield color="green" :label="item3.text" v-model="item2[item3.value]" readonly />
+                      <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3)" readonly />
                     </template>
                     <template v-slot:input>
                       <wh-textfield v-model="editValue" single-line counter />
@@ -96,7 +96,7 @@
                   </v-edit-dialog>
                 </template>
                 <template v-else-if="rowShow(key2,key3)">
-                  <wh-textfield :label="item3.text" v-model="item2[item3.value]" disabled />
+                  <wh-textfield :label="item3.text" :value="getName(item2,item3)" disabled />
                 </template>
                 <template v-else>
                 </template>
@@ -229,6 +229,18 @@
       }
     },
     methods: {
+      getName(item2, item3) {
+        let value = item2[item3.value]
+        if (item3.dicMapSource) {
+          for (let i in item3.dicMapSource) {
+            if (value + '' === item3.dicMapSource[i].value) {
+              value = item3.dicMapSource[i].label
+              break
+            }
+          }
+        }
+        return value
+      },
       save(key2, key3) {
         console.log('aItem saved', key2, key3, this.editValue);
         this.$emit('inline-edit', key2, key3, this.editValue);
