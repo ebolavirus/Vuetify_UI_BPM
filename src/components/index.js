@@ -51,14 +51,14 @@ import WHAreaPanels from './layout/WHAreaPanels'
 import SimpleDialog from './SimpleDialog'
 import SimpleSnackbar from './SimpleSnackbar'
 
-import DialogPromise from './DialogPromise'
+import DialogPromise from '../DialogPromise'
 import VuetifyDialog from 'vuetify-dialog'
 import 'vuetify-dialog/dist/vuetify-dialog.css'
 
 import vuetify from '../plugins/vuetify'
 
 
-import '@mdi/font/css/materialdesignicons.css'
+// import '@mdi/font/css/materialdesignicons.css'
 
 
 SimpleDialog.install = function (Vue) {

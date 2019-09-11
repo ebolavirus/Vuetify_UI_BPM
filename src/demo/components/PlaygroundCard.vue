@@ -356,7 +356,7 @@
           align: 'left',
           sortable: false,
           editable: true,
-          value: 'name',
+          value: 'name'
         },
         {
           text: '公司范围',
@@ -375,7 +375,7 @@
         text: '提交',
         icon: 'mdi-pencil',
         actionName: 'submitEvent'
-      }, {
+      },{
         text: '删除',
         icon: 'mdi-delete',
         actionName: 'deleteEvent'
@@ -521,22 +521,7 @@
         console.log(item)
       },
       showModelDialog() {
-        // this.$alert('ffffff');
-        this.showModelDialog2();
-      },
-      showModelDialog2: async function () {
-        const res = await this.$dialog.confirm({
-          text: 'Do you really want to exit?',
-          title: 'Warning',
-          actions: {
-            false: 'Cancel22',
-            true: {
-              text: 'OK22',
-              color: 'primary'
-            }
-          }
-        })
-        console.log("res comes out......", res);
+        this.$alert('ffffff');
       },
       inlineEditFunction() {
 
