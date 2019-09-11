@@ -89,7 +89,11 @@
           <td>
             <v-container>
               <v-row v-for="(item3, key3) in headers" :key="key3">
-                <template v-if="item3['editable'] && rowShow(key2,key3)">
+                <template v-if="item3['editable'] && item3.dicMapSource && rowShow(key2,key3)">
+                  <wh-select :label="item3.text" :value="getObject(item2, item3)" :items="item3.dicMapSource"
+                    item-text="label" item-value="value" @change="changeValue($event,key2,key3)" />
+                </template>
+                <template v-else-if="item3['editable'] && rowShow(key2,key3)">
                   <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
                     <template v-slot:default>
                       <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3)" readonly />
