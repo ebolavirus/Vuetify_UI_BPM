@@ -66,6 +66,7 @@
             列表
           </th>
           <th v-if="mobileExpandable" style="width: 4%">
+            折叠
           </th>
           <th v-if="actions && actions.length > 0">
             操作
@@ -141,7 +142,7 @@
         editValue: '',
         page: 1,
         //默认变量
-        displayCountWhenUnExpanded: 2
+        displayCountWhenUnExpanded: 3
       }
     },
     props: {
