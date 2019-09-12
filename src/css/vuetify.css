@@ -3612,7 +3612,8 @@
 /** Ripples */
 /** Elements */
 .theme--light.v-label {
-  color: rgba(25, 118, 210, 1);
+  /* color: rgba(0, 118, 210, 1); */
+  color: #000000;
 }
 
 .theme--light.v-label--is-disabled {

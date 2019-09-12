@@ -4,7 +4,7 @@
       <v-app-bar-nav-icon />
     </wh-btn>
     <v-toolbar-title>
-      <span class="mr-2">Vuetify信息服务申请DEMO</span>
+      <span class="title mr-2">Vuetify信息服务申请DEMO</span>
     </v-toolbar-title>
     <wh-spacer></wh-spacer>
     <template v-if="$vuetify.breakpoint.mdAndUp">
