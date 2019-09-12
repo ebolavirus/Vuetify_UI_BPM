@@ -7,7 +7,7 @@
         </v-card-title>
         <v-card-text>
           {{ message.text }}
-          <v-text-field ref="input" v-if="type === 'prompt'" :type="message.type || 'text'" v-model="user_input"
+          <v-text-field ref="prompt" v-if="type === 'prompt'" :type="message.type || 'text'" v-model="user_input"
             @keydown="checkSubmit"></v-text-field>
         </v-card-text>
         <v-card-actions>
@@ -49,10 +49,16 @@
         }
       }
     },
+    beforeMount() {
+      this.theme = this.message.theme || {};
+      this.breakpoint = {};
+    },
     mounted() {
       this.shown = true;
       if (this.type === "prompt") {
-        setTimeout(this.$refs.input.focus.bind(this.$refs.input), 300);
+        setTimeout(function () {
+          this.$refs.prompt.focus();
+        }.bind(this), 300);
       }
     }
   }

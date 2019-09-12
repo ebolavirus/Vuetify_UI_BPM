@@ -3,7 +3,7 @@
     <wh-topbar app dark color="grey darken-2">
       <v-toolbar-title>
         <!-- <wh-logo></wh-logo> -->
-        <span class="font-weight-light">WANHUA UI DEMO</span>
+        <span class="font-weight-light">BPM UI DEMO</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>

@@ -135,7 +135,8 @@ const DialogPromise = {
             snackbarY: "top",
             snackbarTimeout: 3000,
             dialogMaxWidth: 500,
-            snackbarParent: "app"
+            snackbarParent: "app",
+            theme: {}
         }, options);
         Vue.prototype.$alert = _showDialog.bind(this, "alert");
         Vue.prototype.$confirm = _showDialog.bind(this, "confirm");
