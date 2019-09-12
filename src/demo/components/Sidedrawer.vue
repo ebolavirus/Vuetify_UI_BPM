@@ -1,10 +1,9 @@
 <template>
   <wh-drawer app clipped v-model="drawer" width="350">
-    <wh-logo></wh-logo>
     <wh-area-panels>
       <wh-area-panel title="基本信息">
         <!-- <v-card class="mx-auto" max-width="600" tile> -->
-        <v-list dense>
+        <v-list dense readonly>
           <v-list-item-group color="primary">
             <v-list-item v-for="(item, i) in desserts" :key="i">
               <v-list-item-icon>
@@ -20,46 +19,46 @@
         <!-- </v-card> -->
       </wh-area-panel>
       <wh-area-panel title="审批历史">
-        <wh-timeline dense>
-          <wh-timeline-item color="blue lighten-1" right icon="mdi-pencil">
+        <wh-timeline dense >
+          <wh-timeline-item right small icon="mdi-pencil">
             <wh-card class="elevation-2">
-              <wh-card-title class="blue lighten-2">
-                <span class="white--text subtitle-1">当前环节</span>
+              <wh-card-title class="subtitle-1">
+                <span class="blue--text">当前环节：二级审批</span>
               </wh-card-title>
-              <wh-card-text class="body-2">
+              <wh-card-text class="body-3">
                 <span class="blue--text">孙明明(mmsunA)</span>
                 <br />
                 <span class="blue--text">抢单签核</span>
               </wh-card-text>
-            </wh-card>
+            </wh-card >
           </wh-timeline-item>
-          <wh-timeline-item color="green lighten-1" right icon="mdi-check">
+          <wh-timeline-item color="grey lighten-1" right small icon="mdi-check">
             <wh-card class="elevation-2">
-              <wh-card-title class="green lighten-2">
-                <span class="white--text subtitle-1">起草-提交</span>
+              <wh-card-title class="subtitle-1">
+                <span class="grey--text text--lighten-1">起草-提交</span>
               </wh-card-title>
               <wh-card-text class="body-2">
-                <span class="green--text">孙明明(mmsunA)</span>
+                <span class="grey--text">孙明明(mmsunA)</span>
                 <br />
-                <span class="green--text">2019-7-19 10:36:26 --- 2019-7-19 11:36:26</span>
+                <span class="grey--text">2019-7-19 10:36:26 --- 2019-7-19 11:36:26</span>
                 <br />
-                <span class="green--text">用时 0 天</span>
+                <span class="grey--text">用时 0 天</span>
               </wh-card-text>
             </wh-card>
           </wh-timeline-item>
-          <wh-timeline-item color="green lighten-1" right icon="mdi-check">
+          <wh-timeline-item color="grey lighten-1" right small icon="mdi-check">
             <wh-card class="elevation-2">
-              <wh-card-title class="green lighten-2">
-                <span class="white--text subtitle-1">一级审批</span>
+              <wh-card-title class="subtitle-1">
+                <span class="grey--text text--lighten-1">一级审批</span>
               </wh-card-title>
               <wh-card-text class="body-2">
-                <span class="green--text">孙明明(mmsunA)</span>
+                <span class="grey--text">孙明明(mmsunA)</span>
                 <br />
-                <span class="green--text">2019-7-19 10:36:26 --- 2019-7-19 11:36:26</span>
+                <span class="grey--text">2019-7-19 10:36:26 --- 2019-7-19 11:36:26</span>
                 <br />
-                <span class="green--text">用时 0 天</span>
+                <span class="grey--text">用时 0 天</span>
                 <br />
-                <span class="green--text">审批意见审批意见审批意见审批意见审批意见审批意见</span>
+                <span class="grey--text">审批意见审批意见审批意见审批意见审批意见审批意见</span>
                 <br />
               </wh-card-text>
             </wh-card>
