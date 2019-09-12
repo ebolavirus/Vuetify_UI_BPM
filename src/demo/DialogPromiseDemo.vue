@@ -1,9 +1,8 @@
 <template>
   <wh-app>
-    <wh-topbar app dark color="grey darken-2">
+    <wh-topbar app dark color="primary">
       <v-toolbar-title>
-        <!-- <wh-logo></wh-logo> -->
-        <span class="font-weight-light">BPM UI DEMO</span>
+        BPM UI DEMO
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>
