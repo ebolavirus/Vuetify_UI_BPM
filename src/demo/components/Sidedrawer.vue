@@ -1,5 +1,6 @@
 <template>
   <wh-drawer app v-model="drawer" width="350">
+    <wh-logo></wh-logo>
     <wh-area-panels>
       <wh-area-panel title="基本信息">
         <!-- <v-card class="mx-auto" max-width="600" tile> -->
@@ -7,11 +8,11 @@
           <v-list-item-group color="primary">
             <v-list-item v-for="(item, i) in desserts" :key="i">
               <v-list-item-icon>
-                <v-icon v-text="item.icon"></v-icon>
+                <v-icon v-text="item.icon" color="blue"></v-icon>
               </v-list-item-icon>
               <v-list-item-content>
                 <!-- <v-list-item-subtitle v-html="item.content" ></v-list-item-subtitle> -->
-                <span style="font-size:12px">{{item.content }}</span>
+                <span style="font-size:14px">{{item.content }}</span>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
