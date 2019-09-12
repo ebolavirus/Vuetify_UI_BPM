@@ -1,10 +1,12 @@
 <template>
-  <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width width="290px">
+  <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width
+    width="290px">
     <template v-slot:activator="{ on }">
-      <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-event" readonly v-on="on">
-      </v-text-field>
+      <wh-text-field v-model="whpassvalue" :label="label" append-outer-icon="mdi-file-document-box-search" readonly
+        v-on="on">
+      </wh-text-field>
     </template>
-    <v-date-picker v-model="whpassvalue"  scrollable>
+    <v-date-picker v-model="whpassvalue" scrollable>
       <v-spacer></v-spacer>
       <v-btn text color="primary" @click="modal = false">取消</v-btn>
       <v-btn text color="primary" @click="$refs.dialog.save(whpassvalue)">确定</v-btn>
@@ -23,9 +25,9 @@
       modal: false
     }),
     props: {
-      date : '',
-      label : '',
-      readonly : false
+      date: '',
+      label: '',
+      readonly: false
 
     },
     computed: {

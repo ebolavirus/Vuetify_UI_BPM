@@ -2,7 +2,7 @@
   <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width
     width="260px">
     <template v-slot:activator="{ on }">
-      <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-event" readonly v-on="on">
+      <v-text-field v-model="whpassvalue" :label="label" append-outer-icon="mdi-event" readonly v-on="on">
       </v-text-field>
     </template>
     <v-time-picker v-model="whpassvalue" :readonly="readonly" scrollable width="260px">

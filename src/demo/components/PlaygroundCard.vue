@@ -199,7 +199,7 @@
         以上仅为tab简单使用场景，详细用法参见vuetify官网doc
       </wh-area-panel>
       <wh-area-panel title="wh-date-picker">
-        <wh-date-picker v-model="date" label="日期"></wh-date-picker>
+        <wh-date-picker v-model="date" label="日期:" />
         <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-time-picker">

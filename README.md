@@ -1,4 +1,4 @@
-# WANHUA UI2
+# BPM UI2
 
 Based On [Vuetify](https://www.npmjs.com/package/vuetify), and make a framework above it, to package some logics and css styles.
  

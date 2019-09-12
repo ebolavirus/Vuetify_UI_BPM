@@ -8,7 +8,7 @@
       <v-toolbar-items>
         <v-btn class="hidden-xs-only" text :input-value="shown === 'wanhuademo'" @click="shown = 'wanhuademo'"
           active-class="default-class grey darken-1">
-          Wanhua UI
+          BPM UI
         </v-btn>
         <v-btn class="hidden-xs-only" text :input-value="shown === 'demo'" @click="shown = 'demo'"
           active-class="default-class grey darken-1">

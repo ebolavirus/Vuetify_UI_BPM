@@ -87,7 +87,7 @@
             <v-checkbox v-else v-model="indexSelected" :multiple="false" :value="key2+1"></v-checkbox>
           </td>
           <td>
-            <v-container>
+            <v-container transition="scroll-y-transition">
               <v-row v-for="(item3, key3) in headers" :key="key3">
                 <template v-if="item3['editable'] && item3.dicMapSource && rowShow(key2,key3)">
                   <wh-select :label="item3.text" :value="getObject(item2, item3)" :items="item3.dicMapSource"
