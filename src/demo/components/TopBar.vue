@@ -1,5 +1,5 @@
 <template>
-  <wh-topbar color="primary" app dark>
+  <wh-topbar color="primary" app clipped-left dark>
     <wh-btn @click="drawerAction()" icon>
       <v-app-bar-nav-icon />
     </wh-btn>

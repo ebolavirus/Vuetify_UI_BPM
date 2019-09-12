@@ -1,5 +1,5 @@
 <template>
-  <wh-drawer app v-model="drawer" width="350">
+  <wh-drawer app clipped v-model="drawer" width="350">
     <wh-logo></wh-logo>
     <wh-area-panels>
       <wh-area-panel title="基本信息">
