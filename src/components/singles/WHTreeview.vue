@@ -6,7 +6,11 @@
     name: 'wh-treeview',
     extends: VTreeview,
     props: {
-      selectable: {
+      // selectable: {
+      //   type: Boolean,
+      //   default: true
+      // },
+      activatable: {
         type: Boolean,
         default: true
       }
