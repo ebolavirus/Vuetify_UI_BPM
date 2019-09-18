@@ -5,7 +5,7 @@
         <wh-area-panel title="服务描述">
           <wh-layout>
             <wh-flex :rowNumber="3">
-              <wh-textfield label="*服务类型" append-outer-icon="mdi-file-document-box-search" counter readonly
+              <wh-textfield label="*服务类型" append-outer-icon="mdi-play" counter readonly
                 @click:append-outer.stop="typeSelect" v-model="typeValue"></wh-textfield>
               <TypeDialog v-model="typedialog" @dialogSelected="typeDialogSelected" />
             </wh-flex>

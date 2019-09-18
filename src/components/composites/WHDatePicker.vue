@@ -1,15 +1,13 @@
 <template>
-  <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width
-    width="290px">
+  <v-dialog ref="datepickerdialog" v-model="modal" :return-value.sync="whpassvalue" persistent width="290px">
     <template v-slot:activator="{ on }">
-      <wh-textfield v-model="whpassvalue" :label="label" append-outer-icon="mdi-file-document-box-search" readonly
-        v-on="on">
-      </wh-textfield>
+      <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-calendar-edit" readonly v-on="on">
+      </v-text-field>
     </template>
     <v-date-picker v-model="whpassvalue" scrollable>
-      <v-spacer></v-spacer>
+      <div class="flex-grow-1"></div>
       <v-btn text color="primary" @click="modal = false">取消</v-btn>
-      <v-btn text color="primary" @click="$refs.dialog.save(whpassvalue)">确定</v-btn>
+      <v-btn text color="primary" @click="$refs.datepickerdialog.save(whpassvalue)">确定</v-btn>
     </v-date-picker>
   </v-dialog>
 </template>

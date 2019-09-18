@@ -1,14 +1,14 @@
 <template>
-  <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width
+  <v-dialog ref="timepickerdialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent
     width="260px">
     <template v-slot:activator="{ on }">
-      <v-text-field v-model="whpassvalue" :label="label" append-outer-icon="mdi-event" readonly v-on="on">
+      <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-clock-check-outline" readonly v-on="on">
       </v-text-field>
     </template>
     <v-time-picker v-model="whpassvalue" :readonly="readonly" scrollable width="260px">
       <v-spacer></v-spacer>
       <v-btn text color="primary" @click="modal = false">取消</v-btn>
-      <v-btn text color="primary" @click="$refs.dialog.save(whpassvalue)">确定</v-btn>
+      <v-btn text color="primary" @click="$refs.timepickerdialog.save(whpassvalue)">确定</v-btn>
     </v-time-picker>
   </v-dialog>
 </template>
