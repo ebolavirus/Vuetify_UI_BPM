@@ -1,7 +1,7 @@
 <template>
   <wh-topbar color="primary" app clipped-left dark>
     <wh-btn @click="drawerAction()" icon>
-      <v-app-bar-nav-icon />
+      <wh-icon>mdi-menu-open</wh-icon>
     </wh-btn>
     <v-toolbar-title>
       <span class="title mr-2">Vuetify信息服务申请DEMO</span>

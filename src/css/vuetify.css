@@ -2,6 +2,7 @@
 /** Elements */
 .theme--light.v-application {
   background: #fafafa;
+  background-color: #E3E5E9;
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -8354,7 +8355,7 @@
 /** Elements */
 .container {
   width: 100%;
-  padding: 0px;
+  padding: 10px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -9090,7 +9091,7 @@
 /** Ripples */
 /** Elements */
 .theme--light.v-navigation-drawer {
-  background-color: #FFFFFF;
+  background-color: #E3E5E9;
 }
 
 .theme--light.v-navigation-drawer:not(.v-navigation-drawer--floating) .v-navigation-drawer__border {
@@ -12554,13 +12555,13 @@
 }
 
 .v-application .blue.darken-2 {
-  background-color: #1976D2 !important;
-  border-color: #1976D2 !important;
+  background-color: #313F9F !important;
+  border-color: #313F9F !important;
 }
 
 .v-application .blue--text.text--darken-2 {
-  color: #1976D2 !important;
-  caret-color: #1976D2 !important;
+  color: #313F9F !important;
+  caret-color: #313F9F !important;
 }
 
 .v-application .blue.darken-3 {
