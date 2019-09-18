@@ -70,11 +70,8 @@
       </wh-area-panel>
       <wh-area-panel title="wh-checkbox">
         <wh-radio-group label="办理人：">
-          <template v-slot:label>
-            <div>Your favourite <strong>search engine</strong></div>
-          </template>
-          <wh-checkbox label="张三" value="checkbox-1"></wh-checkbox>
-          <wh-checkbox label="李四" value="checkbox-2"></wh-checkbox>
+          <wh-checkbox v-model="checkboxValue" label="张三" value="checkbox-1"></wh-checkbox>
+          <wh-checkbox v-model="checkboxValue" label="李四" value="checkbox-2"></wh-checkbox>
         </wh-radio-group>
         <br><code> &lt;wh-radio-group label="办理人"&gt;
           &lt;wh-checkbox label="张三" value="checkbox-1"&gt;&lt;/wh-checkbox&gt;
@@ -219,6 +216,7 @@
   export default {
     name: "PlaygroundCard",
     data: () => ({
+      checkboxValue: [],
       panel: [],
       overlay: false,
       valuenumber: '0',
@@ -486,6 +484,9 @@
           this.overlay = false
         }, 3000)
       },
+      checkboxValue(to) {
+        console.log('checkboxchanged', to);
+      }
     },
     methods: {
       tryPlain() {
