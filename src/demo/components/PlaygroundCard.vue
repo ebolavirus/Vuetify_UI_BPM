@@ -44,7 +44,7 @@
         <br>注意，要触发此组件的值变化检测，必须使用v-model进行值绑定，否则可以直接用value赋值
       </wh-area-panel>
       <wh-area-panel title="wh-textarea">
-        <wh-textarea label="评估意见" disabled light placeholder="请填写评估意见"
+        <wh-textarea label="评估意见" auto-grow disabled light placeholder="请填写评估意见"
           value="请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见请填写评估意见">
         </wh-textarea>
         <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
@@ -70,12 +70,12 @@
       </wh-area-panel>
       <wh-area-panel title="wh-checkbox">
         <wh-radio-group label="办理人：">
-          <wh-checkbox v-model="checkboxValue" label="张三" value="checkbox-1"></wh-checkbox>
-          <wh-checkbox v-model="checkboxValue" label="李四" value="checkbox-2"></wh-checkbox>
+          <wh-checkbox v-model="checkboxValue" label="张三" value="checkbox-1" key="1"></wh-checkbox>
+          <wh-checkbox v-model="checkboxValue" label="李四" value="checkbox-2" key="2"></wh-checkbox>
         </wh-radio-group>
         <br><code> &lt;wh-radio-group label="办理人"&gt;
-          &lt;wh-checkbox label="张三" value="checkbox-1"&gt;&lt;/wh-checkbox&gt;
-          &lt;wh-checkbox label="李四" value="checkbox-2"&gt;&lt;/wh-checkbox&gt;
+          &lt;wh-checkbox v-model="checkboxValue" label="张三" value="checkbox-1"&gt;&lt;/wh-checkbox&gt;
+          &lt;wh-checkbox v-model="checkboxValue" label="李四" value="checkbox-2"&gt;&lt;/wh-checkbox&gt;
           &lt;/wh-radio-group&gt; </code>
       </wh-area-panel>
       <wh-area-panel title="wh-treeview">
