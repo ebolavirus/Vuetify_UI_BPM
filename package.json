@@ -1,6 +1,6 @@
 {
   "name": "vuetify-bpm-ui",
-  "version": "0.0.17",
+  "version": "0.1.2",
   "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
