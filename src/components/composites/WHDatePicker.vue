@@ -2,9 +2,9 @@
   <v-dialog ref="dialog" v-model="modal" :return-value.sync="whpassvalue" :disabled="readonly" persistent full-width
     width="290px">
     <template v-slot:activator="{ on }">
-      <wh-text-field v-model="whpassvalue" :label="label" append-outer-icon="mdi-file-document-box-search" readonly
+      <wh-textfield v-model="whpassvalue" :label="label" append-outer-icon="mdi-file-document-box-search" readonly
         v-on="on">
-      </wh-text-field>
+      </wh-textfield>
     </template>
     <v-date-picker v-model="whpassvalue" scrollable>
       <v-spacer></v-spacer>

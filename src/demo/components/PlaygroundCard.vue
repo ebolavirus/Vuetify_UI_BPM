@@ -196,7 +196,11 @@
         以上仅为tab简单使用场景，详细用法参见vuetify官网doc
       </wh-area-panel>
       <wh-area-panel title="wh-date-picker">
+        <wh-layout>
+          <wh-flex :rowNumber="2">
         <wh-date-picker v-model="date" label="日期:" />
+          </wh-flex>
+        </wh-layout>
         <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-time-picker">
