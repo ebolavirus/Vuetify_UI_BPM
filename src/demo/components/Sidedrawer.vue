@@ -24,12 +24,12 @@
             <wh-timeline-item right small icon="mdi-pencil">
               <wh-card class="elevation-2">
                 <wh-card-title class="subtitle-1">
-                  <span class="blue--text">当前环节：二级审批</span>
+                  <span class="primary--text">当前环节：二级审批</span>
                 </wh-card-title>
                 <wh-card-text class="body-3">
-                  <span class="blue--text">孙明明(mmsunA)</span>
+                  <span class="primary--text">孙明明(mmsunA)</span>
                   <br />
-                  <span class="blue--text">抢单签核</span>
+                  <span class="primary--text">抢单签核</span>
                 </wh-card-text>
               </wh-card>
             </wh-timeline-item>

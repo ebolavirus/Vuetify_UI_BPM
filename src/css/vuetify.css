@@ -4422,7 +4422,7 @@
 }
 
 .v-dialog__container {
-  display: inline-block;
+  display: block;
   vertical-align: middle;
 }
 
