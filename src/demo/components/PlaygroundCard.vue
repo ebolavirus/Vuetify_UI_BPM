@@ -512,7 +512,7 @@
         },
       ],
       time: '',
-      page: 1
+      page: 32
     }),
     computed: {},
     watch: {

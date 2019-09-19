@@ -23,25 +23,39 @@
 <script>
   export default {
     name: 'wh-pagination',
+    model: {
+      prop: "itemNum",
+      event: "itemNumChanged"
+    },
     data() {
+      let maxResult = 0;
+      if (this.itemNum === 0) {
+        maxResult = 0;
+      } else {
+        maxResult = parseInt((this.itemNum - 1) / 10) + 1;
+      }
       return {
         countPerRow: [5, 10, 15, 20, 25, 30],
         currentCountPerRow: 10,
         currentPage: 1,
-        maxPage: this.pageNum
+        maxPage: maxResult
       }
     },
     props: {
-      pageNum: {
+      itemNum: {
         type: Number,
-        default: 3
+        default: 5
       }
     },
     watch: {
       currentPage(to) {
+        console.log("watch currentPage changed:::::", to);
         this.$emit('pageChanged', to)
       },
       currentCountPerRow(to) {
+        console.log("watch currentCountPerRow changed:::::", to);
+        this.currentPage = 1;
+        this.maxPage = this.getPageNumByItemNum(to);
         this.$emit('numPerPageChanged', to)
       }
     },
@@ -57,10 +71,21 @@
         return (this.currentPage - 1) * this.currentCountPerRow + 1
       },
       numTo() {
-        return this.currentPage * this.currentCountPerRow
+        return this.currentPage * this.currentCountPerRow > this.itemNum ? this.itemNum : this.currentPage * this
+          .currentCountPerRow;
       }
     },
     methods: {
+      getPageNumByItemNum(aItemNum) {
+        let maxResult = 0;
+        if (aItemNum === 0) {
+          maxResult = 0;
+        } else {
+          maxResult = parseInt((aItemNum - 1) / this.currentCountPerRow) + 1;
+        }
+        //强转以防止意外发生
+        return parseInt(maxResult);
+      },
       choosePageCount(acount) {
         console.log(acount)
         this.currentCountPerRow = acount
