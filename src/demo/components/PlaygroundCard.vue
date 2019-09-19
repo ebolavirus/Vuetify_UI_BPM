@@ -158,14 +158,14 @@
           :showSelect="true" :singleSelect="false" :mobileExpandable="true" @click:row="clickRow"
           @inline-edit="inlineEditFunction" height="300px" mobileheight="600px" @submitEvent="submitTest"
           @deleteEvent="deleteTest">
-          <wh-pagination v-model="page"></wh-pagination>
+          <wh-pagination v-model="itemCount"></wh-pagination>
         </wh-table>
         <br><code>
           &lt;wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions"
           @item-selected="itemSelected"
           :showSelect="true" :singleSelect="false" @click:row="clickRow" @inline-edit="inlineEditFunction"
           @submitEvent="submitTest" class="elevation-1" &gt; @deleteEvent="deleteTest"
-          &lt;wh-pagination v-model="page"&gt;&lt;/wh-pagination&gt;
+          &lt;wh-pagination v-model="itemCount"&gt;&lt;/wh-pagination&gt;
           &lt;/wh-table&gt;</code>
         <br>基于v-simple-table(非v-data-table)封装，添加了动作按钮、行点击事件、行内编辑、单选、多选事件。
       </wh-area-panel>
@@ -213,8 +213,8 @@
         <br><code>&lt;wh-time-picker v-model="time" label="时间"/&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-pagination">
-        <wh-pagination v-model="page"></wh-pagination>
-        <br><code>&lt;wh-pagination v-model="page"/&gt;</code>
+        <wh-pagination v-model="itemCount"></wh-pagination>
+        <br><code>&lt;wh-pagination v-model="itemCount"/&gt;</code>
         <br>完全自封装组件
       </wh-area-panel>
     </wh-area-panels>
@@ -512,7 +512,7 @@
         },
       ],
       time: '',
-      page: 32
+      itemCount: 32
     }),
     computed: {},
     watch: {

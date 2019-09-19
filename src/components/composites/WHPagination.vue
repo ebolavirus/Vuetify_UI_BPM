@@ -12,17 +12,15 @@
     </v-btn>
     <v-btn text icon @click="btnClick(4)">
       <v-icon>mdi-skip-next</v-icon>
-    </v-btn>
-    Page:
-    <v-select class="v-data-footer__select" :items="pageArray" v-model="currentPage" />
-    Rows per page:
+    </v-btn>Page:
+    <v-select class="v-data-footer__select" :items="pageArray" v-model="currentPage" />Rows per page:
     <v-select class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
   </div>
 </template>
 
 <script>
   export default {
-    name: 'wh-pagination',
+    name: "wh-pagination",
     model: {
       prop: "itemNum",
       event: "itemNumChanged"
@@ -30,7 +28,7 @@
     data() {
       let maxResult = 0;
       if (this.itemNum === 0) {
-        maxResult = 0;
+        maxResult = 1;
       } else {
         maxResult = parseInt((this.itemNum - 1) / 10) + 1;
       }
@@ -39,7 +37,7 @@
         currentCountPerRow: 10,
         currentPage: 1,
         maxPage: maxResult
-      }
+      };
     },
     props: {
       itemNum: {
@@ -50,36 +48,45 @@
     watch: {
       currentPage(to) {
         console.log("watch currentPage changed:::::", to);
-        this.$emit('pageChanged', to)
+        this.$emit("pageChanged", to);
+      },
+      itemNum(to) {
+        console.log("watch itemNum changed:::::", to);
+        this.currentPage = 1;
+        this.maxPage = this.getPageNumByItemNum(to);
       },
       currentCountPerRow(to) {
         console.log("watch currentCountPerRow changed:::::", to);
         this.currentPage = 1;
-        this.maxPage = this.getPageNumByItemNum(to);
-        this.$emit('numPerPageChanged', to)
+        this.maxPage = this.getPageNumByItemNum(this.itemNum);
+        this.$emit("numPerPageChanged", to);
       }
     },
     computed: {
       pageArray() {
-        let array = []
+        let array = [];
         for (let i = 1; i <= this.maxPage; i++) {
-          array.push(i)
+          array.push(i);
         }
-        return array
+        return array;
       },
       numFrom() {
-        return (this.currentPage - 1) * this.currentCountPerRow + 1
+        if (this.itemNum === 0) {
+          return 0;
+        }
+        return (this.currentPage - 1) * this.currentCountPerRow + 1;
       },
       numTo() {
-        return this.currentPage * this.currentCountPerRow > this.itemNum ? this.itemNum : this.currentPage * this
-          .currentCountPerRow;
+        return this.currentPage * this.currentCountPerRow > this.itemNum ?
+          this.itemNum :
+          this.currentPage * this.currentCountPerRow;
       }
     },
     methods: {
       getPageNumByItemNum(aItemNum) {
         let maxResult = 0;
         if (aItemNum === 0) {
-          maxResult = 0;
+          maxResult = 1;
         } else {
           maxResult = parseInt((aItemNum - 1) / this.currentCountPerRow) + 1;
         }
@@ -87,29 +94,29 @@
         return parseInt(maxResult);
       },
       choosePageCount(acount) {
-        console.log(acount)
-        this.currentCountPerRow = acount
+        console.log(acount);
+        this.currentCountPerRow = acount;
       },
       choosePage(acount) {
-        console.log(acount)
-        this.currentPage = acount
+        console.log(acount);
+        this.currentPage = acount;
       },
       btnClick(aIndex) {
         switch (aIndex) {
           case 1:
             this.currentPage = 1;
-            break
+            break;
           case 2:
             this.currentPage > 1 && this.currentPage--;
-            break
+            break;
           case 3:
             this.currentPage < this.maxPage && this.currentPage++;
-            break
+            break;
           case 4:
             this.currentPage = this.maxPage;
-            break
+            break;
         }
       }
     }
-  }
+  };
 </script>
