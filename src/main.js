@@ -7,7 +7,7 @@ import './components/test.js'
 import DialogPromise from './DialogPromise'
 
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
-import './css/vuetify.css'
+import './css/vuetify_bpm.css'
 
 function _getLocale() {
     let locale = "en";
@@ -24,7 +24,7 @@ function _getLocale() {
 Vue.use(DialogPromise, {
     snackbarParent: "app",
     locale: _getLocale()
-})
+});
 Vue.config.productionTip = false;
 new Vue({
     vuetify,
