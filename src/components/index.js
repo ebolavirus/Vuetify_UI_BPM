@@ -53,8 +53,6 @@ import SimpleDialog from './SimpleDialog'
 import SimpleSnackbar from './SimpleSnackbar'
 
 import DialogPromise from '../DialogPromise'
-import VuetifyDialog from 'vuetify-dialog'
-import 'vuetify-dialog/dist/vuetify-dialog.css'
 
 import vuetify from '../plugins/vuetify'
 
@@ -236,11 +234,6 @@ const install = function (Vue) {
     components.map(component => Vue.component(component.name, component))
     Vue.use(vuetify)
     Vue.use(DialogPromise)
-    Vue.use(VuetifyDialog, {
-        context: {
-            vuetify
-        }
-    })
 }
 
 // 判断是否是直接引入文件
