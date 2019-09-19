@@ -44,8 +44,7 @@
         <br>注意，要触发此组件的值变化检测，必须使用v-model进行值绑定，否则可以直接用value赋值
       </wh-area-panel>
       <wh-area-panel title="wh-textarea">
-        <wh-textarea label="评估意见" auto-grow disabled light placeholder="请填写评估意见"
-          value="请填写评估意">
+        <wh-textarea label="评估意见" auto-grow disabled light placeholder="请填写评估意见" value="请填写评估意">
         </wh-textarea>
         <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
       </wh-area-panel>
@@ -390,6 +389,34 @@
           value: 'fat'
         },
         {
+          text: 'IT业务顾问',
+          value: 'fat'
+        },
+        {
+          text: 'IT业务顾问',
+          value: 'fat'
+        },
+        {
+          text: 'IT业务顾问',
+          value: 'fat'
+        },
+        {
+          text: 'IT业务顾问',
+          value: 'fat'
+        },
+        {
+          text: 'IT业务顾问',
+          value: 'fat'
+        },
+        {
+          text: 'IT业务顾问',
+          value: 'fat'
+        },
+        {
+          text: 'IT业务顾问',
+          value: 'fat'
+        },
+        {
           text: '说明',
           value: 'carbs'
         }
@@ -406,7 +433,7 @@
       typedesserts: [{
           name: 'Frozen Yogurt',
           calories: 159,
-          fat: 6.0,
+          fat: 666666666666666666666666,
           carbs: 24,
           protein: 4.0,
           iron: '1%',

@@ -232,7 +232,11 @@
         if (this.singleSelect) {
           this.$emit('item-selected', this.items[to - 1], to - 1);
         } else {
-          this.$emit('item-selected', '', to);
+          let array = []
+          for (let i in to) {
+            array.push(this.items[to[i]])
+          }
+          this.$emit('item-selected', array, to);
         }
       }
     },
