@@ -7,7 +7,7 @@ import './components/test.js'
 import DialogPromise from './DialogPromise'
 
 import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
-import './css/vuetify_bpm.css'
+import './css/vuetify.css'
 
 function _getLocale() {
     let locale = "en";
