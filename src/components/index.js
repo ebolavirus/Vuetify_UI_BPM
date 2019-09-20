@@ -39,6 +39,7 @@ import WHCardTitle from './layout/WHCardTitle'
 import WHCardActions from './layout/WHCardActions'
 import WHDialog from './layout/WHDialog'
 import WHDrawer from './layout/WHDrawer'
+import WHForm from './layout/WHForm'
 import WHFooter from './layout/WHFooter'
 import WHTopbar from './layout/WHTopbar'
 import WHLayout from './layout/WHLayout'
@@ -190,6 +191,9 @@ WHDrawer.install = function (Vue) {
 WHFooter.install = function (Vue) {
     Vue.component(WHFooter.name, WHFooter)
 }
+WHForm.install = function (Vue) {
+    Vue.component(WHForm.name, WHForm)
+}
 WHTopbar.install = function (Vue) {
     Vue.component(WHTopbar.name, WHTopbar)
 }
@@ -223,7 +227,7 @@ WHAreaPanels.install = function (Vue) {
 // 存储组件列表
 const components = [WHLogo, WHMenu, WHIcon, WHImg, WHHyperlink, WHText, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
     WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHDatePicker, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHContainer, WHCard, WHCardText,
-    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHSpacer, WHFlex, WHAreaPanel, WHAreaPanels, WHTextarea
+    WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHForm, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHSpacer, WHFlex, WHAreaPanel, WHAreaPanels, WHTextarea
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -278,6 +282,7 @@ export default {
     WHCardActions,
     WHDialog,
     WHDrawer,
+    WHForm,
     WHFooter,
     WHTopbar,
     WHLayout,

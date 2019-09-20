@@ -58,7 +58,7 @@
           item-value="abbr"&gt;&lt;/wh-select&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-radio">
-        <wh-radio-group label="性别">
+        <wh-radio-group label="性别" v-model="radioValue">
           <wh-radio label="男" value="radio-1"></wh-radio>
           <wh-radio label="女" value="radio-2"></wh-radio>
         </wh-radio-group>
@@ -225,6 +225,7 @@
   export default {
     name: "PlaygroundCard",
     data: () => ({
+      radioValue: '',
       checkboxValue: [],
       panel: [],
       overlay: false,
@@ -523,6 +524,9 @@
       },
       checkboxValue(to) {
         console.log('checkboxchanged', to);
+      },
+      radioValue(to) {
+        console.log('radioChanged', to);
       }
     },
     methods: {

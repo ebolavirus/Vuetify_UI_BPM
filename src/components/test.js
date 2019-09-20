@@ -39,6 +39,7 @@ import WHCardTitle from './layout/WHCardTitle'
 import WHCardActions from './layout/WHCardActions'
 import WHDialog from './layout/WHDialog'
 import WHDrawer from './layout/WHDrawer'
+import WHForm from './layout/WHForm'
 import WHFooter from './layout/WHFooter'
 import WHTopbar from './layout/WHTopbar'
 import WHLayout from './layout/WHLayout'
@@ -92,6 +93,7 @@ Vue.component(WHCardActions.name, WHCardActions)
 Vue.component(WHDialog.name, WHDialog)
 Vue.component(WHDrawer.name, WHDrawer)
 Vue.component(WHFooter.name, WHFooter)
+Vue.component(WHForm.name, WHForm)
 Vue.component(WHTopbar.name, WHTopbar)
 Vue.component(WHLayout.name, WHLayout)
 Vue.component(WHListItem.name, WHListItem)
