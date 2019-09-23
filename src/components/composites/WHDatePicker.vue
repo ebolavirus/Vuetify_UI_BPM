@@ -1,5 +1,8 @@
 <template>
-  <v-dialog ref="datepickerdialog" v-model="modal" :return-value.sync="whpassvalue" persistent width="290px">
+  <v-text-field v-if="readonly || disabled" v-model="whpassvalue" :label="label" append-icon="mdi-calendar-multiselect"
+    :readonly="readonly" :disabled="disabled">
+  </v-text-field>
+  <v-dialog v-else ref="datepickerdialog" v-model="modal" :return-value.sync="whpassvalue" persistent width="290px">
     <template v-slot:activator="{ on }">
       <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-calendar-multiselect" readonly v-on="on">
       </v-text-field>
@@ -25,8 +28,14 @@
     props: {
       date: '',
       label: '',
-      readonly: false
-
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
     },
     computed: {
       whpassvalue: {
@@ -37,6 +46,9 @@
           this.$emit('whdateChanged', val)
         }
       }
+    },
+    mounted() {
+      console.log("fetch datepicker statusssssss.......", this.readonly, this.disabled);
     }
   }
 </script>

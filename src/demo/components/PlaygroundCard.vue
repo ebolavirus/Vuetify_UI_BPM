@@ -197,19 +197,17 @@
       <wh-area-panel title="wh-date-picker">
         <wh-layout>
           <wh-flex :rowNumber="3">
-            <wh-date-picker v-model="date" label="日期:"></wh-date-picker>
+            <wh-date-picker disabled v-model="date" label="日期:"></wh-date-picker>
           </wh-flex>
         </wh-layout>
-        <wh-date-picker v-model="date" label="日期:"></wh-date-picker>
         <br><code>&lt;wh-date-picker v-model="date" label="日期"/&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-time-picker">
         <wh-layout>
           <wh-flex :rowNumber="3">
-            <wh-time-picker v-model="time" label="时间"></wh-time-picker>
+            <wh-time-picker disabled v-model="time" label="时间"></wh-time-picker>
           </wh-flex>
         </wh-layout>
-        <wh-time-picker v-model="time" label="时间"></wh-time-picker>
         <br><code>&lt;wh-time-picker v-model="time" label="时间"/&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-pagination">
