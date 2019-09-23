@@ -46,9 +46,6 @@
           this.$emit('whdateChanged', val)
         }
       }
-    },
-    mounted() {
-      console.log("fetch datepicker statusssssss.......", this.readonly, this.disabled);
     }
   }
 </script>
