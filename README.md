@@ -27,8 +27,6 @@ All of these are optional and have defaults:
     - Label for accept button in dialog
 * `cancelText` 
     - Label for cancel button in dialog
-* `closeText` 
-    - Label for close button in snackbar message
 * `snackbarX` 
     - Position of snackbar message: "left" or "right"
 * `snackbarY` 

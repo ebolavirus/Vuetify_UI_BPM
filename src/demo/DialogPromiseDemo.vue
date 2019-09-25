@@ -65,9 +65,6 @@
                 <v-card-text>
                   <v-flex>
                     <v-flex d-inline-flex ma-2 style="width: 120px">
-                      <v-text-field v-model="defaults.closeText" label="Close button label (closeText)"></v-text-field>
-                    </v-flex>
-                    <v-flex d-inline-flex ma-2 style="width: 120px">
                       <v-text-field v-model="defaults.snackbarTimeout" type="number" label="Timeout (snackbarTimeout)">
                       </v-text-field>
                     </v-flex>
@@ -146,7 +143,6 @@
           snackbarY: "bottom",
           color: "pink",
           snackbarTimeout: 1000,
-          closeText: "Okay",
           dialogMaxWidth: 400,
         },
         demos: [{
