@@ -547,7 +547,6 @@
           this.$warn({
             color: color,
             text: "The color is " + color + ".",
-            closeText: "Yeah!",
             snackbarTimeout: 0
           });
         });
