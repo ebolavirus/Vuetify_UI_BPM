@@ -4,7 +4,6 @@
     <wh-content>
       <Sidedrawer v-model="draweropen" />
       <HelloWorld />
-      <!-- <FootAttachment/> -->
     </wh-content>
   </wh-app>
 </template>

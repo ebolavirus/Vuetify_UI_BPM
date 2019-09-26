@@ -54,7 +54,6 @@
                 </v-card-text>
               </v-card>
             </v-flex>
-
             <v-flex ma-3 d-inline-flex>
               <v-card width="500" height="295">
                 <v-card-title>
@@ -84,14 +83,10 @@
                 </v-card-text>
               </v-card>
             </v-flex>
-
             <demo-card v-for="demo in demos" :isPromise="demo.isPromise" :type="demo.type" :text="demo.text"
               :description="demo.description" :defaults="defaults" :key="demo.type">
             </demo-card>
-
-
           </v-flex>
-
         </v-layout>
       </v-container>
     </v-content>
