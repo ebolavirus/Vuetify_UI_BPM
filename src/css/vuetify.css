@@ -255,6 +255,11 @@
   overflow: hidden;
 }
 
+.v-application--is-rtl .v-toolbar.v-toolbar--collapsed {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 24px;
+}
+
 .v-toolbar.v-toolbar--collapsed .v-toolbar__title,
 .v-toolbar.v-toolbar--collapsed .v-toolbar__extension {
   display: none;
@@ -304,7 +309,7 @@
 }
 
 .v-sheet {
-  border-radius: 0px;
+  border-radius: 4px;
 }
 
 .v-sheet>*:first-child:not(.v-btn):not(.v-chip) {
@@ -626,11 +631,11 @@
 }
 
 .v-btn.v-size--default {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .v-btn.v-size--large {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 .v-btn.v-size--x-large {
@@ -1523,7 +1528,7 @@
 
 .v-text-field .v-label--active {
   max-width: 133%;
-  transform: translateY(-18px) scale(0.9);
+  transform: translateY(-18px) scale(1.0);
 }
 
 .v-text-field>.v-input__control>.v-input__slot {
@@ -3100,7 +3105,7 @@
   display: flex;
   flex: 1 1 100%;
   letter-spacing: normal;
-  min-height: 48px;
+  min-height: 36px;
   outline: none;
   padding: 0 16px;
   position: relative;
@@ -3174,7 +3179,7 @@
   flex-wrap: wrap;
   flex: 1 1;
   overflow: hidden;
-  padding: 12px 0;
+  padding: 5px 0;
 }
 
 .v-list-item__content>* {
@@ -4831,6 +4836,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  min-height: 0;
 }
 
 .v-calendar-weekly__head {
@@ -4860,6 +4866,7 @@
   display: flex;
   flex: 1;
   height: 0;
+  min-height: 0;
 }
 
 .v-calendar-weekly__day {
@@ -6184,11 +6191,7 @@
 
 /** Ripples */
 /** Elements */
-.theme--light.v-data-table tbody tr:hover:not(.v-data-table__expand-row) {
-  background: #eeeeee;
-}
-
-.theme--light.v-data-table tbody tr.expanded.expanded__row {
+.theme--light.v-data-table tbody tr.v-data-table__selected {
   background: #f5f5f5;
 }
 
@@ -6205,11 +6208,7 @@
   color: rgba(0, 0, 0, 0.38);
 }
 
-.theme--dark.v-data-table tbody tr:hover:not(.v-data-table__expand-row) {
-  background: #616161;
-}
-
-.theme--dark.v-data-table tbody tr.expanded.expanded__row {
+.theme--dark.v-data-table tbody tr.v-data-table__selected {
   background: #505050;
 }
 
@@ -6226,11 +6225,11 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-.v-data-table tbody tr.expanded {
+.v-data-table tbody tr.v-data-table__expanded {
   border-bottom: 0;
 }
 
-.v-data-table tbody tr.expanded.expanded__content {
+.v-data-table tbody tr.v-data-table__expanded__content {
   box-shadow: inset 0px 4px 8px -5px rgba(50, 50, 50, 0.75), inset 0px -4px 8px -5px rgba(50, 50, 50, 0.75);
 }
 
@@ -6255,28 +6254,6 @@
 
 .v-data-table__mobile-row__cell {
   text-align: right;
-}
-
-.v-data-table__expand-row {
-  border: none !important;
-}
-
-.v-data-table__expand-col {
-  padding: 0 !important;
-  height: 0px !important;
-}
-
-.v-data-table__expand-col--expanded {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
-}
-
-.v-data-table__expand-content {
-  transition: height 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
-}
-
-.v-data-table__expand-content>.card {
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .v-row-group__header td,
@@ -6437,7 +6414,7 @@
   background: #f5f5f5;
 }
 
-.theme--light.v-data-table tbody tr:hover {
+.theme--light.v-data-table tbody tr:hover:not(.v-data-table__expanded__content) {
   background: #eeeeee;
 }
 
@@ -6475,7 +6452,7 @@
   background: #505050;
 }
 
-.theme--dark.v-data-table tbody tr:hover {
+.theme--dark.v-data-table tbody tr:hover:not(.v-data-table__expanded__content) {
   background: #616161;
 }
 
@@ -6486,7 +6463,7 @@
 
 .v-data-table td,
 .v-data-table th {
-  padding: 8px 16px 4px 16px;
+  padding: 0 16px;
 }
 
 .v-data-table th {
@@ -6925,6 +6902,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
 }
 
 .v-picker__body>div {
@@ -7022,7 +7000,7 @@
 }
 
 .v-expansion-panels {
-  border-radius: 0px;
+  border-radius: 4px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -7139,7 +7117,7 @@
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   display: flex;
-  font-size: 0.9375rem;
+  font-size: 16px;
   line-height: 1;
   min-height: 30px;
   outline: none;
@@ -11143,6 +11121,7 @@
 
 .v-time-picker-title__time {
   white-space: nowrap;
+  direction: ltr;
 }
 
 .v-time-picker-title__time .v-picker__title__btn,
@@ -15236,7 +15215,7 @@ html {
 }
 
 .v-application {
-  font-family: "Roboto", sans-serif;
+  font-family: PingFangSC-Regular, sans-serif;
   line-height: 1.5;
 }
 
@@ -15299,7 +15278,7 @@ html {
 }
 
 .v-application .title {
-  font-size: 1.25rem !important;
+  font-size: 18px !important;
   font-weight: 500;
   line-height: 2rem;
   letter-spacing: 0.0125em !important;
@@ -26059,10 +26038,19 @@ html {
 .whtableselect {
   background-color: #FFECB3;
 }
+
 .whtabledan {
- background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
+
 .whtableshuang {
-background-color: #EEEEEE;
+  background-color: #EEEEEE;
 }
+
+.whtexttitle {
+  left: 0px;
+  right: auto;
+  position: absolute;
+}
+
 /*end^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
