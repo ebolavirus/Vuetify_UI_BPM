@@ -10,41 +10,43 @@
             </p>
             <ul>
               <li><code>$alert( message ).then( result => handler )</code> Raise a modal alert</li>
-              <li><code>$confirm( message ).then( result => handler ).catch( reject => {} );</code> Raise a modal confirmation dialogue</li>
-              <li><code>$prompt( message ).then( result => handler ).catch( reject => {} );</code> Raise a modal prompt for an input</li>
+              <li><code>$confirm( message ).then( result => handler ).catch( reject => {} );</code> Raise a modal
+                confirmation dialogue</li>
+              <li><code>$prompt( message ).then( result => handler ).catch( reject => {} );</code> Raise a modal prompt
+                for an input</li>
               <li><code>$inform( message )</code> Raise a notification in the "info" colour</li>
               <li><code>$warn( message )</code> Raise a notification in the "warn" colour</li>
               <li><code>$error( message )</code> Raise a notification in the "error" colour</li>
             </ul>
-            <br/>
+            <br />
             <h2>Installation</h2>
             <p>
               On the command line:
             </p>
             <p>
               <code class="d-block">
-    npm install vuetify-dialog-promise
+                npm install vuetify-dialog-promise
               </code>
             </p>
             <p>In your Vue app:</p>
             <p>
               <code class="d-block">
-    import DialogPromise from 'vuetify-dialog-promise';
-    Vue.use( DialogPromise, { 
-        snackbarParent : "app",
-        locale : "en",
-        acceptText : "My Default OK",
-        cancelText : "My Default Cancel",
-        closeText : "My Default Close",
-        snackbarX : "left",
-        snackbarY : "bottom",
-        snackbarTimeout : 1000,
-        dialogMaxWidth : 450
-    } );
+                import DialogPromise from 'vuetify-dialog-promise';
+                Vue.use( DialogPromise, { 
+                snackbarParent : "app",
+                locale : "en",
+                acceptText : "My Default OK",
+                cancelText : "My Default Cancel",
+                snackbarX : "left",
+                snackbarY : "bottom",
+                snackbarTimeout : 1000,
+                dialogMaxWidth : 450
+                } );
               </code>
             </p>
             <p>
-              All options have defaults. The <code>{ snackbarParent : "app" }</code> option controls where snackbars are mounted. It defaults
+              All options have defaults. The <code>{ snackbarParent : "app" }</code> option controls where snackbars are
+              mounted. It defaults
               to "app" so if your v-app root is something different, change it.
             </p>
             <h2>Use</h2>
@@ -53,13 +55,13 @@
             </p>
             <p>
               <code class="d-block">
-    /**
-     * With a plain text message
-     */
-    this.$prompt( "What is your favourite colour?" ).then( colour =>
-    {
-        this.$inform( "The colour is " + colour + "." );
-    } );
+                /**
+                * With a plain text message
+                */
+                this.$prompt( "What is your favourite colour?" ).then( colour =>
+                {
+                this.$inform( "The colour is " + colour + "." );
+                } );
               </code>
             </p>
             <p>
@@ -67,24 +69,23 @@
             </p>
             <p>
               <code class="d-block">
-    /**
-     * With custom properties
-     */
-    this.$prompt( {
-        title : "Important question:",
-        text : "What is your favourite colour?",
-        dialogMaxWidth : 600,
-        acceptText : "This",
-        cancelText : "Won't say"
-    } ).then( color =>
-    {
-        this.$warn( {
-            text : "The color is " + color + ".",
-            color : color,
-            closeText : "Yeah!",
-            timeout : 0
-        } );
-    } );
+                /**
+                * With custom properties
+                */
+                this.$prompt( {
+                title : "Important question:",
+                text : "What is your favourite colour?",
+                dialogMaxWidth : 600,
+                acceptText : "This",
+                cancelText : "Won't say"
+                } ).then( color =>
+                {
+                this.$warn( {
+                text : "The color is " + color + ".",
+                color : color,
+                timeout : 0
+                } );
+                } );
               </code>
             </p>
             <p>
@@ -99,36 +100,31 @@
 </template>
 
 <script>
-    export default {
-        name : "InfoCard",
-        methods : {
-            tryPlain()
-            {
-                this.$prompt( "What is your favourite colour?" ).then( colour =>
-                {
-                    this.$inform( "The colour is " + colour + "." );
-                } );
-            },
-            tryFull()
-            {
-                this.$prompt( {
-                    title : "Important question:",
-                    text : "What is your favourite colour?",
-                    dialogMaxWidth : 600,
-                    acceptText : "This",
-                    cancelText : "Won't say"
-                } ).then( color =>
-                {
-                    this.$warn( {
-                        color : color,
-                        text : "The color is " + color + ".",
-                        closeText : "Yeah!",
-                        snackbarTimeout : 0
-                    } );
-                } );
-            }
-        }
+  export default {
+    name: "InfoCard",
+    methods: {
+      tryPlain() {
+        this.$prompt("What is your favourite colour?").then(colour => {
+          this.$inform("The colour is " + colour + ".");
+        });
+      },
+      tryFull() {
+        this.$prompt({
+          title: "Important question:",
+          text: "What is your favourite colour?",
+          dialogMaxWidth: 600,
+          acceptText: "This",
+          cancelText: "Won't say"
+        }).then(color => {
+          this.$warn({
+            color: color,
+            text: "The color is " + color + ".",
+            snackbarTimeout: 0
+          });
+        });
+      }
     }
+  }
 </script>
 
 <style scoped>

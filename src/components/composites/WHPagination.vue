@@ -12,9 +12,12 @@
     </v-btn>
     <v-btn text icon @click="btnClick(4)">
       <v-icon>mdi-skip-next</v-icon>
-    </v-btn>Page:
-    <v-select class="v-data-footer__select" :items="pageArray" v-model="currentPage" />Rows per page:
-    <v-select class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
+    </v-btn>
+    <template v-if="!simple">
+      Page:
+      <v-select class="v-data-footer__select" :items="pageArray" v-model="currentPage" />Rows per page:
+      <v-select class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
+    </template>
   </div>
 </template>
 
@@ -43,6 +46,10 @@
       itemNum: {
         type: Number,
         default: 5
+      },
+      simple: {
+        type: Boolean,
+        default: false
       }
     },
     watch: {

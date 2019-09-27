@@ -54,7 +54,6 @@
                 </v-card-text>
               </v-card>
             </v-flex>
-
             <v-flex ma-3 d-inline-flex>
               <v-card width="500" height="295">
                 <v-card-title>
@@ -64,9 +63,6 @@
                 </v-card-title>
                 <v-card-text>
                   <v-flex>
-                    <v-flex d-inline-flex ma-2 style="width: 120px">
-                      <v-text-field v-model="defaults.closeText" label="Close button label (closeText)"></v-text-field>
-                    </v-flex>
                     <v-flex d-inline-flex ma-2 style="width: 120px">
                       <v-text-field v-model="defaults.snackbarTimeout" type="number" label="Timeout (snackbarTimeout)">
                       </v-text-field>
@@ -87,14 +83,10 @@
                 </v-card-text>
               </v-card>
             </v-flex>
-
             <demo-card v-for="demo in demos" :isPromise="demo.isPromise" :type="demo.type" :text="demo.text"
               :description="demo.description" :defaults="defaults" :key="demo.type">
             </demo-card>
-
-
           </v-flex>
-
         </v-layout>
       </v-container>
     </v-content>
@@ -146,7 +138,6 @@
           snackbarY: "bottom",
           color: "pink",
           snackbarTimeout: 1000,
-          closeText: "Okay",
           dialogMaxWidth: 400,
         },
         demos: [{

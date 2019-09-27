@@ -214,6 +214,7 @@
         <br><code>&lt;wh-time-picker v-model="time" label="时间"/&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-pagination">
+        <wh-pagination simple v-model="itemCount"></wh-pagination>
         <wh-pagination v-model="itemCount"></wh-pagination>
         <br><code>&lt;wh-pagination v-model="itemCount"/&gt;</code>
         <br>完全自封装组件
@@ -549,7 +550,6 @@
           this.$warn({
             color: color,
             text: "The color is " + color + ".",
-            closeText: "Yeah!",
             snackbarTimeout: 0
           });
         });
