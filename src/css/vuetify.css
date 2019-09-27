@@ -26059,10 +26059,19 @@ html {
 .whtableselect {
   background-color: #FFECB3;
 }
+
 .whtabledan {
- background-color: #FFFFFF;
+  background-color: #FFFFFF;
 }
+
 .whtableshuang {
-background-color: #EEEEEE;
+  background-color: #EEEEEE;
 }
+
+.whtexttitle {
+  left: 0px;
+  right: auto;
+  position: absolute;
+}
+
 /*end^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
