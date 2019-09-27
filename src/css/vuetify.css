@@ -26042,3 +26042,27 @@ html {
 }
 
 /*# sourceMappingURL=vuetify.css.map*/
+/*below mmsuna added for bpm ui not for vuetify*/
+.whtextbreak {
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.whareapanel {
+  background-color: #E0E3FD;
+}
+
+.whtableedititem {
+  color: blue;
+}
+
+.whtableselect {
+  background-color: #FFECB3;
+}
+.whtabledan {
+ background-color: #FFFFFF;
+}
+.whtableshuang {
+background-color: #EEEEEE;
+}
+/*end^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/

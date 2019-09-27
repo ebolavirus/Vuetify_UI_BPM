@@ -5,7 +5,7 @@
         <label for="input-907" class="v-label v-label--active theme--light"
           style="left: 0px; right: auto; position: absolute;">{{label}}</label>
         <!-- <input id="input-907" type="text"> -->
-        <div style="word-wrap: break-word;word-break: break-word;">
+        <div class="whtextbreak">
           {{value}}
         </div>
       </div>

@@ -15,8 +15,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item2, key2) in items" :key="key2"
-          :style="key2 === selectedIndex?{'background-color': '#FFECB3'}:{}" @click="colClicked(key2, item2)">
+        <tr v-for="(item2, key2) in items" :key="key2" :class="key2 === selectedIndex?'whtableselect':'whtabledan'"
+          @click="colClicked(key2, item2)">
           <td v-if="showSelect">
             <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
             <!--when single check, add 1 plus to avoid a bug when key is 0-->
@@ -31,7 +31,7 @@
               <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
                 <!-- @close="close"-->
                 <template v-slot:default>
-                  <span style="color: blue">
+                  <span class="whtableedititem">
                     {{getName(item2,item3)}}
                   </span>
                 </template>
@@ -79,7 +79,7 @@
       </thead>
       <tbody class="mx-0 px-0">
         <tr v-for="(item2, key2) in items" :key="key2"
-          :style="key2 === selectedIndex?{'background-color': '#FFECB3'}:(key2 % 2 === 0?{'background-color': '#FFFFFF'}:{'background-color': '#EEEEEE'})"
+          :class="key2 === selectedIndex?'whtableselect':(key2 % 2 === 0?'whtableshuang':'whtabledan')"
           @click="colClicked(key2, item2)">
           <td v-if="showSelect" style="width: 8%">
             <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
