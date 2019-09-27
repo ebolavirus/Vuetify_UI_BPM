@@ -631,11 +631,11 @@
 }
 
 .v-btn.v-size--default {
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .v-btn.v-size--large {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 .v-btn.v-size--x-large {
@@ -1528,7 +1528,7 @@
 
 .v-text-field .v-label--active {
   max-width: 133%;
-  transform: translateY(-18px) scale(0.9);
+  transform: translateY(-18px) scale(1.0);
 }
 
 .v-text-field>.v-input__control>.v-input__slot {
@@ -3105,7 +3105,7 @@
   display: flex;
   flex: 1 1 100%;
   letter-spacing: normal;
-  min-height: 48px;
+  min-height: 36px;
   outline: none;
   padding: 0 16px;
   position: relative;
@@ -3179,7 +3179,7 @@
   flex-wrap: wrap;
   flex: 1 1;
   overflow: hidden;
-  padding: 12px 0;
+  padding: 5px 0;
 }
 
 .v-list-item__content>* {
@@ -7117,7 +7117,7 @@
   border-top-left-radius: inherit;
   border-top-right-radius: inherit;
   display: flex;
-  font-size: 0.9375rem;
+  font-size: 16px;
   line-height: 1;
   min-height: 30px;
   outline: none;
@@ -15215,7 +15215,7 @@ html {
 }
 
 .v-application {
-  font-family: "Roboto", sans-serif;
+  font-family: PingFangSC-Regular, sans-serif;
   line-height: 1.5;
 }
 
@@ -15278,7 +15278,7 @@ html {
 }
 
 .v-application .title {
-  font-size: 1.25rem !important;
+  font-size: 18px !important;
   font-weight: 500;
   line-height: 2rem;
   letter-spacing: 0.0125em !important;
