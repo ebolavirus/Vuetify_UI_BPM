@@ -1539,15 +1539,15 @@
   max-width: 90%;
   overflow: hidden;
   text-overflow: ellipsis;
-  top: 2px;
+  top: -16px;
   transform-origin: top left;
   white-space: nowrap;
   pointer-events: none;
 }
 
 .v-text-field .v-label--active {
-  max-width: 133%;
-  transform: translateY(-18px) scale(1.0);
+  max-width: 100%;
+  transform: none;
 }
 
 /*
