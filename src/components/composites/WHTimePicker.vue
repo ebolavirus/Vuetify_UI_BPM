@@ -1,5 +1,5 @@
 <template>
-  <v-text-field v-if="readonly || disabled" v-model="whpassvalue" :label="label" append-icon="mdi-calendar-multiselect"
+  <v-text-field v-if="readonly || disabled" v-model="whpassvalue" :label="label" append-icon="mdi-clock-check-outline"
     :readonly="readonly" :disabled="disabled">
   </v-text-field>
   <v-dialog v-else ref="timepickerdialog" v-model="modal" :return-value.sync="whpassvalue" persistent width="260px">
