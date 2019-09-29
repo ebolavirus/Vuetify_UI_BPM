@@ -3261,7 +3261,8 @@
 
 .v-list-item--dense,
 .v-list--dense .v-list-item {
-  min-height: 40px;
+  min-height: 30px;
+  padding: 0 10px;
 }
 
 .v-list-item--dense .v-list-item__icon,
@@ -7159,7 +7160,7 @@
 }
 
 .v-expansion-panel-content__wrap {
-  padding: 5px 10px;
+  padding: 10px 10px 5px;
   flex: 1 1 auto;
   max-width: 100%;
 }
