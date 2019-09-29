@@ -1,18 +1,17 @@
 <template>
-  <v-dialog v-model="shown" :max-width="message.dialogMaxWidth || 500" persistent>
+  <v-dialog v-model="shown" :max-width="message.dialogMaxWidth || 300" persistent>
     <v-card>
       <v-responsive>
-        <v-card-title v-if="message.title">
-          <h3>{{ message.title }}</h3>
+        <v-card-title class="title" v-if="message.title">
+          {{ message.title }}
         </v-card-title>
         <v-card-text>
-          {{ message.text }}
+          <span style="font-size: 16px;">{{ message.text }}</span>
           <v-text-field ref="prompt" v-if="type === 'prompt'" :type="message.type || 'text'" v-model="user_input"
             @keydown="checkSubmit"></v-text-field>
         </v-card-text>
-        <v-card-actions>
+        <v-card-actions class="justify-end">
           <v-btn v-on:click="cancel" v-if="type !== 'alert'">{{ message.cancelText }}</v-btn>
-          <v-spacer></v-spacer>
           <v-btn v-on:click="accept" color="primary">{{ message.acceptText }}</v-btn>
         </v-card-actions>
       </v-responsive>
