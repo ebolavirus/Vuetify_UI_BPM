@@ -10,23 +10,23 @@ import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loade
 import './css/vuetify.css'
 
 function _getLocale() {
-    let locale = "en";
-    const locales = Object.keys(i18n);
-    for (let i = 0; i < locales.length; i++) {
-        if (window.location.pathname.indexOf('/' + locales[i] + '/') !== -1) {
-            locale = locales[i];
-            return locale;
-        }
+  let locale = "en";
+  const locales = Object.keys(i18n);
+  for (let i = 0; i < locales.length; i++) {
+    if (window.location.pathname.indexOf('/' + locales[i] + '/') !== -1) {
+      locale = locales[i];
+      return locale;
     }
-    return locale;
+  }
+  return locale;
 }
 
 Vue.use(DialogPromise, {
-    snackbarParent: "app",
-    locale: _getLocale()
+  snackbarParent: "app",
+  locale: _getLocale()
 });
 Vue.config.productionTip = false;
 new Vue({
-    vuetify,
-    render: h => h(App),
+  vuetify,
+  render: h => h(App),
 }).$mount('#app');
