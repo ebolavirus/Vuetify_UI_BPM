@@ -47,6 +47,7 @@
         <wh-text label="评估意见"
           value="请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意">
         </wh-text>
+        <wh-text label="评估意见" value="请填写评估意请填写" />
         <wh-textarea label="评估意见" auto-grow disabled light placeholder="请填写评估意见" value="请填写评估意">
         </wh-textarea>
         <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
