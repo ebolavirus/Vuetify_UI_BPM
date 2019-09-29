@@ -1,6 +1,6 @@
 <template>
-  <!-- <dialog-promise-demo></dialog-promise-demo> -->
-  <it-service-demo></it-service-demo>
+  <dialog-promise-demo></dialog-promise-demo>
+  <!-- <it-service-demo></it-service-demo> -->
 </template>
 
 <script>

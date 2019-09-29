@@ -47,6 +47,7 @@
         <wh-text label="评估意见"
           value="请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意">
         </wh-text>
+        <wh-text label="评估意见" value="请填写评估意请填写" />
         <wh-textarea label="评估意见" auto-grow disabled light placeholder="请填写评估意见" value="请填写评估意">
         </wh-textarea>
         <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
@@ -95,8 +96,7 @@
             <wh-card-text>
               Only clevers can see the dialog now!
             </wh-card-text>
-            <wh-card-actions>
-              <div class="flex-grow-1"></div>
+            <wh-card-actions class="justify-end">
               <wh-btn color="green darken-1" text @click="showDialog = false">
                 Disagree
               </wh-btn>
@@ -579,7 +579,10 @@
         console.log(item)
       },
       showModelDialog() {
-        this.$alert('ffffff');
+        this.$alert({
+          title: 'aaabbb',
+          text: 'ffffffff'
+        });
       },
       inlineEditFunction() {
 
