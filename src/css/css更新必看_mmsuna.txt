@@ -1,0 +1,27 @@
+这是css更新的方法论说明，建议后续每次更新之前都阅读或熟知该文件内容。
+
+#0 最终实践（正文）
+#### 0.1 更新Vuetify版本
+我们可以从node_modules中取到最新版本的vuetify copy.css(dist文件夹下的vuetify.css，即最终产物)。
+复制到项目指定位置，进行Beautify File指令使其与下一步的对比文件进行格式统一方便查看。
+将该vuetify copy.css与src/css下的vuetify.origin.css进行对比，将所有的版本更新改动迁入到vuetify.origin.css。
+迁入后，应先对vuetify.origin.css进行格式化，再进行保存。
+最后，将vuetify.origin.css下的内容复制到vuetify.css中，然后进行代码压缩。
+#### 0.2 自己的界面改动
+可以留意到vuetify.origin.css下大量css class都被注释掉，这是为了保留源代码的同时，格式化可以删除未修改代码。
+当自己修改时，请留意是否修改的是注释掉的css class，如果是的话，请先用/**/符号将该class类打开，注意不要打开其他class。
+打开以后，再进行class的修改和保存。
+
+
+#1 关于SASS
+我们之前考虑过sass变量的方式，这是vuetify的推荐方案且我们验证了技术可行，
+但是sass编写到一半我们发现vuetify存在很多魔鬼常量没有引入到sass中，因此该方案中途放弃。
+如果后续vuetify最终将所有变量纳入到sass变量中，那么sass方案是后续的进一步优化方案。
+
+#2 CSS增量方案
+由于Vuetify在引入插件且use时，就自行导入了自己的全部css，
+因此whui在css改写方面，目前采用增量改写的方式，
+即，在原vuetify生成的最终css的上，进行css最终值的覆盖。
+这种方案的缺陷在于，最终修改的所有元素上，会有两份基本类似的重名style，
+一份来自vuetify，另一份来自我们的bpmui的改动。
+因此，我们只能将bpmui最小化，只保留我们改动过的痕迹。
