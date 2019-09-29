@@ -3461,12 +3461,12 @@
 /** Ripples */
 /** Elements */
 /* Theme */
-/*
 .theme--light.v-input:not(.v-input--is-disabled) input,
 .theme--light.v-input:not(.v-input--is-disabled) textarea {
-  color: rgba(0, 0, 0, 0.87);
+  color: #40454A;
 }
 
+/*
 .theme--light.v-input input::-webkit-input-placeholder,
 .theme--light.v-input textarea::-webkit-input-placeholder {
   color: rgba(0, 0, 0, 0.38);
@@ -3663,7 +3663,7 @@
 /** Ripples */
 /** Elements */
 .theme--light.v-label {
-  color: #000000;
+  color: #262B3A;
 }
 
 /*
