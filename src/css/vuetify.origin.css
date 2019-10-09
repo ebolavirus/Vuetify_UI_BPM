@@ -1475,7 +1475,7 @@
 */
 .v-text-field {
   padding-top: 12px;
-  margin-top: 0px;
+  margin-top: 2px;
 }
 
 .v-text-field input {
@@ -2923,16 +2923,16 @@
 .theme--dark.v-list .v-list-group--active:after {
   background: rgba(255, 255, 255, 0.12);
 }
-
+*/
 .v-list {
   border-radius: 4px;
   display: block;
-  padding: 8px 0;
+  padding: 0px 0 5px;
   position: static;
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   will-change: box-shadow;
 }
-
+/*
 .v-list--disabled {
   pointer-events: none;
 }
@@ -3364,12 +3364,12 @@
 .v-application--is-rtl .v-list-item__avatar:first-child {
   margin-left: 24px;
 }
-
+*/
 .v-application--is-ltr .v-list-item__action:first-child,
 .v-application--is-ltr .v-list-item__icon:first-child {
-  margin-right: 32px;
+  margin-right: 12px;
 }
-
+/*
 .v-application--is-rtl .v-list-item__action:first-child,
 .v-application--is-rtl .v-list-item__icon:first-child {
   margin-left: 32px;
@@ -3410,7 +3410,7 @@
 */
 .v-list-item--dense,
 .v-list--dense .v-list-item {
-  min-height: 30px;
+  min-height: 24px;
   padding: 0 10px;
 }
 

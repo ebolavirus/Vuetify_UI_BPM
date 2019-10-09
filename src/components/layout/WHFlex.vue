@@ -17,7 +17,8 @@
       flexClass() {
         let resultJson = {
           'xs12': true,
-          'px-1': true
+          'pl-1': true,
+          'pr-5': true
         }
         let smTitle = 'sm12'
         switch (this.rowNumber) {
