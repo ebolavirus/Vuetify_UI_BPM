@@ -22,47 +22,33 @@
         <wh-area-panel title="审批历史">
           <wh-timeline dense>
             <wh-timeline-item right small icon="mdi-pencil">
-              <wh-card class="elevation-2">
-                <wh-card-title class="subtitle-1">
-                  <span class="primary--text">当前环节：二级审批</span>
-                </wh-card-title>
-                <wh-card-text class="body-3">
-                  <span class="primary--text">孙明明(mmsunA)</span>
-                  <br />
-                  <span class="primary--text">抢单签核</span>
-                </wh-card-text>
-              </wh-card>
+              <div class="py-2">
+                <div class="primary--text font-weight-bold">Lorem ipsum</div>
+                <div class="primary--text">
+                  孙明明(mmsunA)<br>
+                  抢单签核
+                </div>
+              </div>
             </wh-timeline-item>
             <wh-timeline-item color="grey lighten-1" right small icon="mdi-check">
-              <wh-card class="elevation-2">
-                <wh-card-title class="subtitle-1">
-                  <span class="grey--text text--lighten-1">起草-提交</span>
-                </wh-card-title>
-                <wh-card-text class="body-2">
-                  <span class="grey--text">孙明明(mmsunA)</span>
-                  <br />
-                  <span class="grey--text">2019-7-19 10:36:26 --- 2019-7-19 11:36:26</span>
-                  <br />
-                  <span class="grey--text">用时 0 天</span>
-                </wh-card-text>
-              </wh-card>
+              <div class="py-2">
+                <div class="grey--text font-weight-bold">起草-提交</div>
+                <div class="grey--text">
+                  孙明明(mmsunA)<br>
+                  2019-7-19 10:36:26 --- 2019-7-19 11:36:26<br>
+                  用时 0 天
+                </div>
+              </div>
             </wh-timeline-item>
             <wh-timeline-item color="grey lighten-1" right small icon="mdi-check">
-              <wh-card class="elevation-2">
-                <wh-card-title class="subtitle-1">
-                  <span class="grey--text text--lighten-1">一级审批</span>
-                </wh-card-title>
-                <wh-card-text class="body-2">
-                  <span class="grey--text">孙明明(mmsunA)</span>
-                  <br />
-                  <span class="grey--text">2019-7-19 10:36:26 --- 2019-7-19 11:36:26</span>
-                  <br />
-                  <span class="grey--text">用时 0 天</span>
-                  <br />
-                  <span class="grey--text">审批意见审批意见审批意见审批意见审批意见审批意见</span>
-                  <br />
-                </wh-card-text>
-              </wh-card>
+              <div class="py-2">
+                <div class="grey--text font-weight-bold">起草-提交</div>
+                <div class="grey--text">
+                  孙明明(mmsunA)<br>
+                  2019-7-19 10:36:26 --- 2019-7-19 11:36:26<br>
+                  用时 0 天
+                </div>
+              </div>
             </wh-timeline-item>
           </wh-timeline>
         </wh-area-panel>
