@@ -5441,19 +5441,20 @@
   -ms-user-select: none;
   user-select: none;
 }
-
+*/
 .v-input--selection-controls__ripple {
   border-radius: 50%;
   cursor: pointer;
-  height: 34px;
+  height: 28px;
   position: absolute;
   transition: inherit;
-  width: 34px;
-  left: -12px;
-  top: calc(50% - 24px);
+  width: 28px;
+  left: -11px;
+  top: calc(50% - 21px);
   margin: 7px;
 }
 
+/*
 .v-input--selection-controls__ripple:before {
   border-radius: inherit;
   bottom: 0;
