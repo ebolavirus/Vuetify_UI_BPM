@@ -1,5 +1,5 @@
 <template>
-  <wh-topbar color="primary" app clipped-left dark>
+  <wh-topbar color="primary" app clipped-left dark fixed>
     <wh-btn @click="drawerAction()" icon>
       <wh-icon>mdi-menu-open</wh-icon>
     </wh-btn>
@@ -7,55 +7,57 @@
       <span class="title mr-2">Vuetify信息服务申请DEMO</span>
     </v-toolbar-title>
     <wh-spacer></wh-spacer>
-    <template v-if="$vuetify.breakpoint.mdAndUp">
-      <wh-btn text @click="submitAction()">
-        <span class="mr-2">提交</span>
-      </wh-btn>
-      <wh-btn text @click="saveAction()">
-        <span class="mr-2">保存</span>
-      </wh-btn>
-      <wh-btn text @click="rejectAction()">
-        <span class="mr-2">驳回</span>
-      </wh-btn>
-      <wh-btn text @click="cancelAction()">
-        <span class="mr-2">注销</span>
-      </wh-btn>
-      <wh-menu offset-y>
-        <template v-slot:activator="{on}">
-          <wh-btn text v-on="on">
-            <span class="mr-2">高级▾</span>
-          </wh-btn>
-        </template>
-        <wh-list>
-          <wh-list-item v-for="(item, index) in baritems" :key="index">
-            <wh-list-item-title>{{item.title}}</wh-list-item-title>
-          </wh-list-item>
-        </wh-list>
-      </wh-menu>
-      <wh-btn text>
-        <span class="mr-2">帮助</span>
-      </wh-btn>
-      <wh-btn text @click="progressGraphAction()">
-        <span class="mr-2">流程图</span>
-      </wh-btn>
-      <wh-btn text>
-        <span class="mr-2">关闭</span>
-      </wh-btn>
-    </template>
-    <template v-else>
-      <wh-menu offset-y>
-        <template v-slot:activator="{on}">
-          <wh-btn text v-on="on">
-            <span class="mr-2">操作▾</span>
-          </wh-btn>
-        </template>
-        <wh-list>
-          <wh-list-item v-for="(item, index) in barminiitems" :key="index">
-            <wh-list-item-title>{{item.title}}</wh-list-item-title>
-          </wh-list-item>
-        </wh-list>
-      </wh-menu>
-    </template>
+    <v-toolbar-items>
+      <template v-if="$vuetify.breakpoint.mdAndUp">
+        <wh-btn text @click="submitAction()">
+          <span class="mr-2">提交</span>
+        </wh-btn>
+        <wh-btn text @click="saveAction()">
+          <span class="mr-2">保存</span>
+        </wh-btn>
+        <wh-btn text @click="rejectAction()">
+          <span class="mr-2">驳回</span>
+        </wh-btn>
+        <wh-btn text @click="cancelAction()">
+          <span class="mr-2">注销</span>
+        </wh-btn>
+        <wh-menu bottom left offset-y>
+          <template v-slot:activator="{on}">
+            <wh-btn text v-on="on">
+              <span class="mr-2">高级▾</span>
+            </wh-btn>
+          </template>
+          <wh-list nav>
+            <wh-list-item v-for="(item, index) in baritems" :key="index">
+              <wh-list-item-title>{{item.title}}</wh-list-item-title>
+            </wh-list-item>
+          </wh-list>
+        </wh-menu>
+        <wh-btn text>
+          <span class="mr-2">帮助</span>
+        </wh-btn>
+        <wh-btn text @click="progressGraphAction()">
+          <span class="mr-2">流程图</span>
+        </wh-btn>
+        <wh-btn text>
+          <span class="mr-2">关闭</span>
+        </wh-btn>
+      </template>
+      <template v-else>
+        <wh-menu offset-y>
+          <template v-slot:activator="{on}">
+            <wh-btn text v-on="on">
+              <span class="mr-2">操作▾</span>
+            </wh-btn>
+          </template>
+          <wh-list>
+            <wh-list-item v-for="(item, index) in barminiitems" :key="index">
+              <wh-list-item-title>{{item.title}}</wh-list-item-title>
+            </wh-list-item>
+          </wh-list>
+        </wh-menu>
+      </template>
+    </v-toolbar-items>
     <!-- 提交对话框 -->
     <wh-dialog v-model="dialog2" max-width="800px">
       <wh-card>
@@ -247,3 +249,8 @@
     }
   };
 </script>
+<style scoped>
+.v-menu__content {
+  position: fixed !important;
+}
+</style>

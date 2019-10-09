@@ -1,11 +1,11 @@
 <template>
-  <wh-app>
-    <TopBar @drawerclick="draweropen = !draweropen" />
-    <wh-content>
-      <Sidedrawer v-model="draweropen" />
+  <v-app>
+    <v-content>
       <HelloWorld />
-    </wh-content>
-  </wh-app>
+    </v-content>
+    <Sidedrawer v-model="draweropen" />
+    <TopBar @drawerclick="draweropen = !draweropen" />
+  </v-app>
 </template>
 
 <script>

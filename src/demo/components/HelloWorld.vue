@@ -1,5 +1,5 @@
 <template>
-  <wh-container>
+  <wh-container class="fill-height" fluid>
     <wh-layout>
       <wh-area-panels>
         <wh-area-panel title="服务描述">
@@ -34,9 +34,6 @@
             </wh-flex>
             <wh-flex :rowNumber="3">
               <wh-textfield label="预估费用" type="number" suffix="元"></wh-textfield>
-            </wh-flex>
-            <wh-flex :rowNumber="3">
-              <wh-textfield label="实施日期" type="date"></wh-textfield>
             </wh-flex>
             <wh-flex :rowNumber="2">
               <wh-textfield label="办理人员名称" append-outer-icon="mdi-file-document-box-search" readonly
