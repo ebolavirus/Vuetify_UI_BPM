@@ -1,5 +1,5 @@
 <template>
-  <v-expansion-panels multiple accordion v-model="expandeditems" :inheritAttrs="false">
+  <v-expansion-panels multiple v-model="expandeditems" :inheritAttrs="false">
     <slot />
   </v-expansion-panels>
 </template>
