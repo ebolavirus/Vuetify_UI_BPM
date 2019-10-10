@@ -5587,15 +5587,16 @@
 .v-input--selection-controls__ripple {
   border-radius: 50%;
   cursor: pointer;
-  height: 24px;
+  height: 28px;
   position: absolute;
   transition: inherit;
-  width: 24px;
-  left: -9px;
-  top: calc(50% - 19px);
+  width: 28px;
+  left: -11px;
+  top: calc(50% - 21px);
   margin: 7px;
 }
 
+/*
 /*
 .v-input--selection-controls__ripple:before {
   border-radius: inherit;
