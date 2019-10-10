@@ -2932,6 +2932,7 @@
   transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   will-change: box-shadow;
 }
+
 /*
 .v-list--disabled {
   pointer-events: none;
@@ -3369,6 +3370,7 @@
 .v-application--is-ltr .v-list-item__icon:first-child {
   margin-right: 12px;
 }
+
 /*
 .v-application--is-rtl .v-list-item__action:first-child,
 .v-application--is-rtl .v-list-item__icon:first-child {
@@ -5593,6 +5595,7 @@
   top: calc(50% - 19px);
   margin: 7px;
 }
+
 /*
 .v-input--selection-controls__ripple:before {
   border-radius: inherit;
@@ -26461,4 +26464,25 @@ html {
   position: absolute;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-track {
+  background-color: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  scrollbar-face-color: rgba(0, 0, 0, 0.5);
+  scrollbar-width: 8px;
+  scrollbar-base-color: white;
+  scrollbar-track-color: lightgray;
+}
 /*end^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
