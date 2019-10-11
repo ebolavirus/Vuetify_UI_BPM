@@ -4,7 +4,7 @@
   </v-text-field>
   <v-dialog v-else ref="timepickerdialog" v-model="modal" :return-value.sync="whpassvalue" persistent width="260px">
     <template v-slot:activator="{ on }">
-      <v-text-field v-model="whpassvalue" :label="label" append-icon="mdi-clock-check-outline" readonly v-on="on">
+      <v-text-field v-model="whpassvalue" :label="label" :rules="rules" append-icon="mdi-clock-check-outline" readonly v-on="on">
       </v-text-field>
     </template>
     <v-time-picker v-model="whpassvalue" scrollable width="260px">
@@ -28,6 +28,12 @@
     props: {
       time: '',
       label: '',
+      rules: {
+        type: Array,
+        default () {
+          return []
+        }
+      },
       readonly: {
         type: Boolean,
         default: false
