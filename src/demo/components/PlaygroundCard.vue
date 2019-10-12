@@ -1,10 +1,6 @@
 <template>
   <v-container>
     <wh-area-panels>
-      <wh-area-panel title="wh-logo">
-        <wh-logo></wh-logo><br>
-        <code>&lt;wh-logo&gt;&lt;/wh-logo&gt;</code>
-      </wh-area-panel>
       <wh-area-panel title="wh-icon">
         <wh-icon color="primary">mdi-car-light-fog</wh-icon>
         <br><code>&lt;wh-icon&gt;mdi-car-light-fog&lt;/wh-icon&gt;</code>
@@ -157,7 +153,7 @@
         <br>使用方法视上方demo，最外层嵌套wh-layout,内部使用wh-flex标签动态拼接元素，元素的rowNumber默认为1，允许值包含1,2,3,4
       </wh-area-panel>
       <wh-area-panel title="wh-table">
-        <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" @item-selected="itemSelected"
+        <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" :formatter="formatterFunction" @item-selected="itemSelected"
           :showSelect="true" :singleSelect="false" :mobileExpandable="true" @click:row="clickRow"
           @inline-edit="inlineEditFunction" height="300px" mobileheight="600px" @submitEvent="submitTest"
           @deleteEvent="deleteTest">
@@ -592,6 +588,11 @@
       },
       deleteTest() {
         console.log('delete test');
+      },
+      formatterFunction (row, key, value, index) {
+        if (key === 'fat' && index === 1)
+          return this.itemCount
+        return value
       }
     }
   }

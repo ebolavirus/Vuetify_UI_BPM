@@ -32,7 +32,7 @@
                 <!-- @close="close"-->
                 <template v-slot:default>
                   <span class="whtableedititem">
-                    {{getName(item2,item3)}}
+                    {{getName(item2,item3,key2,key3)}}
                   </span>
                 </template>
                 <template v-slot:input>
@@ -41,7 +41,7 @@
               </v-edit-dialog>
             </template>
             <template v-else>
-              {{getName(item2,item3)}}
+              {{getName(item2,item3,key2,key3)}}
             </template>
           </td>
           <td v-if="actions && actions.length > 0">
@@ -96,7 +96,7 @@
                 <template v-else-if="item3['editable'] && rowShow(key2,key3)">
                   <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
                     <template v-slot:default>
-                      <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3)" readonly />
+                      <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3,key2,key3)" readonly />
                     </template>
                     <template v-slot:input>
                       <wh-textfield v-model="editValue" single-line counter />
@@ -104,7 +104,7 @@
                   </v-edit-dialog>
                 </template>
                 <template v-else-if="rowShow(key2,key3)">
-                  <wh-textfield :label="item3.text" :value="getName(item2,item3)" disabled />
+                  <wh-textfield :label="item3.text" :value="getName(item2,item3,key2,key3)" disabled />
                 </template>
                 <template v-else>
                 </template>
@@ -164,7 +164,7 @@
       },
       dense: {
         type: Boolean,
-        default: false
+        default: true
       },
       mobileExpandable: {
         type: Boolean,
@@ -204,6 +204,9 @@
       singleSelect: {
         type: Boolean,
         default: true
+      },
+      formatter: {
+        type: Function
       }
     },
     computed: {
@@ -241,15 +244,22 @@
       }
     },
     methods: {
-      getName(item2, item3) {
+      getName(item2,item3,key2,key3) {
         let value = item2[item3.value]
         if (item3.dicMapSource) {
           for (let i in item3.dicMapSource) {
             if (value + '' === item3.dicMapSource[i].value) {
               value = item3.dicMapSource[i].label
-              break
+              return value
             }
           }
+        }
+        // no dic for translate, may it have a formmater.
+        if (this.formatter) {
+          let row = item2
+          let column = item3.value
+          let index = key2
+          return this.formatter(row, column, value, index);
         }
         return value
       },
