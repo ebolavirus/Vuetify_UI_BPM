@@ -57,8 +57,8 @@
     methods: {
       priceSwitch(x) {
         //强制保留两位小数
-        var f = parseFloat(x);
-        if (isNaN(f)) return '0.00';
+        var e = parseFloat(x);
+        if (isNaN(e)) return '0.00';
         var f = Math.round(x * 100) / 100;
         var s = f.toString();
         var rs = s.indexOf('.');
@@ -86,8 +86,8 @@
           }
           //由于从后向前截取，所以从最后一个开始遍历并存到一个新的数组，顺序调换
           var sortArray = new Array();
-          for (var i = resultArray.length - 1; i >= 0; i--) {
-            sortArray.push(resultArray[i]);
+          for (var j = resultArray.length - 1; j >= 0; j--) {
+            sortArray.push(resultArray[j]);
           }
           result = leftNum + "," + sortArray.join(",") + rightNum;
         } else {
@@ -95,11 +95,11 @@
         }
         return result;
       },
-      focusAction(e) {
+      focusAction() {
         //console.log('focused.....', e)
         this.isFocusing = true
       },
-      blurAction(e) {
+      blurAction() {
         //console.log('blurred.....', e)
         this.isFocusing = false
         //console.log('before the cachevalue', this.cacheValue)

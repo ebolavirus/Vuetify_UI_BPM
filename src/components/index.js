@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import WHLogo from './singles/WHLogo'
 import WHMenu from './singles/WHMenu'
 import WHIcon from './singles/WHIcon'
 import WHImg from './singles/WHImg'
@@ -66,10 +65,6 @@ SimpleDialog.install = function (Vue) {
 }
 SimpleSnackbar.install = function (Vue) {
     Vue.component(SimpleSnackbar.name, SimpleSnackbar)
-}
-
-WHLogo.install = function (Vue) {
-    Vue.component(WHLogo.name, WHLogo)
 }
 
 WHMenu.install = function (Vue) {
@@ -225,7 +220,7 @@ WHAreaPanels.install = function (Vue) {
 
 
 // 存储组件列表
-const components = [WHLogo, WHMenu, WHIcon, WHImg, WHHyperlink, WHText, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
+const components = [WHMenu, WHIcon, WHImg, WHHyperlink, WHText, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
     WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHDatePicker, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHContainer, WHCard, WHCardText,
     WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHForm, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHSpacer, WHFlex, WHAreaPanel, WHAreaPanels, WHTextarea
 ]
@@ -249,7 +244,6 @@ export default {
     // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
     install,
     // 以下是具体的组件列表
-    WHLogo,
     WHMenu,
     WHIcon,
     WHImg,
