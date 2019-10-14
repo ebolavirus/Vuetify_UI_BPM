@@ -30,7 +30,7 @@
         isFocusing: false,
         rulesTag: {
           ruleMoney: value => {
-            const pattern = /^(\-|\+)?\d+(\.\d+)?$/
+            const pattern = /^(-|\+)?\d+(\.\d+)?$/
             return pattern.test(value) || 'Invalid Money.'
           }
         }
@@ -96,13 +96,10 @@
         return result;
       },
       focusAction() {
-        //console.log('focused.....', e)
         this.isFocusing = true
       },
       blurAction() {
-        //console.log('blurred.....', e)
         this.isFocusing = false
-        //console.log('before the cachevalue', this.cacheValue)
         var f = parseFloat(this.cacheValue);
         if (isNaN(f) || f === null) {
           f = 0;
@@ -110,7 +107,6 @@
         // 保留两位小数
         f = Math.round(f * 100) / 100;
         this.cacheValue = f + ''
-        //console.log('now the cachevalue', this.cacheValue)
         this.$emit('whvalueChanged', this.cacheValue)
       }
     }

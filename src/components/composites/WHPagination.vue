@@ -54,16 +54,13 @@
     },
     watch: {
       currentPage(to) {
-        console.log("watch currentPage changed:::::", to);
         this.$emit("pageChanged", to);
       },
       itemNum(to) {
-        console.log("watch itemNum changed:::::", to);
         this.currentPage = 1;
         this.maxPage = this.getPageNumByItemNum(to);
       },
       currentCountPerRow(to) {
-        console.log("watch currentCountPerRow changed:::::", to);
         this.currentPage = 1;
         this.maxPage = this.getPageNumByItemNum(this.itemNum);
         this.$emit("numPerPageChanged", to);
@@ -101,11 +98,9 @@
         return parseInt(maxResult);
       },
       choosePageCount(acount) {
-        console.log(acount);
         this.currentCountPerRow = acount;
       },
       choosePage(acount) {
-        console.log(acount);
         this.currentPage = acount;
       },
       btnClick(aIndex) {

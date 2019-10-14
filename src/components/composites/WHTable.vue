@@ -28,11 +28,11 @@
                 item-value="value" @change="changeValue($event,key2,key3)" />
             </template>
             <template v-else-if="item3['editable']">
-              <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
+              <v-edit-dialog @save="save(key2, key3)" @open="open(item2, item3)">
                 <!-- @close="close"-->
                 <template v-slot:default>
                   <span class="whtableedititem">
-                    {{getName(item2,item3,key2,key3)}}
+                    {{getName(item2,item3,key2)}}
                   </span>
                 </template>
                 <template v-slot:input>
@@ -41,7 +41,7 @@
               </v-edit-dialog>
             </template>
             <template v-else>
-              {{getName(item2,item3,key2,key3)}}
+              {{getName(item2,item3,key2)}}
             </template>
           </td>
           <td v-if="actions && actions.length > 0">
@@ -97,9 +97,9 @@
                     item-text="label" item-value="value" @change="changeValue($event,key2,key3)" />
                 </template>
                 <template v-else-if="item3['editable'] && rowShow(key2,key3)">
-                  <v-edit-dialog @save="save(key2, key3)" @cancel="cancel" @open="open(item2, item3)">
+                  <v-edit-dialog @save="save(key2, key3)" @open="open(item2, item3)">
                     <template v-slot:default>
-                      <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3,key2,key3)" readonly />
+                      <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3,key2)" readonly />
                     </template>
                     <template v-slot:input>
                       <wh-textfield v-model="editValue" single-line counter />
@@ -107,7 +107,7 @@
                   </v-edit-dialog>
                 </template>
                 <template v-else-if="rowShow(key2,key3)">
-                  <wh-textfield :label="item3.text" :value="getName(item2,item3,key2,key3)" disabled />
+                  <wh-textfield :label="item3.text" :value="getName(item2,item3,key2)" disabled />
                 </template>
                 <template v-else>
                 </template>
@@ -139,12 +139,6 @@
   </div>
 </template>
 <script>
-  import {
-    access
-  } from 'fs';
-  import {
-    setTimeout
-  } from 'timers';
   export default {
     name: 'wh-table',
     data() {
@@ -225,19 +219,18 @@
       }
     },
     watch: {
-      wholecheckbox(to, from) {
+      wholecheckbox(to) {
         if (this.singleSelect) {
           //do nothing...
           return;
         }
-        console.log('whole checked....', to);
         if (to) {
           this.indexSelected = this.tableWholeArray;
         } else {
           this.indexSelected = [];
         }
       },
-      indexSelected(to, from) {
+      indexSelected(to) {
         if (this.singleSelect) {
           this.$emit('item-selected', this.items[to - 1], to - 1);
         } else {
@@ -250,7 +243,7 @@
       }
     },
     methods: {
-      getName(item2,item3,key2,key3) {
+      getName(item2,item3,key2) {
         let value = item2[item3.value]
         if (item3.dicMapSource) {
           for (let i in item3.dicMapSource) {
@@ -284,17 +277,10 @@
         }
       },
       save(key2, key3) {
-        console.log('aItem saved', key2, key3, this.editValue);
         this.$emit('inline-edit', key2, key3, this.editValue);
-      },
-      cancel(event) {
-        console.log('aItem canceled', event);
       },
       open(item2, item3) {
         this.editValue = item2[item3['value']]
-      },
-      close(event) {
-        console.log('aItem closed', event);
       },
       colClicked(aCol, aitem) {
         this.selectedIndex = aCol
@@ -303,7 +289,6 @@
       rowShow(key2, key3) {
         if (!this.mobileExpandable)
           return true
-        // console.log('rowShow;::::', this.items[key2].isMobileExpand);
         if (this.items[key2].isMobileExpand)
           return true
         return key3 < this.displayCountWhenUnExpanded
@@ -320,7 +305,6 @@
         }
       },
       changeValue(value, key2, key3) {
-        console.log('select changed.....', value, key2, key3);
         this.editValue = value
         this.$emit('inline-edit', key2, key3, value);
       }

@@ -26,8 +26,14 @@
       modal: false
     }),
     props: {
-      date: '',
-      label: '',
+      date: {
+        type: String,
+        default: ''
+      },
+      label: {
+        type: String,
+        default: ''
+      },
       rules: {
         type: Array,
         default () {

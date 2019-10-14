@@ -23,7 +23,10 @@
           return []
         }
       },
-      isDecimal: false
+      isDecimal: {
+        type: Boolean,
+        default: false
+      }
     },
     data() {
       return {
@@ -35,7 +38,7 @@
           //rulenull: value => !!value || 'Required.',
           //rulemax20: value => value.length <= 20 || 'Max 20 characters',
           rulefloat: value => {
-            const pattern = /^(\-|\+)?\d+(\.\d+)?$/
+            const pattern = /^(-|\+)?\d+(\.\d+)?$/
             return pattern.test(value) || 'Invalid Decimal.'
           }
         }

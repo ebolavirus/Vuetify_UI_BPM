@@ -8,7 +8,12 @@
   export default {
     name: 'wh-loading',
     props: {
-      loading: false
+      loading: {
+        type: Boolean,
+        default () {
+          return false
+        }
+      }
     }
   };
 </script>

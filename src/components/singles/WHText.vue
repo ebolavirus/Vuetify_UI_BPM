@@ -20,8 +20,14 @@
       event: 'valueChanged'
     },
     props: {
-      label: '',
-      value: ''
+      label: {
+        type: String,
+        default: ''
+      },
+      value: {
+        type: String,
+        default: ''
+      }
     }
   }
 </script>
