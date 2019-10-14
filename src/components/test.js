@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import WHLogo from './singles/WHLogo'
 import WHMenu from './singles/WHMenu'
 import WHIcon from './singles/WHIcon'
 import WHImg from './singles/WHImg'
@@ -50,6 +51,7 @@ import WHFlex from './layout/WHFlex'
 import WHAreaPanel from './layout/WHAreaPanel'
 import WHAreaPanels from './layout/WHAreaPanels'
 
+Vue.component(WHLogo.name, WHLogo)
 Vue.component(WHMenu.name, WHMenu)
 Vue.component(WHIcon.name, WHIcon)
 Vue.component(WHImg.name, WHImg)
