@@ -1,81 +1,90 @@
 <template>
   <div v-if="$vuetify.breakpoint.smAndUp">
-    <v-simple-table fixed-header :height="height" :dense="dense">
-      <thead v-if="showHeader" style="line-height:1;">
-        <tr style="line-height:1;">
-          <th v-if="showSelect" style="width: 5%">
-            <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
-          </th>
-          <th v-for="(item, key) in headers" :key="key">
-            {{item.text}}
-          </th>
-          <th v-if="actions && actions.length > 0">
-            操作
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(item2, key2) in items" :key="key2" :class="key2 === selectedIndex?'whtableselect':'whtabledan'"
-          @click="colClicked(key2, item2)">
-          <td v-if="showSelect">
-            <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
-            <!--when single check, add 1 plus to avoid a bug when key is 0-->
-            <v-checkbox v-else v-model="indexSelected" :multiple="false" :value="key2+1"></v-checkbox>
-          </td>
-          <td v-for="(item3, key3) in headers" :key="key3">
-            <template v-if="item3['editable'] && item3.dicMapSource">
-              <wh-select :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
-                item-value="value" @change="changeValue($event,key2,key3)" />
-            </template>
-            <template v-else-if="item3['editable']">
-              <v-edit-dialog @save="save(key2, key3)" @open="open(item2, item3)">
-                <!-- @close="close"-->
-                <template v-slot:default>
-                  <span class="whtableedititem">
-                    {{getName(item2,item3,key2)}}
-                  </span>
+    <!-- <v-simple-table fixed-header :height="height" :dense="dense"> -->
+    <div class="v-data-table v-data-table--dense v-data-table--fixed-header theme--light">
+      <div class="v-data-table__wrapper" :style="{'height': height}">
+        <table :style="widths.length>0 ?{'table-layout':'fixed','word-wrap':'break-word'}:{}">
+          <thead v-if="showHeader" style="line-height:1;">
+            <tr style="line-height:1;">
+              <th v-if="showSelect" width="5%">
+                <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
+              </th>
+              <th v-for="(item, key) in headers" :key="key" :width="widths[key]">
+                {{item.text}}
+              </th>
+              <th v-if="actions && actions.length > 0"  width="8%">
+                操作
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item2, key2) in items" :key="key2" :class="key2 === selectedIndex?'whtableselect':'whtabledan'"
+              @click="colClicked(key2, item2)">
+              <td v-if="showSelect">
+                <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
+                <!--when single check, add 1 plus to avoid a bug when key is 0-->
+                <v-checkbox v-else v-model="indexSelected" :multiple="false" :value="key2+1"></v-checkbox>
+              </td>
+              <td v-for="(item3, key3) in headers" :key="key3">
+                <template v-if="item3['editable'] && item3.dicMapSource">
+                  <wh-select :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
+                    item-value="value" @change="changeValue($event,key2,key3)" />
                 </template>
-                <template v-slot:input>
-                  <wh-textfield v-model="editValue" single-line counter />
+                <template v-else-if="item3['editable']">
+                  <v-edit-dialog @save="save(key2, key3)" @open="open(item2, item3)">
+                    <!-- @close="close"-->
+                    <template v-slot:default>
+                      <span class="whtableedititem">
+                        {{getName(item2,item3,key2)}}
+                      </span>
+                    </template>
+                    <template v-slot:input>
+                      <wh-textfield v-model="editValue" single-line counter />
+                    </template>
+                  </v-edit-dialog>
                 </template>
-              </v-edit-dialog>
-            </template>
-            <template v-else>
-              {{getName(item2,item3,key2)}}
-            </template>
-          </td>
-          <td v-if="actions && actions.length > 0">
-            <template v-for="(action, key4) in actions">
-              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)"
-                :key="key4">
-                {{action.icon}}
-              </v-icon>
-              <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
-                {{action.text}}
-              </wh-btn>
-            </template>
-          </td>
-        </tr>
-      </tbody>
-    </v-simple-table>
+                <template v-else>
+                  {{getName(item2,item3,key2)}}
+                </template>
+              </td>
+              <td v-if="actions && actions.length > 0">
+                <template v-for="(action, key4) in actions">
+                  <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)"
+                    :key="key4">
+                    {{action.icon}}
+                  </v-icon>
+                  <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
+                    @click="$emit(action.actionName, item2, key2)">
+                    {{action.text}}
+                  </wh-btn>
+                </template>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- </v-simple-table> -->
     <template v-if="showFooter && (items.length > 0)">
       <slot />
     </template>
   </div>
   <div v-else>
-    <v-simple-table fixed-header :height="mobileheight" dense>
+    <div class="v-data-table v-data-table--dense v-data-table--fixed-header theme--light">
+      <div class="v-data-table__wrapper" :style="{'height': mobileheight}">
+        <table :style="{'table-layout':'fixed','word-wrap':'break-word'}">
       <thead>
         <tr>
-          <th v-if="showSelect" style="width: 4%">
+          <th v-if="showSelect" width="10%">
             <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
           </th>
-          <th>
+          <th width="70%">
             列表
           </th>
-          <th v-if="mobileExpandable" style="width: 4%">
+          <th v-if="mobileExpandable" width="10%">
             折叠
           </th>
-          <th v-if="actions && actions.length > 0">
+          <th v-if="actions && actions.length > 0" width="10%">
             操作
           </th>
         </tr>
@@ -125,14 +134,17 @@
                 :key="key4">
                 {{action.icon}}
               </v-icon>
-              <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4" @click="$emit(action.actionName, item2, key2)">
+              <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
+                @click="$emit(action.actionName, item2, key2)">
                 {{action.text}}
               </wh-btn>
             </template>
           </td>
         </tr>
       </tbody>
-    </v-simple-table>
+        </table>
+      </div>
+    </div>
     <template v-if="showFooter && (items.length > 0)">
       <slot />
     </template>
@@ -180,6 +192,12 @@
       },
       headers: {
         // support ability: text,value,width,align,editable
+        type: Array,
+        default () {
+          return []
+        }
+      },
+      widths: {
         type: Array,
         default () {
           return []
@@ -241,12 +259,12 @@
           this.$emit('item-selected', array, to);
         }
       },
-      items () {
+      items() {
         this.indexSelected = [];
       }
     },
     methods: {
-      getName(item2,item3,key2) {
+      getName(item2, item3, key2) {
         let value = item2[item3.value]
         if (item3.dicMapSource) {
           for (let i in item3.dicMapSource) {
@@ -311,7 +329,7 @@
         this.editValue = value
         this.$emit('inline-edit', key2, key3, value);
       },
-      removeSelected () {
+      removeSelected() {
         this.indexSelected = [];
       }
     }

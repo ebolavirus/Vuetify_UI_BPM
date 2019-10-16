@@ -127,8 +127,6 @@
     }),
     methods: {
       typeSelect() {
-        // let aaa = 1;
-        // this.typeValue = aaa;
         this.typedialog = !this.typedialog;
       },
       dutySelect() {
