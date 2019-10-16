@@ -240,6 +240,9 @@
           }
           this.$emit('item-selected', array, to);
         }
+      },
+      items () {
+        this.indexSelected = [];
       }
     },
     methods: {
@@ -307,6 +310,9 @@
       changeValue(value, key2, key3) {
         this.editValue = value
         this.$emit('inline-edit', key2, key3, value);
+      },
+      removeSelected () {
+        this.indexSelected = [];
       }
     }
   }
