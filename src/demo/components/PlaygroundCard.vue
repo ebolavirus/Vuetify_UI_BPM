@@ -509,14 +509,8 @@
           iron: '6%',
         },
       ],
-      time: {
-        type: String,
-        default: ''
-      },
-      itemCount: {
-        type: Number,
-        default: 32
-      }
+      time: '',
+      itemCount: 32
     }),
     computed: {},
     watch: {
@@ -567,7 +561,7 @@
       },
       formatterFunction (row, key, value, index) {
         if (key === 'fat' && index === 1)
-          return this.itemCount
+          return 'AAA'
         return value
       }
     }
