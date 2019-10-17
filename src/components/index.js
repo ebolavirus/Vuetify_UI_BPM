@@ -23,6 +23,7 @@ import WHTabs from './singles/WHTabs'
 import WHTabsSlider from './singles/WHTabsSlider'
 
 import WHDatePicker from './composites/WHDatePicker'
+import WHDatetimePicker from './composites/WHDatetimePicker'
 import WHTimePicker from './composites/WHTimePicker'
 import WHPagination from './composites/WHPagination'
 import WHTable from './composites/WHTable'
@@ -138,6 +139,9 @@ WHTabsSlider.install = function (Vue) {
 WHDatePicker.install = function (Vue) {
     Vue.component(WHDatePicker.name, WHDatePicker)
 }
+WHDatetimePicker.install = function (Vue) {
+    Vue.component(WHDatetimePicker.name, WHDatetimePicker)
+}
 WHTimePicker.install = function (Vue) {
     Vue.component(WHTimePicker.name, WHTimePicker)
 }
@@ -221,7 +225,7 @@ WHAreaPanels.install = function (Vue) {
 
 // 存储组件列表
 const components = [WHMenu, WHIcon, WHImg, WHHyperlink, WHText, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
-    WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHDatePicker, WHTabsSlider, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHContainer, WHCard, WHCardText,
+    WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHDatePicker, WHTabsSlider, WHDatetimePicker, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHContainer, WHCard, WHCardText,
     WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHForm, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHSpacer, WHFlex, WHAreaPanel, WHAreaPanels, WHTextarea
 ]
 
@@ -264,6 +268,7 @@ export default {
     WHTabItem,
     WHTabsItems,
     WHTabsSlider,
+    WHDatetimePicker,
     WHTimePicker,
     WHPagination,
     WHTable,

@@ -25,12 +25,18 @@
         default () {
           return ''
         }
+      },
+      value: {
+        type: String,
+        default () {
+          return ''
+        }
       }
     },
     computed: {
       showlabel() {
-        if (this.label && this.label.length > 0) {
-          return this.label
+        if (this.value && this.value.length > 0) {
+          return this.value
         }
         return this.href
       }

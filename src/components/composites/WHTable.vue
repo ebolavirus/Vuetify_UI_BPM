@@ -12,7 +12,7 @@
               <th v-for="(item, key) in headers" :key="key" :width="widths[key]">
                 {{item.text}}
               </th>
-              <th v-if="actions && actions.length > 0"  width="8%">
+              <th v-if="actions && actions.length > 0" width="8%">
                 操作
               </th>
             </tr>
@@ -73,75 +73,75 @@
     <div class="v-data-table v-data-table--dense v-data-table--fixed-header theme--light">
       <div class="v-data-table__wrapper" :style="{'height': mobileheight}">
         <table :style="{'table-layout':'fixed','word-wrap':'break-word'}">
-      <thead>
-        <tr>
-          <th v-if="showSelect" width="10%">
-            <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
-          </th>
-          <th width="70%">
-            列表
-          </th>
-          <th v-if="mobileExpandable" width="10%">
-            折叠
-          </th>
-          <th v-if="actions && actions.length > 0" width="10%">
-            操作
-          </th>
-        </tr>
-      </thead>
-      <tbody class="mx-0 px-0">
-        <tr v-for="(item2, key2) in items" :key="key2"
-          :class="key2 === selectedIndex?'whtableselect':(key2 % 2 === 0?'whtableshuang':'whtabledan')"
-          @click="colClicked(key2, item2)">
-          <td v-if="showSelect" style="width: 8%">
-            <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
-            <!--when single check, add 1 plus to avoid a bug when key is 0-->
-            <v-checkbox v-else v-model="indexSelected" :multiple="false" :value="key2+1"></v-checkbox>
-          </td>
-          <td>
-            <v-container transition="scroll-y-transition">
-              <v-row v-for="(item3, key3) in headers" :key="key3">
-                <template v-if="item3['editable'] && item3.dicMapSource && rowShow(key2,key3)">
-                  <wh-select :label="item3.text" :value="getObject(item2, item3)" :items="item3.dicMapSource"
-                    item-text="label" item-value="value" @change="changeValue($event,key2,key3)" />
-                </template>
-                <template v-else-if="item3['editable'] && rowShow(key2,key3)">
-                  <v-edit-dialog @save="save(key2, key3)" @open="open(item2, item3)">
-                    <template v-slot:default>
-                      <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3,key2)" readonly />
+          <thead>
+            <tr>
+              <th v-if="showSelect" width="10%">
+                <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
+              </th>
+              <th width="70%">
+                列表
+              </th>
+              <th v-if="mobileExpandable" width="10%">
+                折叠
+              </th>
+              <th v-if="actions && actions.length > 0" width="10%">
+                操作
+              </th>
+            </tr>
+          </thead>
+          <tbody class="mx-0 px-0">
+            <tr v-for="(item2, key2) in items" :key="key2"
+              :class="key2 === selectedIndex?'whtableselect':(key2 % 2 === 0?'whtableshuang':'whtabledan')"
+              @click="colClicked(key2, item2)">
+              <td v-if="showSelect" style="width: 8%">
+                <v-checkbox v-if="!singleSelect" v-model="indexSelected" :value="key2"></v-checkbox>
+                <!--when single check, add 1 plus to avoid a bug when key is 0-->
+                <v-checkbox v-else v-model="indexSelected" :multiple="false" :value="key2+1"></v-checkbox>
+              </td>
+              <td>
+                <v-container transition="scroll-y-transition">
+                  <v-row v-for="(item3, key3) in headers" :key="key3">
+                    <template v-if="item3['editable'] && item3.dicMapSource && rowShow(key2,key3)">
+                      <wh-select :label="item3.text" :value="getObject(item2, item3)" :items="item3.dicMapSource"
+                        item-text="label" item-value="value" @change="changeValue($event,key2,key3)" />
                     </template>
-                    <template v-slot:input>
-                      <wh-textfield v-model="editValue" single-line counter />
+                    <template v-else-if="item3['editable'] && rowShow(key2,key3)">
+                      <v-edit-dialog @save="save(key2, key3)" @open="open(item2, item3)">
+                        <template v-slot:default>
+                          <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3,key2)" readonly />
+                        </template>
+                        <template v-slot:input>
+                          <wh-textfield v-model="editValue" single-line counter />
+                        </template>
+                      </v-edit-dialog>
                     </template>
-                  </v-edit-dialog>
+                    <template v-else-if="rowShow(key2,key3)">
+                      <wh-textfield :label="item3.text" :value="getName(item2,item3,key2)" disabled />
+                    </template>
+                    <template v-else>
+                    </template>
+                  </v-row>
+                </v-container>
+              </td>
+              <td v-if="mobileExpandable" style="width: 4%">
+                <v-icon @click="clickExpanded(key2)" color="blue">
+                  {{items[key2].isMobileExpand?'mdi-chevron-double-up':'mdi-chevron-double-down'}}
+                </v-icon>
+              </td>
+              <td v-if="actions && actions.length > 0" style="width: 20%">
+                <template v-for="(action, key4) in actions">
+                  <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)"
+                    :key="key4">
+                    {{action.icon}}
+                  </v-icon>
+                  <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
+                    @click="$emit(action.actionName, item2, key2)">
+                    {{action.text}}
+                  </wh-btn>
                 </template>
-                <template v-else-if="rowShow(key2,key3)">
-                  <wh-textfield :label="item3.text" :value="getName(item2,item3,key2)" disabled />
-                </template>
-                <template v-else>
-                </template>
-              </v-row>
-            </v-container>
-          </td>
-          <td v-if="mobileExpandable" style="width: 4%">
-            <v-icon @click="clickExpanded(key2)" color="blue">
-              {{items[key2].isMobileExpand?'mdi-chevron-double-up':'mdi-chevron-double-down'}}
-            </v-icon>
-          </td>
-          <td v-if="actions && actions.length > 0" style="width: 20%">
-            <template v-for="(action, key4) in actions">
-              <v-icon v-if="action.icon && action.icon !== ''" @click="$emit(action.actionName, item2, key2)"
-                :key="key4">
-                {{action.icon}}
-              </v-icon>
-              <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
-                @click="$emit(action.actionName, item2, key2)">
-                {{action.text}}
-              </wh-btn>
-            </template>
-          </td>
-        </tr>
-      </tbody>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>
