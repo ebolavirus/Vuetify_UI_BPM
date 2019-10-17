@@ -153,6 +153,13 @@
         <br>使用方法视上方demo，最外层嵌套wh-layout,内部使用wh-flex标签动态拼接元素，元素的rowNumber默认为1，允许值包含1,2,3,4
       </wh-area-panel>
       <wh-area-panel title="wh-table">
+        <wh-layout>
+          <wh-flex :rowNumber="2">
+            <wh-table-excel-input v-model="typedesserts" :onSuccess="onSuccessExcel">导入</wh-table-excel-input>
+            <wh-table-excel-output :tableHeader="typeheaders" :tableData="typedesserts" @onFail="excelFail">导出
+            </wh-table-excel-output>
+          </wh-flex>
+        </wh-layout>
         <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" :formatter="formatterFunction"
           @item-selected="itemSelected" :showSelect="true" :singleSelect="false" :mobileExpandable="true"
           @click:row="clickRow" @inline-edit="inlineEditFunction" height="300px" mobileheight="600px"
@@ -566,6 +573,13 @@
         if (key === 'fat' && index === 1)
           return 'AAA'
         return value
+      },
+      beforeUploadExcel() {},
+      onSuccessExcel(e) {
+        this.$alert(JSON.stringify(e))
+      },
+      excelFail(e) {
+        this.$alert(e)
       }
     }
   }

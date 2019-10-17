@@ -29,6 +29,8 @@ import WHPagination from './composites/WHPagination'
 import WHTable from './composites/WHTable'
 import WHEditdialog from './composites/WHEditdialog'
 import WHLoading from './composites/WHLoading'
+import WHTableExcelInput from './composites/WHTableExcelInput'
+import WHTableExcelOutput from './composites/WHTableExcelOutput'
 
 import WHApp from './layout/WHApp'
 import WHContent from './layout/WHContent'
@@ -157,7 +159,12 @@ WHPagination.install = function (Vue) {
 WHLoading.install = function (Vue) {
     Vue.component(WHLoading.name, WHLoading)
 }
-
+WHTableExcelInput.install = function (Vue) {
+    Vue.component(WHTableExcelInput.name, WHTableExcelInput)
+}
+WHTableExcelOutput.install = function (Vue) {
+    Vue.component(WHTableExcelOutput.name, WHTableExcelOutput)
+}
 
 
 WHApp.install = function (Vue) {
@@ -225,7 +232,7 @@ WHAreaPanels.install = function (Vue) {
 
 // 存储组件列表
 const components = [WHMenu, WHIcon, WHImg, WHHyperlink, WHText, WHTextfield, WHNumberfield, WHMoneyfield, WHButton, WHSelect, WHRadioGroup, WHRadio, WHCheckbox, WHTreeview, WHTimeline,
-    WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHDatePicker, WHTabsSlider, WHDatetimePicker, WHTimePicker, WHPagination, WHTable, WHLoading, WHApp, WHContent, WHContainer, WHCard, WHCardText,
+    WHTimelineItem, WHTab, WHTabItem, WHTabsItems, WHDatePicker, WHTabsSlider, WHDatetimePicker, WHTimePicker, WHPagination, WHTable, WHLoading, WHTableExcelInput, WHTableExcelOutput, WHApp, WHContent, WHContainer, WHCard, WHCardText,
     WHCardTitle, WHCardActions, WHDialog, WHDrawer, WHForm, WHFooter, WHTopbar, WHLayout, WHList, WHListItem, WHListItemTitle, WHSpacer, WHFlex, WHAreaPanel, WHAreaPanels, WHTextarea
 ]
 
@@ -273,6 +280,8 @@ export default {
     WHPagination,
     WHTable,
     WHLoading,
+    WHTableExcelInput,
+    WHTableExcelOutput,
     WHApp,
     WHContent,
     WHContainer,

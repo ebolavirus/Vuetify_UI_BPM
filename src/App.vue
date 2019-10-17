@@ -11,7 +11,7 @@
     name: 'App',
     components: {
       "dialog-promise-demo": DialogPromiseDemo
-      //, "it-service-demo": ItServiceDemo
+      // "it-service-demo": ItServiceDemo
     },
     data() {
       return {

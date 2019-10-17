@@ -29,6 +29,8 @@ import WHPagination from './composites/WHPagination'
 import WHTable from './composites/WHTable'
 import WHEditdialog from './composites/WHEditdialog'
 import WHLoading from './composites/WHLoading'
+import WHTableExcelInput from './composites/WHTableExcelInput'
+import WHTableExcelOutput from './composites/WHTableExcelOutput'
 
 import WHApp from './layout/WHApp'
 import WHContent from './layout/WHContent'
@@ -103,3 +105,5 @@ Vue.component(WHSpacer.name, WHSpacer)
 Vue.component(WHFlex.name, WHFlex)
 Vue.component(WHAreaPanel.name, WHAreaPanel)
 Vue.component(WHAreaPanels.name, WHAreaPanels)
+Vue.component(WHTableExcelInput.name, WHTableExcelInput)
+Vue.component(WHTableExcelOutput.name, WHTableExcelOutput)
