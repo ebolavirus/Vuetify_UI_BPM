@@ -153,10 +153,10 @@
         <br>使用方法视上方demo，最外层嵌套wh-layout,内部使用wh-flex标签动态拼接元素，元素的rowNumber默认为1，允许值包含1,2,3,4
       </wh-area-panel>
       <wh-area-panel title="wh-table">
-        <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" :formatter="formatterFunction" @item-selected="itemSelected"
-          :showSelect="true" :singleSelect="false" :mobileExpandable="true" @click:row="clickRow"
-          @inline-edit="inlineEditFunction" height="300px" mobileheight="600px" @submitEvent="submitTest"
-          @deleteEvent="deleteTest">
+        <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" :formatter="formatterFunction"
+          @item-selected="itemSelected" :showSelect="true" :singleSelect="false" :mobileExpandable="true"
+          @click:row="clickRow" @inline-edit="inlineEditFunction" height="300px" mobileheight="600px"
+          @submitEvent="submitTest" @deleteEvent="deleteTest">
           <wh-pagination v-model="itemCount"></wh-pagination>
         </wh-table>
         <br><code>
@@ -196,8 +196,8 @@
       <wh-area-panel title="wh-datetime-picker">
         <wh-layout>
           <wh-flex :rowNumber="3">
-            <wh-datetime-picker v-model="date" label="日期+时间"></wh-datetime-picker>
-            <wh-datetime-picker disabled v-model="date" label="日期+时间"></wh-datetime-picker>
+            <wh-datetime-picker v-model="datetime" label="日期+时间" />
+            <wh-datetime-picker disabled v-model="datetime" label="日期+时间" />
           </wh-flex>
         </wh-layout>
         <br><code>&lt;wh-datetime-picker v-model="date" label="日期+时间"/&gt;</code>
@@ -231,296 +231,299 @@
 <script>
   export default {
     name: "PlaygroundCard",
-    data: () => ({
-      radioValue: '',
-      checkboxValue: [],
-      panel: [],
-      overlay: false,
-      valuenumber: '0',
-      types: [{
-          state: 'Florida',
-          abbr: 'FL'
-        },
-        {
-          state: 'Georgia',
-          abbr: 'GA'
-        },
-        {
-          state: 'Nebraska',
-          abbr: 'NE'
-        },
-        {
-          state: 'California',
-          abbr: 'CA'
-        },
-        {
-          state: 'New York',
-          abbr: 'NY'
-        },
-      ],
-      showDialog: false,
-      date: new Date().toISOString().substr(0, 10),
-      treeitems: [{
-          id: 1,
-          name: 'Applications :',
-          children: [{
-              id: 2,
-              name: 'Calendar : app'
-            },
-            {
-              id: 3,
-              name: 'Chrome : app'
-            },
-            {
-              id: 4,
-              name: 'Webstorm : app'
-            },
-          ],
-        },
-        {
-          id: 5,
-          name: 'Documents :',
-          children: [{
-              id: 6,
-              name: 'vuetify :',
-              children: [{
-                id: 7,
-                name: 'src :',
+    data() {
+      return {
+        radioValue: '',
+        checkboxValue: [],
+        panel: [],
+        overlay: false,
+        valuenumber: '0',
+        types: [{
+            state: 'Florida',
+            abbr: 'FL'
+          },
+          {
+            state: 'Georgia',
+            abbr: 'GA'
+          },
+          {
+            state: 'Nebraska',
+            abbr: 'NE'
+          },
+          {
+            state: 'California',
+            abbr: 'CA'
+          },
+          {
+            state: 'New York',
+            abbr: 'NY'
+          },
+        ],
+        showDialog: false,
+        date: new Date().toISOString().substr(0, 10),
+        datetime: "2019-09-03 16:33:00",
+        treeitems: [{
+            id: 1,
+            name: 'Applications :',
+            children: [{
+                id: 2,
+                name: 'Calendar : app'
+              },
+              {
+                id: 3,
+                name: 'Chrome : app'
+              },
+              {
+                id: 4,
+                name: 'Webstorm : app'
+              },
+            ],
+          },
+          {
+            id: 5,
+            name: 'Documents :',
+            children: [{
+                id: 6,
+                name: 'vuetify :',
                 children: [{
-                    id: 8,
-                    name: 'index : ts'
+                  id: 7,
+                  name: 'src :',
+                  children: [{
+                      id: 8,
+                      name: 'index : ts'
+                    },
+                    {
+                      id: 9,
+                      name: 'bootstrap : ts'
+                    },
+                  ],
+                }, ],
+              },
+              {
+                id: 10,
+                name: 'material2 :',
+                children: [{
+                  id: 11,
+                  name: 'src :',
+                  children: [{
+                      id: 12,
+                      name: 'wh-btn : ts'
+                    },
+                    {
+                      id: 13,
+                      name: 'wh-card : ts'
+                    },
+                    {
+                      id: 14,
+                      name: 'v-window : ts'
+                    },
+                  ],
+                }, ],
+              },
+            ],
+          },
+          {
+            id: 15,
+            name: 'Downloads :',
+            children: [{
+                id: 16,
+                name: 'October : pdf'
+              },
+              {
+                id: 17,
+                name: 'November : pdf'
+              },
+              {
+                id: 18,
+                name: 'Tutorial : html'
+              },
+            ],
+          },
+          {
+            id: 19,
+            name: 'Videos :',
+            children: [{
+                id: 20,
+                name: 'Tutorials :',
+                children: [{
+                    id: 21,
+                    name: 'Basic layouts : mp4'
                   },
                   {
-                    id: 9,
-                    name: 'bootstrap : ts'
+                    id: 22,
+                    name: 'Advanced techniques : mp4'
+                  },
+                  {
+                    id: 23,
+                    name: 'All about app : dir'
                   },
                 ],
-              }, ],
-            },
-            {
-              id: 10,
-              name: 'material2 :',
-              children: [{
-                id: 11,
-                name: 'src :',
-                children: [{
-                    id: 12,
-                    name: 'wh-btn : ts'
-                  },
-                  {
-                    id: 13,
-                    name: 'wh-card : ts'
-                  },
-                  {
-                    id: 14,
-                    name: 'v-window : ts'
-                  },
-                ],
-              }, ],
-            },
-          ],
-        },
-        {
-          id: 15,
-          name: 'Downloads :',
-          children: [{
-              id: 16,
-              name: 'October : pdf'
-            },
-            {
-              id: 17,
-              name: 'November : pdf'
-            },
-            {
-              id: 18,
-              name: 'Tutorial : html'
-            },
-          ],
-        },
-        {
-          id: 19,
-          name: 'Videos :',
-          children: [{
-              id: 20,
-              name: 'Tutorials :',
-              children: [{
-                  id: 21,
-                  name: 'Basic layouts : mp4'
-                },
-                {
-                  id: 22,
-                  name: 'Advanced techniques : mp4'
-                },
-                {
-                  id: 23,
-                  name: 'All about app : dir'
-                },
-              ],
-            },
-            {
-              id: 24,
-              name: 'Intro : mov'
-            },
-            {
-              id: 25,
-              name: 'Conference introduction : avi'
-            },
-          ],
-        },
-      ],
-      typeheaders: [{
-          text: '变更类型',
-          editable: true,
-          value: 'name'
-        },
-        {
-          text: '公司范围',
-          value: 'calories',
-          editable: true,
-          dicMapSource: [{
-            label: 'label1',
-            value: '1',
-          }, {
-            label: 'label2',
-            value: '2',
-          }, {
-            label: 'label3',
-            value: '3',
-          }, {
-            label: 'label4',
-            value: '4',
-          }]
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: 'IT业务顾问',
-          value: 'fat'
-        },
-        {
-          text: '说明',
-          value: 'carbs'
-        }
-      ],
-      typeActions: [{
-        text: '提交',
-        icon: 'mdi-pencil',
-        actionName: 'submitEvent'
-      }, {
-        text: '删除',
-        icon: 'mdi-delete',
-        actionName: 'deleteEvent'
-      }],
-      typedesserts: [{
-          name: 'Frozen Yogurt',
-          calories: 159,
-          fat: 666666666666666666666666,
-          carbs: 24,
-          protein: 4.0,
-          iron: '1%',
-        },
-        {
-          name: 'Ice cream sandwich',
-          calories: 2,
-          fat: 9.0,
-          carbs: 37,
-          protein: 4.3,
-          iron: '1%',
-        },
-        {
-          name: 'Eclair',
-          calories: 3,
-          fat: 16.0,
-          carbs: 23,
-          protein: 6.0,
-          iron: '7%',
-        },
-        {
-          name: 'Cupcake',
-          calories: 305,
-          fat: 3.7,
-          carbs: 67,
-          protein: 4.3,
-          iron: '8%',
-        },
-        {
-          name: 'Gingerbread',
-          calories: 356,
-          fat: 16.0,
-          carbs: 49,
-          protein: 3.9,
-          iron: '16%',
-        },
-        {
-          name: 'Jelly bean',
-          calories: 375,
-          fat: 0.0,
-          carbs: 94,
-          protein: 0.0,
-          iron: '0%',
-        },
-        {
-          name: 'Lollipop',
-          calories: 392,
-          fat: 0.2,
-          carbs: 98,
-          protein: 0,
-          iron: '2%',
-        },
-        {
-          name: 'Honeycomb',
-          calories: 408,
-          fat: 3.2,
-          carbs: 87,
-          protein: 6.5,
-          iron: '45%',
-        },
-        {
-          name: 'Donut',
-          calories: 452,
-          fat: 25.0,
-          carbs: 51,
-          protein: 4.9,
-          iron: '22%',
-        },
-        {
-          name: 'KitKat',
-          calories: 518,
-          fat: 26.0,
-          carbs: 65,
-          protein: 7,
-          iron: '6%',
-        },
-      ],
-      time: '',
-      itemCount: 32
-    }),
+              },
+              {
+                id: 24,
+                name: 'Intro : mov'
+              },
+              {
+                id: 25,
+                name: 'Conference introduction : avi'
+              },
+            ],
+          },
+        ],
+        typeheaders: [{
+            text: '变更类型',
+            editable: true,
+            value: 'name'
+          },
+          {
+            text: '公司范围',
+            value: 'calories',
+            editable: true,
+            dicMapSource: [{
+              label: 'label1',
+              value: '1',
+            }, {
+              label: 'label2',
+              value: '2',
+            }, {
+              label: 'label3',
+              value: '3',
+            }, {
+              label: 'label4',
+              value: '4',
+            }]
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: 'IT业务顾问',
+            value: 'fat'
+          },
+          {
+            text: '说明',
+            value: 'carbs'
+          }
+        ],
+        typeActions: [{
+          text: '提交',
+          icon: 'mdi-pencil',
+          actionName: 'submitEvent'
+        }, {
+          text: '删除',
+          icon: 'mdi-delete',
+          actionName: 'deleteEvent'
+        }],
+        typedesserts: [{
+            name: 'Frozen Yogurt',
+            calories: 159,
+            fat: 666666666666666666666666,
+            carbs: 24,
+            protein: 4.0,
+            iron: '1%',
+          },
+          {
+            name: 'Ice cream sandwich',
+            calories: 2,
+            fat: 9.0,
+            carbs: 37,
+            protein: 4.3,
+            iron: '1%',
+          },
+          {
+            name: 'Eclair',
+            calories: 3,
+            fat: 16.0,
+            carbs: 23,
+            protein: 6.0,
+            iron: '7%',
+          },
+          {
+            name: 'Cupcake',
+            calories: 305,
+            fat: 3.7,
+            carbs: 67,
+            protein: 4.3,
+            iron: '8%',
+          },
+          {
+            name: 'Gingerbread',
+            calories: 356,
+            fat: 16.0,
+            carbs: 49,
+            protein: 3.9,
+            iron: '16%',
+          },
+          {
+            name: 'Jelly bean',
+            calories: 375,
+            fat: 0.0,
+            carbs: 94,
+            protein: 0.0,
+            iron: '0%',
+          },
+          {
+            name: 'Lollipop',
+            calories: 392,
+            fat: 0.2,
+            carbs: 98,
+            protein: 0,
+            iron: '2%',
+          },
+          {
+            name: 'Honeycomb',
+            calories: 408,
+            fat: 3.2,
+            carbs: 87,
+            protein: 6.5,
+            iron: '45%',
+          },
+          {
+            name: 'Donut',
+            calories: 452,
+            fat: 25.0,
+            carbs: 51,
+            protein: 4.9,
+            iron: '22%',
+          },
+          {
+            name: 'KitKat',
+            calories: 518,
+            fat: 26.0,
+            carbs: 65,
+            protein: 7,
+            iron: '6%',
+          },
+        ],
+        time: '',
+        itemCount: 32
+      }
+    },
     computed: {},
     watch: {
       overlay(val) {
@@ -541,20 +544,13 @@
           this.$inform("The colour is " + colour + ".");
         });
       },
-      tryFull() {
-      },
-      clickRow() {
-      },
-      save() {
-      },
-      cancel() {
-      },
-      open() {
-      },
-      close() {
-      },
-      itemSelected() {
-      },
+      tryFull() {},
+      clickRow() {},
+      save() {},
+      cancel() {},
+      open() {},
+      close() {},
+      itemSelected() {},
       showModelDialog() {
         this.$alert({
           title: 'aaabbb',
@@ -564,11 +560,9 @@
       inlineEditFunction() {
 
       },
-      submitTest() {
-      },
-      deleteTest() {
-      },
-      formatterFunction (row, key, value, index) {
+      submitTest() {},
+      deleteTest() {},
+      formatterFunction(row, key, value, index) {
         if (key === 'fat' && index === 1)
           return 'AAA'
         return value
