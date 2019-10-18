@@ -6687,12 +6687,12 @@
   width: 100%;
   border-spacing: 0;
 }
-
+*/
 .v-data-table td,
 .v-data-table th {
-  padding: 0 16px;
+  padding: 0 5px;
 }
-
+/*
 .v-data-table th {
   -webkit-user-select: none;
   -moz-user-select: none;

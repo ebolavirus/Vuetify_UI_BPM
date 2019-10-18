@@ -78,13 +78,13 @@
               <th v-if="showSelect" width="10%">
                 <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
               </th>
-              <th width="70%">
+              <th width="60%">
                 列表
               </th>
-              <th v-if="mobileExpandable" width="10%">
+              <th v-if="mobileExpandable" width="15%">
                 折叠
               </th>
-              <th v-if="actions && actions.length > 0" width="10%">
+              <th v-if="actions && actions.length > 0" width="15%">
                 操作
               </th>
             </tr>
