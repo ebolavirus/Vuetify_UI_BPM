@@ -159,13 +159,15 @@
             <wh-table-excel-output :tableHeader="typeheaders" :tableData="typedesserts" @onFail="excelFail">导出
             </wh-table-excel-output>
           </wh-flex>
-        </wh-layout>
+          <wh-flex :rowNumber="1">
         <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" :formatter="formatterFunction"
           @item-selected="itemSelected" :showSelect="true" :singleSelect="false" :mobileExpandable="true"
           @click:row="clickRow" @inline-edit="inlineEditFunction" height="300px" mobileheight="600px"
           @submitEvent="submitTest" @deleteEvent="deleteTest">
           <wh-pagination v-model="itemCount"></wh-pagination>
         </wh-table>
+          </wh-flex>
+        </wh-layout>
         <br><code>
           &lt;wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions"
           @item-selected="itemSelected"

@@ -15,8 +15,11 @@
     </v-btn>
     <template v-if="!simple">
       Page:
-      <v-select class="v-data-footer__select" :items="pageArray" v-model="currentPage" />Rows per page:
-      <v-select class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
+      <wh-select class="v-data-footer__select" :items="pageArray" v-model="currentPage" />
+      <!--<wh-select :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
+                    item-value="value" @change="changeValue($event,key2,key3)" />-->
+      Rows per page:
+      <wh-select class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
     </template>
   </div>
 </template>
