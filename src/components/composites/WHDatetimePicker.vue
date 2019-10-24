@@ -8,15 +8,15 @@
     <v-dialog v-model="modal" persistent width="290px">
       <v-date-picker v-model="dateValue" scrollable>
         <v-spacer></v-spacer>
-        <v-btn text color="primary" @click="modal=false">取消</v-btn>
-        <v-btn text color="primary" @click="openTime()">确定</v-btn>
+        <v-btn text color="primary" @click="modal=false">{{$vuetify.lang.t('$vuetify.dialogtext.cancel')}}</v-btn>
+        <v-btn text color="primary" @click="openTime()">{{$vuetify.lang.t('$vuetify.dialogtext.ok')}}</v-btn>
       </v-date-picker>
     </v-dialog>
     <v-dialog v-model="modal2" persistent width="260px">
       <v-time-picker v-model="timeValue" scrollable width="260px">
         <v-spacer></v-spacer>
-        <v-btn text color="primary" @click="modal2 = false">取消</v-btn>
-        <v-btn text color="primary" @click="saveTime()">确定</v-btn>
+        <v-btn text color="primary" @click="modal2 = false">{{$vuetify.lang.t('$vuetify.dialogtext.cancel')}}</v-btn>
+        <v-btn text color="primary" @click="saveTime()">{{$vuetify.lang.t('$vuetify.dialogtext.ok')}}</v-btn>
       </v-time-picker>
     </v-dialog>
   </span>

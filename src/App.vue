@@ -17,6 +17,10 @@
       return {
         //
       }
+    },
+    mounted() {
+      // console.log("data vuetify:::::", this.$vuetify)
+      this.$vuetify.lang.current = 'zh'
     }
   }
 </script>

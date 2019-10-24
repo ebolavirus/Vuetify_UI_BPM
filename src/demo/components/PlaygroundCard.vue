@@ -220,6 +220,7 @@
       <wh-area-panel title="wh-time-picker">
         <wh-layout>
           <wh-flex :rowNumber="3">
+            <wh-time-picker v-model="time" label="时间"></wh-time-picker>
             <wh-time-picker disabled v-model="time" label="时间"></wh-time-picker>
           </wh-flex>
         </wh-layout>

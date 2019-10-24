@@ -1,5 +1,5 @@
 <template>
-  <v-text-field v-if="readonly || disabled" v-model="whpassvalue" :label="label" append-icon="mdi-clock-check-outline"
+  <v-text-field v-if="readonly||disabled" v-model="whpassvalue" :label="label" append-icon="mdi-clock-check-outline"
     :readonly="readonly" :disabled="disabled">
   </v-text-field>
   <v-dialog v-else ref="timepickerdialog" v-model="modal" :return-value.sync="whpassvalue" persistent width="260px">
@@ -9,8 +9,8 @@
     </template>
     <v-time-picker v-model="whpassvalue" scrollable width="260px">
       <v-spacer></v-spacer>
-      <v-btn text color="primary" @click="modal = false">取消</v-btn>
-      <v-btn text color="primary" @click="$refs.timepickerdialog.save(whpassvalue)">确定</v-btn>
+      <v-btn text color="primary" @click="modal=false">{{$vuetify.lang.t('$vuetify.dialogtext.cancel')}}</v-btn>
+      <v-btn text color="primary" @click="$refs.timepickerdialog.save(whpassvalue)">{{$vuetify.lang.t('$vuetify.dialogtext.ok')}}</v-btn>
     </v-time-picker>
   </v-dialog>
 </template>

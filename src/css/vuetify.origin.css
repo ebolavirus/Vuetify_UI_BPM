@@ -6682,15 +6682,14 @@
 .theme--dark.v-data-table tbody tr:hover:not(.v-data-table__expanded__content) {
   background: #616161;
 }
-
+*/
 .v-data-table table {
   width: 100%;
-  border-spacing: 0;
+  border-spacing: 1px;
 }
-*/
 .v-data-table td,
 .v-data-table th {
-  padding: 0 5px;
+  padding: 0 2px;
 }
 /*
 .v-data-table th {

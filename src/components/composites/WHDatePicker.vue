@@ -9,8 +9,8 @@
     </template>
     <v-date-picker v-model="whpassvalue" scrollable>
       <div class="flex-grow-1"></div>
-      <v-btn text color="primary" @click="modal = false">取消</v-btn>
-      <v-btn text color="primary" @click="$refs.datepickerdialog.save(whpassvalue)">确定</v-btn>
+      <v-btn text color="primary" @click="modal = false">{{$vuetify.lang.t('$vuetify.dialogtext.cancel')}}</v-btn>
+      <v-btn text color="primary" @click="$refs.datepickerdialog.save(whpassvalue)">{{$vuetify.lang.t('$vuetify.dialogtext.ok')}}</v-btn>
     </v-date-picker>
   </v-dialog>
 </template>

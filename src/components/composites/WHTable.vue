@@ -12,8 +12,8 @@
               <th v-for="(item, key) in headers" :key="key" :width="widths[key]">
                 {{item.text}}
               </th>
-              <th v-if="actions && actions.length > 0" width="8%">
-                操作
+              <th v-if="actions && actions.length > 0" :width="widths[headers.length]?widths[headers.length]:'8%'">
+                {{$vuetify.lang.t('$vuetify.tabletext.action')}}
               </th>
             </tr>
           </thead>
@@ -79,13 +79,13 @@
                 <v-checkbox v-if="!singleSelect" v-model="wholecheckbox"></v-checkbox>
               </th>
               <th width="60%">
-                列表
+                {{$vuetify.lang.t('$vuetify.tabletext.table')}}
               </th>
               <th v-if="mobileExpandable" width="15%">
-                折叠
+                {{$vuetify.lang.t('$vuetify.tabletext.expand')}}
               </th>
               <th v-if="actions && actions.length > 0" width="15%">
-                操作
+                {{$vuetify.lang.t('$vuetify.tabletext.action')}}
               </th>
             </tr>
           </thead>
