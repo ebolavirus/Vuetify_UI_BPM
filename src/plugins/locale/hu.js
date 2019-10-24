@@ -6,9 +6,14 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _default = {
   close: 'Close',
-  dialog: {
+  dialogtext: {
     cancel: 'Cancel',
     ok: 'OK'
+  },
+  tabletext: {
+    table: 'data',
+    expand: 'fold',
+    action: 'actions'
   },
   dataIterator: {
     noResultsText: 'Nincs egyező találat',
