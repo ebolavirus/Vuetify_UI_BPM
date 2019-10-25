@@ -58,10 +58,34 @@
           item-value="abbr"&gt;&lt;/wh-select&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-radio">
-        <wh-radio-group label="性别" v-model="radioValue">
-          <wh-radio label="男" value="radio-1"></wh-radio>
-          <wh-radio label="女" value="radio-2"></wh-radio>
-        </wh-radio-group>
+        <wh-layout>
+          <wh-flex :rowNumber="1">
+            <wh-radio-group label="性别" v-model="radioValue">
+              <wh-radio label="男男男男男男男男男男男男男男123" value="radio-1"></wh-radio>
+              <wh-radio label="女女女女女女女女女女女女女女123" value="radio-2"></wh-radio>
+            </wh-radio-group>
+          </wh-flex>
+        </wh-layout>
+        <wh-layout>
+          <wh-flex :rowNumber="3">
+            <wh-radio-group label="性别" v-model="radioValue">
+              <wh-radio label="男男男男男男男男男男男男男男123" value="radio-1"></wh-radio>
+              <wh-radio label="女女女女女女女女女女女女女女123" value="radio-2"></wh-radio>
+            </wh-radio-group>
+          </wh-flex>
+          <wh-flex :rowNumber="3">
+            <wh-radio-group label="性别" v-model="radioValue">
+              <wh-radio label="男男男男男男男男男男男男男男123" value="radio-1"></wh-radio>
+              <wh-radio label="女女女女女女女女女女女女女女123" value="radio-2"></wh-radio>
+            </wh-radio-group>
+          </wh-flex>
+          <wh-flex :rowNumber="3">
+            <wh-radio-group label="性别" v-model="radioValue">
+              <wh-radio label="男男男男男男男男男男男男男男123" value="radio-1"></wh-radio>
+              <wh-radio label="女女女女女女女女女女女女女女123" value="radio-2"></wh-radio>
+            </wh-radio-group>
+          </wh-flex>
+        </wh-layout>
         <br><code> &lt;wh-radio-group label="性别"&gt;
           &lt;wh-radio label="男" value="radio-1"&gt;&lt;/wh-radio&gt;
           &lt;wh-radio label="女" value="radio-2"&gt;&lt;/wh-radio&gt;
@@ -160,12 +184,12 @@
             </wh-table-excel-output>
           </wh-flex>
           <wh-flex :rowNumber="1">
-        <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" :formatter="formatterFunction"
-          @item-selected="itemSelected" :showSelect="true" :singleSelect="false" :mobileExpandable="true"
-          @click:row="clickRow" @inline-edit="inlineEditFunction" height="300px" mobileheight="600px"
-          @submitEvent="submitTest" @deleteEvent="deleteTest">
-          <wh-pagination v-model="itemCount"></wh-pagination>
-        </wh-table>
+            <wh-table :headers="typeheaders" :items="typedesserts" :actions="typeActions" :formatter="formatterFunction"
+              @item-selected="itemSelected" :showSelect="true" :singleSelect="false" :mobileExpandable="true"
+              @click:row="clickRow" @inline-edit="inlineEditFunction" height="300px" mobileheight="600px"
+              @submitEvent="submitTest" @deleteEvent="deleteTest">
+              <wh-pagination v-model="itemCount"></wh-pagination>
+            </wh-table>
           </wh-flex>
         </wh-layout>
         <br><code>
