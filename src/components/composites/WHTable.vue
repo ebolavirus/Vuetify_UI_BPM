@@ -53,7 +53,7 @@
                     :key="key4">
                     {{action.icon}}
                   </v-icon>
-                  <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
+                  <wh-btn dark color="blue darken-3" small v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
                     @click="$emit(action.actionName, item2, key2)">
                     {{action.text}}
                   </wh-btn>
@@ -134,7 +134,7 @@
                     :key="key4">
                     {{action.icon}}
                   </v-icon>
-                  <wh-btn v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
+                  <wh-btn dark color="blue darken-3" small v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
                     @click="$emit(action.actionName, item2, key2)">
                     {{action.text}}
                   </wh-btn>

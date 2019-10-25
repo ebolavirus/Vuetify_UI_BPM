@@ -53,7 +53,14 @@
         <br><code>&lt;wh-btn depressed block color="indigo" dark&gt;Button&lt;/wh-btn&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-select">
-        <wh-select :items="types" label="state" item-text="state" item-value="abbr"></wh-select>
+        <wh-layout>
+          <wh-flex :rowNumber="2">
+            <wh-select :items="types" label="state" item-text="state" item-value="abbr"></wh-select>
+          </wh-flex>
+          <wh-flex :rowNumber="2">
+            <wh-select disabled :items="types" label="state" item-text="state" item-value="abbr"></wh-select>
+          </wh-flex>
+        </wh-layout>
         <br><code>&lt;wh-select :items="types" label="state" item-text="state"
           item-value="abbr"&gt;&lt;/wh-select&gt;</code>
       </wh-area-panel>
@@ -470,7 +477,6 @@
           actionName: 'submitEvent'
         }, {
           text: '删除',
-          icon: 'mdi-delete',
           actionName: 'deleteEvent'
         }],
         typedesserts: [{
