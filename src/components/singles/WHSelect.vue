@@ -42,14 +42,14 @@
         }
         return ''
       }
-    },
+    }/*,
     mounted() {
       let explorer = this.currentExplorer()
-      if (explorer === 'edge' || explorer === 'ie') {
-
-      }
+      // if (explorer === 'edge' || explorer === 'ie') {
+        //do sometihing.....
+      // }
       console.log('now ieexplorer--->', explorer) 
-    }
+    }*/
   }
 /*
 <template>

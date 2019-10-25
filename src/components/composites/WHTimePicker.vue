@@ -7,7 +7,7 @@
       <v-text-field v-model="whpassvalue" :label="label" :rules="rules" append-icon="mdi-clock-check-outline" readonly v-on="on">
       </v-text-field>
     </template>
-    <v-time-picker v-model="whpassvalue" scrollable width="260px">
+    <v-time-picker ref="timepickerself" v-model="whpassvalue" width="260px">
       <v-spacer></v-spacer>
       <v-btn text color="primary" @click="modal=false">{{$vuetify.lang.t('$vuetify.dialogtext.cancel')}}</v-btn>
       <v-btn text color="primary" @click="$refs.timepickerdialog.save(whpassvalue)">{{$vuetify.lang.t('$vuetify.dialogtext.ok')}}</v-btn>
@@ -25,6 +25,13 @@
       menu: false,
       modal: false
     }),
+    watch: {
+      modal (to) {
+        setTimeout(()=>{
+          to && (this.$refs.timepickerself.selecting = 1)
+        }, 200)
+      }
+    },
     props: {
       time: {
         type: String,

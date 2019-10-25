@@ -16,6 +16,9 @@
               <wh-textfield disabled label="*办公室位置(只读）" value="ffff"></wh-textfield>
             </wh-flex>
             <wh-flex :rowNumber="1">
+              <wh-pagination v-model="itemCount"></wh-pagination>
+            </wh-flex>
+            <wh-flex :rowNumber="1">
               <wh-textarea label="服务内容"></wh-textarea>
             </wh-flex>
           </wh-layout>
@@ -119,6 +122,7 @@
       dutyValue: "",
       typedialog: false,
       dutydialog: false,
+      itemCount: 32,
       row: "",
       startDateMenu: false,
       endDateMenu: false,

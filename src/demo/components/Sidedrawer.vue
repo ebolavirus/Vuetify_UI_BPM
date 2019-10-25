@@ -4,7 +4,7 @@
       <wh-area-panels>
         <wh-area-panel title="基本信息">
           <!-- <v-card class="mx-auto" max-width="600" tile> -->
-          <v-list dense disabled>
+          <v-list dense disabled width="300">
             <v-list-item-group color="primary">
               <v-list-item v-for="(item, i) in desserts" :key="i">
                 <v-list-item-icon>
