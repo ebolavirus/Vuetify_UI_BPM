@@ -15,6 +15,10 @@ var _default = {
     expand: 'fold',
     action: 'actions'
   },
+  paginationtext: {
+    pagebef: 'Page:',
+    perpagebef: 'Rows per page:'
+  },
   dataIterator: {
     noResultsText: 'No matching records found',
     loadingText: 'Loading items...'
