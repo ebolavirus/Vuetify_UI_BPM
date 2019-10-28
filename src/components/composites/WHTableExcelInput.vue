@@ -16,7 +16,10 @@
     name: "wh-table-excel-input",
     props: {
       btnStyle:{},
-      value: '',
+      value: {
+        type: String,
+        default: ''
+      },
       beforeUpload: Function, // eslint-disable-line
       onSuccess: Function// eslint-disable-line
     },
@@ -61,7 +64,7 @@
       },
       readerData(rawFile) {
         this.loading = true
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve/*, reject*/) => {
           const reader = new FileReader()
           reader.onload = e => {
             const data = e.target.result

@@ -56,6 +56,7 @@
 </template>
 
 <script>
+  /* eslint-disable */
   export default {
     model: {
       prop: "typedialog",

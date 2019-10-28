@@ -32,7 +32,7 @@
             <p>
               <code class="d-block">
                 import DialogPromise from 'vuetify-dialog-promise';
-                Vue.use( DialogPromise, { 
+                Vue.use( DialogPromise, {
                 snackbarParent : "app",
                 locale : "en",
                 acceptText : "My Default OK",
@@ -100,6 +100,7 @@
 </template>
 
 <script>
+  /* eslint-disable */
   export default {
     name: "InfoCard",
     methods: {
