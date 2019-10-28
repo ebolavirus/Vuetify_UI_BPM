@@ -5,13 +5,13 @@
 
 <script>
   import DialogPromiseDemo from './demo/DialogPromiseDemo.vue'
-  // import ItServiceDemo from './demo/ITServiceDemo.vue'
+  import ItServiceDemo from './demo/ITServiceDemo.vue'
 
   export default {
     name: 'App',
     components: {
-      "dialog-promise-demo": DialogPromiseDemo
-      // "it-service-demo": ItServiceDemo
+      "dialog-promise-demo": DialogPromiseDemo,
+      "it-service-demo": ItServiceDemo
     },
     data() {
       return {

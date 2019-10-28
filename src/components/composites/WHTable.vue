@@ -330,7 +330,11 @@
         this.$emit('inline-edit', key2, key3, value);
       },
       removeSelected() {
-        this.indexSelected = [];
+        if (this.wholecheckbox) {
+          this.wholecheckbox = false
+        } else {
+          this.indexSelected = [];
+        }
       }
     }
   }
