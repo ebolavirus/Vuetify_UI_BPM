@@ -39,7 +39,7 @@
                       </span>
                     </template>
                     <template v-slot:input>
-                      <wh-textfield v-model="editValue" single-line counter />
+                      <v-text-field v-model="editValue" single-line counter autofocus />
                     </template>
                   </v-edit-dialog>
                 </template>
@@ -111,7 +111,7 @@
                           <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3,key2)" readonly />
                         </template>
                         <template v-slot:input>
-                          <wh-textfield v-model="editValue" single-line counter />
+                          <v-text-field v-model="editValue" single-line counter autofocus/>
                         </template>
                       </v-edit-dialog>
                     </template>
@@ -330,7 +330,11 @@
         this.$emit('inline-edit', key2, key3, value);
       },
       removeSelected() {
-        this.indexSelected = [];
+        if (this.wholecheckbox) {
+          this.wholecheckbox = false
+        } else {
+          this.indexSelected = [];
+        }
       }
     }
   }

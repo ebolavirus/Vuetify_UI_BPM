@@ -15,6 +15,10 @@ var _default = {
     expand: '折叠',
     action: '操作'
   },
+  paginationtext: {
+    pagebef: '当前页：',
+    perpagebef: '每页条数：'
+  },
   dataIterator: {
     noResultsText: '没有符合条件的结果',
     loadingText: '加载中……'
