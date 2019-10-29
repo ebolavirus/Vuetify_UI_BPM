@@ -24,7 +24,7 @@
         <br>参考v-text-field，属性一致
       </wh-area-panel>
       <wh-area-panel title="wh-numberfield">
-        <wh-numberfield v-model="valuenumber" :isDecimal="false" label="办公室个数" placeholder="please input number"
+        <wh-numberfield v-model="valuenumber" maxlength="8" :isDecimal="false" label="办公室个数" placeholder="please input number"
           append-icon="mdi-bee" />
         <code>&lt;wh-numberfield v-model="valuenumber" :isDecimal="false" label="办公室个数"
           placeholder="please input number" append-icon="mdi-bee" /&gt;</code>
@@ -193,8 +193,11 @@
       <wh-area-panel title="wh-table">
         <wh-layout>
           <wh-flex :rowNumber="2">
-            <wh-table-excel-input v-model="typedesserts" :onSuccess="onSuccessExcel">导入</wh-table-excel-input>
-            <wh-table-excel-output :tableHeader="typeheaders" :tableData="typedesserts" @onFail="excelFail">导出
+            <wh-table-excel-input v-model="typedesserts" :onSuccess="onSuccessExcel">
+              导入
+            </wh-table-excel-input>
+            <wh-table-excel-output :tableHeader="typeheaders" :tableData="typedesserts" @onFail="excelFail">
+              导出
             </wh-table-excel-output>
           </wh-flex>
           <wh-flex :rowNumber="1">

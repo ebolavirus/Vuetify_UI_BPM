@@ -17,8 +17,10 @@
     props: {
       btnStyle:{},
       value: {
-        type: String,
-        default: ''
+        type: Array,
+        default() {
+          return []
+        }
       },
       beforeUpload: Function, // eslint-disable-line
       onSuccess: Function// eslint-disable-line
