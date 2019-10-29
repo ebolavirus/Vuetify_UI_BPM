@@ -3797,11 +3797,11 @@
 .v-input--dense>.v-input__control>.v-input__slot {
   margin-bottom: 4px;
 }
-
+*/
 .v-input--is-disabled:not(.v-input--is-readonly) {
-  pointer-events: none;
+  pointer-events: auto;
 }
-
+/*
 .v-input--is-loading>.v-input__control>.v-input__slot:before,
 .v-input--is-loading>.v-input__control>.v-input__slot:after {
   display: none;
