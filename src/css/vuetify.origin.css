@@ -2044,7 +2044,12 @@
 .theme--light.v-select .v-select__selection--disabled {
   color: rgba(0, 0, 0, 0.38);
 }
+**/
+.theme--light.v-select .v-select__selection--disabled {
+  color: rgba(0, 0, 0, 0.6);
+}
 
+/*
 .theme--light.v-select.v-text-field--solo-inverted.v-input--is-focused .v-select__selections {
   color: #FFFFFF;
 }
