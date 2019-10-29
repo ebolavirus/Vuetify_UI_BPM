@@ -1,6 +1,6 @@
 <template>
   <v-text-field v-model="whpassvalue" v-bind="$attrs" :rules="passrules" v-on="$listeners" :inheritAttrs="false"
-    type="number" />
+    type="number" :oninput="valuefunction" />
 </template>
 
 <script>
@@ -11,6 +11,10 @@
       event: 'whvalueChanged'
     },
     props: {
+      maxlength: {
+        type: [Number, String],
+        default: '20'
+      },
       value: {
         type: String,
         default () {
@@ -30,6 +34,7 @@
     },
     data() {
       return {
+        valuefunction: 'if(value.length>'+this.maxlength+')value=value.slice(0,'+this.maxlength+')',
         rulesTag: {
           ruleint: value => {
             const pattern = /^[0-9]*$/

@@ -15,12 +15,16 @@
     props: {
       btnStyle:{},
       tableHeader: {
-        type: String,
-        default: ''
+        type: Array,
+        default() {
+          return []
+        }
       },
       tableData: {
-        type: String,
-        default: ''
+        type: Array,
+        default() {
+          return []
+        }
       },
       autoWidth: {
         type: Boolean,
