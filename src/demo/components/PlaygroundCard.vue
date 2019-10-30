@@ -70,7 +70,7 @@
         <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-btn">
-        <wh-btn depressed block color="indigo" dark>Button</wh-btn>
+        <wh-btn depressed block color="primary" dark>Button</wh-btn>
         <br><code>&lt;wh-btn depressed block color="indigo" dark&gt;Button&lt;/wh-btn&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-select">
