@@ -14,7 +14,7 @@
     <v-btn text icon @click="btnClick(4)">
       <v-icon>mdi-skip-next</v-icon>
     </v-btn>
-    <template v-if="!simple">
+    <template v-if="(!simple) && $vuetify.breakpoint.smAndUp">
       <div>{{$vuetify.lang.t('$vuetify.paginationtext.pagebef')}}</div>
       <wh-select style="min-width:50px;flex:0.08" class="v-data-footer__select" :items="pageArray" v-model="currentPage" />
       <!--<wh-select :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
