@@ -262,6 +262,7 @@
       },
       items() {
         this.indexSelected = [];
+        this.wholecheckbox = false;
       }
     },
     methods: {
