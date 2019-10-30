@@ -31,7 +31,8 @@
                     item-value="value" @change="changeValue($event,key2,key3)" />
                 </template>
                 <template v-else-if="item3['editable']">
-                  <v-edit-dialog @save="save(key2, key3)" @open="open(item2, item3)">
+                  <v-edit-dialog @save="save(key2, key3)"
+                    @open="open(item2,item3,key2,key3)">
                     <!-- @close="close"-->
                     <template v-slot:default>
                       <span class="whtableedititem">
@@ -39,7 +40,7 @@
                       </span>
                     </template>
                     <template v-slot:input>
-                      <v-text-field v-model="editValue" single-line counter autofocus />
+                      <v-text-field :ref="'edd'+key2+'-'+key3" v-model="editValue" single-line counter autofocus />
                     </template>
                   </v-edit-dialog>
                 </template>
@@ -53,8 +54,8 @@
                     :key="key4">
                     {{action.icon}}
                   </v-icon>
-                  <wh-btn dark color="blue darken-3" small v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
-                    @click="$emit(action.actionName, item2, key2)">
+                  <wh-btn dark color="blue darken-3" small v-else-if="action.text && action.text !== ''" class="mb-2"
+                    :key="key4" @click="$emit(action.actionName, item2, key2)">
                     {{action.text}}
                   </wh-btn>
                 </template>
@@ -111,7 +112,7 @@
                           <wh-textfield color="green" :label="item3.text" :value="getName(item2,item3,key2)" readonly />
                         </template>
                         <template v-slot:input>
-                          <v-text-field v-model="editValue" single-line counter autofocus/>
+                          <v-text-field :ref="'edd'+key2+'-'+key3" v-model="editValue" single-line counter autofocus />
                         </template>
                       </v-edit-dialog>
                     </template>
@@ -134,8 +135,8 @@
                     :key="key4">
                     {{action.icon}}
                   </v-icon>
-                  <wh-btn dark color="blue darken-3" small v-else-if="action.text && action.text !== ''" class="mb-2" :key="key4"
-                    @click="$emit(action.actionName, item2, key2)">
+                  <wh-btn dark color="blue darken-3" small v-else-if="action.text && action.text !== ''" class="mb-2"
+                    :key="key4" @click="$emit(action.actionName, item2, key2)">
                     {{action.text}}
                   </wh-btn>
                 </template>
@@ -300,8 +301,14 @@
       save(key2, key3) {
         this.$emit('inline-edit', key2, key3, this.editValue);
       },
-      open(item2, item3) {
+      open(item2, item3, key2, key3) {
         this.editValue = item2[item3['value']]
+        //  :ref="'edd'+key2+'-'+key3"
+        let me = this
+        let refkey = 'edd' + key2 + '-' + key3
+        setTimeout(() => {
+          me.$refs[refkey][0].focus()
+        }, 500)
       },
       colClicked(aCol, aitem) {
         this.selectedIndex = aCol
