@@ -12358,11 +12358,11 @@
   padding-left: 8px;
   padding-right: 8px;
 }
-
+*/
 .v-treeview-node {
-  margin-left: 26px;
+  margin-left: 10px;
 }
-
+/*
 .v-treeview-node--disabled {
   pointer-events: none;
 }
@@ -12409,15 +12409,15 @@
   padding-left: 24px;
   padding-right: 8px;
 }
-
+*/
 .v-treeview-node__root {
   display: flex;
   align-items: center;
-  min-height: 48px;
+  min-height: 30px;
   padding-right: 8px;
   position: relative;
 }
-
+/*
 .v-treeview-node__root::before {
   background-color: currentColor;
   bottom: 0;
@@ -26510,7 +26510,7 @@ html {
 }
 
 .whareapanel {
-  background-color: #E0E3FD;
+  background-color: #D0E0FF;
 }
 
 .whtableedititem {
