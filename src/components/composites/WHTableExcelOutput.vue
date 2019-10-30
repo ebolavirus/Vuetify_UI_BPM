@@ -14,10 +14,26 @@
     name: 'wh-table-excel-output',
     props: {
       btnStyle:{},
-      tableHeader:'',
-      tableData: '',
-      autoWidth: true,
-      bookType: 'xlsx'
+      tableHeader: {
+        type: Array,
+        default() {
+          return []
+        }
+      },
+      tableData: {
+        type: Array,
+        default() {
+          return []
+        }
+      },
+      autoWidth: {
+        type: Boolean,
+        default: true
+      },
+      bookType:  {
+        type: String,
+        default: 'xlsx'
+      }
     },
     data(){
       return {

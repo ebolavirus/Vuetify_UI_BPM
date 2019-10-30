@@ -4,6 +4,7 @@
 </template>
 
 <script>
+  /* eslint-disable */
   import DialogPromiseDemo from './demo/DialogPromiseDemo.vue'
   import ItServiceDemo from './demo/ITServiceDemo.vue'
 

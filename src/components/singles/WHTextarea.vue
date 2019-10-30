@@ -1,9 +1,19 @@
+<template>
+  <v-textarea :auto-grow="disabled" :readonly="readonly" :disabled="disabled"  v-bind="$attrs" v-on="$listeners" :inheritAttrs="false" />
+</template>
+
 <script>
-  import {
-    VTextarea
-  } from 'vuetify/lib'
   export default {
     name: 'wh-textarea',
-    extends: VTextarea
-  };
+    props: {
+      readonly: {
+        type: Boolean,
+        default: false
+      },
+      disabled: {
+        type: Boolean,
+        default: false
+      }
+    }
+  }
 </script>

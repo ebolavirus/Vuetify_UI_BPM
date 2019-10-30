@@ -18,14 +18,26 @@
         <br>复合组件，loading为boolean，决定是否展示loading
       </wh-area-panel>
       <wh-area-panel title="wh-textfield">
-        <wh-textfield label="*办公室位置" placeholder="万华实业前楼" />
+        <wh-layout>
+          <wh-flex :rowNumber="2">
+            <wh-textfield label="*办公室位置" placeholder="万华实业前楼" />
+          </wh-flex>
+          <wh-flex :rowNumber="2">
+            <wh-textfield disabled label="*办公室位置" placeholder="万华实业前楼"
+              value="万华实业前楼万华实业前楼万华实业前楼万华实业前楼万华实业前楼万华实业前楼万华实业前楼万华实业前楼万华实业" />
+          </wh-flex>
+        </wh-layout>
         <code>&lt;wh-textfield label="*办公室位置" placeholder="万华实业前楼" disabled
           append-icon="mdi-account-edit"/&gt;</code>
         <br>参考v-text-field，属性一致
       </wh-area-panel>
       <wh-area-panel title="wh-numberfield">
-        <wh-numberfield v-model="valuenumber" :isDecimal="false" label="办公室个数" placeholder="please input number"
-          append-icon="mdi-bee" />
+        <wh-layout>
+          <wh-flex :rowNumber="2">
+            <wh-numberfield v-model="valuenumber" maxlength="8" :isDecimal="false" label="办公室个数"
+              placeholder="please input number" append-icon="mdi-bee" />
+          </wh-flex>
+        </wh-layout>
         <code>&lt;wh-numberfield v-model="valuenumber" :isDecimal="false" label="办公室个数"
           placeholder="please input number" append-icon="mdi-bee" /&gt;</code>
         <br>整体基于v-text-field,最大长度、后缀图标等属性参考v-text-field
@@ -40,12 +52,21 @@
         <br>注意，要触发此组件的值变化检测，必须使用v-model进行值绑定，否则可以直接用value赋值
       </wh-area-panel>
       <wh-area-panel title="wh-textarea">
-        <wh-text label="评估意见"
-          value="请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意">
-        </wh-text>
-        <wh-text label="评估意见" value="请填写评估意请填写" />
-        <wh-textarea label="评估意见" auto-grow disabled light placeholder="请填写评估意见" value="请填写评估意">
-        </wh-textarea>
+        <wh-layout>
+          <wh-flex :rowNumber="1">
+            <wh-text label="评估意见"
+              value="请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意">
+            </wh-text>
+          </wh-flex>
+          <wh-flex :rowNumber="1">
+            <wh-textarea label="评估意见" light placeholder="请填写评估意见"
+              value="请填请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写">
+            </wh-textarea>
+            <wh-textarea label="评估意见" disabled light placeholder="请填写评估意见"
+              value="请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意请填写评估意">
+            </wh-textarea>
+          </wh-flex>
+        </wh-layout>
         <br><code>&lt;wh-textarea label="评估意见" light placeholder="请填写评估意见" value=""&gt;</code>
       </wh-area-panel>
       <wh-area-panel title="wh-btn">
@@ -186,8 +207,11 @@
       <wh-area-panel title="wh-table">
         <wh-layout>
           <wh-flex :rowNumber="2">
-            <wh-table-excel-input v-model="typedesserts" :onSuccess="onSuccessExcel">导入</wh-table-excel-input>
-            <wh-table-excel-output :tableHeader="typeheaders" :tableData="typedesserts" @onFail="excelFail">导出
+            <wh-table-excel-input v-model="typedesserts" :onSuccess="onSuccessExcel">
+              导入
+            </wh-table-excel-input>
+            <wh-table-excel-output :tableHeader="typeheaders" :tableData="typedesserts" @onFail="excelFail">
+              导出
             </wh-table-excel-output>
           </wh-flex>
           <wh-flex :rowNumber="1">
