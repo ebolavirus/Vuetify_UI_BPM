@@ -600,6 +600,10 @@
 }
 */
 .v-btn {
+  text-transform: none;
+}
+/*
+.v-btn {
   align-items: center;
   border-radius: 4px;
   display: inline-flex;
@@ -612,7 +616,7 @@
   position: relative;
   text-decoration: none;
   text-indent: 0.0892857143em;
-  text-transform: none;
+  text-transform: uppercase;
   transition-duration: 0.28s;
   transition-property: box-shadow, transform, opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -623,7 +627,7 @@
   vertical-align: middle;
   white-space: nowrap;
 }
-/*
+
 .v-btn.v-size--x-small {
   font-size: 0.625rem;
 }
