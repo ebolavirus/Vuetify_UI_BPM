@@ -16,10 +16,10 @@
               <wh-textfield disabled label="*办公室位置(只读）" value="ffff"></wh-textfield>
             </wh-flex>
             <wh-flex :rowNumber="1">
-              <wh-pagination v-model="itemCount"></wh-pagination>
+              <wh-textarea label="服务内容"></wh-textarea>
             </wh-flex>
             <wh-flex :rowNumber="1">
-              <wh-textarea label="服务内容"></wh-textarea>
+              <wh-pagination v-model="itemCount"></wh-pagination>
             </wh-flex>
           </wh-layout>
         </wh-area-panel>
@@ -120,9 +120,9 @@
       serviceTypes: ["type1", "type2", "type3", "type4", "type5"],
       typeValue: "AAA天罡火地煞功",
       dutyValue: "",
+      itemCount: 9999,
       typedialog: false,
       dutydialog: false,
-      itemCount: 32,
       row: "",
       startDateMenu: false,
       endDateMenu: false,
