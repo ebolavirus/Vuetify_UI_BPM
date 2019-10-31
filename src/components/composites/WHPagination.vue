@@ -16,11 +16,11 @@
     </v-btn>
     <template v-if="!simple">
       <div>{{$vuetify.lang.t('$vuetify.paginationtext.pagebef')}}</div>
-      <wh-select style="min-width:50px;flex:0.08" class="v-data-footer__select" :items="pageArray" v-model="currentPage" />
+      <wh-select style="min-width:50px;" class="v-data-footer__select" :items="pageArray" v-model="currentPage" />
       <!--<wh-select :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
                     item-value="value" @change="changeValue($event,key2,key3)" />-->
       {{$vuetify.lang.t('$vuetify.paginationtext.perpagebef')}}
-      <wh-select style="min-width:50px;flex:0.07" class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
+      <wh-select style="min-width:50px;" class="v-data-footer__select" :items="countPerRow" v-model="currentCountPerRow" />
     </template>
   </div>
 </template>
