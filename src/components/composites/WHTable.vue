@@ -27,7 +27,7 @@
               </td>
               <td v-for="(item3, key3) in headers" :key="key3">
                 <template v-if="item3['editable'] && item3.dicMapSource">
-                  <wh-select :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
+                  <wh-select style="min-width:150px;" :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
                     item-value="value" @change="changeValue($event,key2,key3)" />
                 </template>
                 <template v-else-if="item3['editable']">
