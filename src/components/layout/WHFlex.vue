@@ -18,7 +18,8 @@
         let resultJson = {
           'xs12': true,
           'pl-1': true,
-          'pr-5': true
+          'pr-md-5': true,
+          'pr-sm-1': true
         }
         let smTitle = 'sm12'
         switch (this.rowNumber) {
