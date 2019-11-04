@@ -248,8 +248,3 @@
     }
   };
 </script>
-<style scoped>
-.v-menu__content {
-  position: fixed !important;
-}
-</style>

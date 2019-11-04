@@ -8,7 +8,7 @@
       </wh-area-panel>
       <wh-area-panel title="wh-hyperlink">
         <wh-hyperlink href="http://www.baidu.com" label="百度" />
-        <br><code>&lt;wh-hyperlink href="http://www.baidu.com" label="百度" /&gt;</code>
+        <code>&lt;wh-hyperlink href="http://www.baidu.com" label="百度" /&gt;</code>
         <br>自封组件，href为链接，label为展示文字，不填文字则展示超链接自身
       </wh-area-panel>
       <wh-area-panel title="wh-loading">
