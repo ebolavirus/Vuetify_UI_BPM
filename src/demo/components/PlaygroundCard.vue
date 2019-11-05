@@ -625,7 +625,9 @@
 
       },
       submitTest() {},
-      deleteTest() {},
+      deleteTest() {
+        console.log('delete....')
+      },
       formatterFunction(row, key, value, index) {
         if (key === 'fat' && index === 1)
           return 'AAA'

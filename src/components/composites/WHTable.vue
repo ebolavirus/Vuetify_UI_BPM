@@ -27,12 +27,11 @@
               </td>
               <td v-for="(item3, key3) in headers" :key="key3">
                 <template v-if="item3['editable'] && item3.dicMapSource">
-                  <wh-select style="min-width:150px;" :value="getObject(item2, item3)" :items="item3.dicMapSource" item-text="label"
-                    item-value="value" @change="changeValue($event,key2,key3)" />
+                  <wh-select style="min-width:150px;" :value="getObject(item2, item3)" :items="item3.dicMapSource"
+                    item-text="label" item-value="value" @change="changeValue($event,key2,key3)" />
                 </template>
                 <template v-else-if="item3['editable']">
-                  <v-edit-dialog @save="save(key2, key3)"
-                    @open="open(item2,item3,key2,key3)">
+                  <v-edit-dialog @save="save(key2, key3)" @open="open(item2,item3,key2,key3)">
                     <!-- @close="close"-->
                     <template v-slot:default>
                       <span class="whtableedititem">
@@ -135,10 +134,9 @@
                     :key="key4">
                     {{action.icon}}
                   </v-icon>
-                  <wh-btn dark color="blue darken-3" small v-else-if="action.text && action.text !== ''" class="mb-2"
-                    :key="key4" @click="$emit(action.actionName, item2, key2)">
-                    {{action.text}}
-                  </wh-btn>
+                  <a v-else-if="action.text && action.text !== ''" @click="$emit(action.actionName, item2, key2)"
+                    :key="key4">{{action.text}}</a>
+                  <br v-if="key4 < actions.length - 1" :key="'br'+key4">
                 </template>
               </td>
             </tr>
